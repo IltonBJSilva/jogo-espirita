@@ -1,0 +1,83 @@
+{
+  "_comentario": "Perfis de iluminação por mapa. 'colors' = [hora, [r,g,b]] interpolados ciclicamente; 'lights_curve' = [hora, fator 0..1] para lampiões/janelas; luzes em pixels do mapa. Tipos de luz: lamp (lampião), window (janela), candle (vela/lareira).",
+  "profiles": {
+    "outdoor": {
+      "colors": [
+        ["00:00", [0.50, 0.52, 0.74]],
+        ["04:30", [0.50, 0.52, 0.74]],
+        ["05:30", [0.66, 0.60, 0.76]],
+        ["06:30", [0.96, 0.80, 0.72]],
+        ["08:00", [1.00, 0.97, 0.93]],
+        ["12:00", [1.00, 1.00, 1.00]],
+        ["16:00", [1.00, 0.95, 0.86]],
+        ["17:30", [1.00, 0.85, 0.70]],
+        ["18:45", [0.90, 0.68, 0.64]],
+        ["19:45", [0.64, 0.58, 0.78]],
+        ["21:00", [0.52, 0.53, 0.75]]
+      ],
+      "lights_curve": [["05:30", 1.0], ["06:45", 0.0], ["17:45", 0.0], ["19:15", 1.0]]
+    },
+    "indoor": {
+      "colors": [
+        ["00:00", [0.84, 0.78, 0.84]],
+        ["05:30", [0.86, 0.80, 0.85]],
+        ["07:30", [0.97, 0.95, 0.94]],
+        ["12:00", [1.00, 1.00, 1.00]],
+        ["17:00", [0.99, 0.95, 0.90]],
+        ["19:30", [0.90, 0.83, 0.84]],
+        ["21:30", [0.85, 0.79, 0.84]]
+      ],
+      "lights_curve": [["06:00", 1.0], ["07:30", 0.35], ["17:00", 0.35], ["19:30", 1.0]]
+    },
+    "none": {}
+  },
+  "light_types": {
+    "lamp": {"color": [1.0, 0.80, 0.48], "energy": 1.1, "scale": 2.4},
+    "window": {"color": [1.0, 0.78, 0.42], "energy": 0.7, "scale": 0.75},
+    "candle": {"color": [1.0, 0.74, 0.40], "energy": 0.8, "scale": 2.0}
+  },
+  "maps": {
+    "paris_1857": {
+      "profile": "outdoor",
+      "lights": [
+        {"type": "lamp", "pos": [569, 420]}, {"type": "lamp", "pos": [969, 420]},
+        {"type": "lamp", "pos": [587, 778]}, {"type": "lamp", "pos": [923, 790]},
+        {"type": "window", "pos": [615, 240]}, {"type": "window", "pos": [690, 240]},
+        {"type": "window", "pos": [900, 240]}, {"type": "window", "pos": [970, 240]},
+        {"type": "window", "pos": [795, 300]},
+        {"type": "window", "pos": [108, 335]}, {"type": "window", "pos": [230, 335]},
+        {"type": "window", "pos": [215, 545]}, {"type": "window", "pos": [45, 485]},
+        {"type": "window", "pos": [1290, 270]}, {"type": "window", "pos": [1430, 270]},
+        {"type": "window", "pos": [1262, 375]}, {"type": "window", "pos": [1362, 375]},
+        {"type": "window", "pos": [1475, 375]}, {"type": "window", "pos": [1258, 545]},
+        {"type": "window", "pos": [1475, 545]}, {"type": "window", "pos": [1305, 540]},
+        {"type": "window", "pos": [65, 30]}, {"type": "window", "pos": [140, 30]},
+        {"type": "window", "pos": [215, 30]}, {"type": "window", "pos": [290, 30]},
+        {"type": "window", "pos": [1415, 30]}, {"type": "window", "pos": [1490, 30]},
+        {"type": "window", "pos": [60, 960]}, {"type": "window", "pos": [160, 960]}
+      ]
+    },
+    "livraria": {
+      "profile": "indoor",
+      "lights": [
+        {"type": "candle", "pos": [322, 294]}, {"type": "candle", "pos": [826, 216]},
+        {"type": "candle", "pos": [32, 320]}, {"type": "candle", "pos": [928, 320]}
+      ]
+    },
+    "residencia_kardec": {
+      "profile": "indoor",
+      "lights": [{"type": "candle", "pos": [480, 140]}, {"type": "candle", "pos": [836, 224]}]
+    },
+    "sociedade_salao": {
+      "profile": "indoor",
+      "lights": [{"type": "candle", "pos": [388, 236]}, {"type": "candle", "pos": [580, 236]}]
+    },
+    "tipografia": {
+      "profile": "indoor",
+      "lights": [{"type": "candle", "pos": [544, 96]}, {"type": "candle", "pos": [288, 160]},
+                 {"type": "candle", "pos": [768, 320]}]
+    },
+    "plano_espiritual": {"profile": "none"}
+  },
+  "default_profile": "indoor"
+}

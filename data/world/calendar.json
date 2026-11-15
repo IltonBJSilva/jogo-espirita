@@ -1,0 +1,33 @@
+{
+  "base_year": 1850,
+  "base_weekday": 1,
+  "gregorian_leap": true,
+  "time_scale": 1.0,
+  "start": {"year": 1857, "month": 5, "day": 4, "hour": 9, "minute": 0},
+  "weekdays": ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado", "Domingo"],
+  "months": [
+    {"name": "janeiro", "days": 31},
+    {"name": "fevereiro", "days": 28},
+    {"name": "março", "days": 31},
+    {"name": "abril", "days": 30},
+    {"name": "maio", "days": 31},
+    {"name": "junho", "days": 30},
+    {"name": "julho", "days": 31},
+    {"name": "agosto", "days": 31},
+    {"name": "setembro", "days": 30},
+    {"name": "outubro", "days": 31},
+    {"name": "novembro", "days": 30},
+    {"name": "dezembro", "days": 31}
+  ],
+  "leap_month": 2,
+  "phases": [
+    {"id": "madrugada", "from": "00:00"},
+    {"id": "amanhecer", "from": "05:00"},
+    {"id": "manha", "from": "07:00"},
+    {"id": "meio_dia", "from": "11:30"},
+    {"id": "tarde", "from": "13:30"},
+    {"id": "por_do_sol", "from": "17:30"},
+    {"id": "noite", "from": "19:30"}
+  ],
+  "_comentario": "base_weekday: dia da semana de 1º de janeiro de base_year (0 = segunda). 1º/01/1850 foi uma terça-feira. Fases: cada uma vai até o início da seguinte."
+}

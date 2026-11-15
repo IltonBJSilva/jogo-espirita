@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/clock_widget.gd" id="1_clock"]
+[ext_resource type="Script" path="res://scripts/ui/clock_icon.gd" id="2_icon"]
+
+[node name="ClockWidget" type="CanvasLayer"]
+layer = 11
+script = ExtResource("1_clock")
+
+[node name="Panel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -232.0
+offset_top = -70.0
+offset_right = -12.0
+offset_bottom = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="HBox" type="HBoxContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Icon" type="Control" parent="Panel/HBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+script = ExtResource("2_icon")
+
+[node name="VBox" type="VBoxContainer" parent="Panel/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Top" type="HBoxContainer" parent="Panel/HBox/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Time" type="Label" parent="Panel/HBox/VBox/Top"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.74, 0.38, 1)
+theme_override_font_sizes/font_size = 18
+text = "09:00"
+
+[node name="Weekday" type="Label" parent="Panel/HBox/VBox/Top"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 13
+text = "Segunda-feira"
+
+[node name="Date" type="Label" parent="Panel/HBox/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.78, 0.66, 1)
+theme_override_font_sizes/font_size = 13
+text = "4 de maio de 1857"
