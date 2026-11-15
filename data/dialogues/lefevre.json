@@ -1,0 +1,174 @@
+{
+  "speaker": "medico",
+  "start": "antes",
+  "variants": [
+    {
+      "condition": {
+        "objective_current": {
+          "quest": "o_cetico",
+          "objective": "convidar"
+        }
+      },
+      "start": "convite"
+    },
+    {
+      "condition": {
+        "objective_current": {
+          "quest": "o_cetico",
+          "objective": "debater"
+        }
+      },
+      "start": "debate"
+    },
+    {
+      "condition": {
+        "all": [
+          {
+            "quest_status": {
+              "quest": "conhecendo_sociedade",
+              "status": "completed"
+            }
+          },
+          {
+            "quest_status": {
+              "quest": "o_cetico",
+              "status": "not_started"
+            }
+          }
+        ]
+      },
+      "start": "provoca"
+    }
+  ],
+  "nodes": {
+    "antes": {
+      "text": "Mesas que falam! Em que século vivemos? Sou médico, meu jovem. Acredito no que posso examinar."
+    },
+    "provoca": {
+      "text": "Então você também anda com o pessoal da Sociedade? Mesas, cestinhas, lápis... Truques de salão!",
+      "choices": [
+        {
+          "text": "Ouvir o doutor com respeito",
+          "next": "aceita",
+          "actions": [
+            {
+              "type": "start_quest",
+              "quest": "o_cetico"
+            },
+            {
+              "type": "add_virtue",
+              "virtue": "fraternidade",
+              "amount": 5
+            },
+            {
+              "type": "add_affinity",
+              "npc": "medico",
+              "amount": 5
+            }
+          ]
+        },
+        {
+          "text": "Zombar dele",
+          "next": "zomba",
+          "actions": [
+            {
+              "type": "add_affinity",
+              "npc": "medico",
+              "amount": -5
+            }
+          ]
+        }
+      ]
+    },
+    "zomba": {
+      "text": "Ha! Eis a resposta de quem não tem argumentos. Passe bem.",
+      "actions": [
+        {
+          "type": "notify",
+          "text": "Zombar fecha o diálogo. Talvez valha tentar de novo."
+        }
+      ]
+    },
+    "aceita": {
+      "text": "Ora, um jovem que escuta! Muito bem: vou lhe fazer algumas objeções. Se responder com honestidade, eu escuto também.",
+      "next": "debate"
+    },
+    "debate": {
+      "text": "Pronto para as minhas objeções?",
+      "choices": [
+        {
+          "text": "Estou pronto",
+          "next": "end",
+          "actions": [
+            {
+              "type": "start_minigame",
+              "minigame": "debate_cetico",
+              "on_success": [
+                {
+                  "type": "complete_objective",
+                  "quest": "o_cetico",
+                  "objective": "debater"
+                },
+                {
+                  "type": "add_virtue",
+                  "virtue": "estudo",
+                  "amount": 5
+                },
+                {
+                  "type": "add_virtue",
+                  "virtue": "fraternidade",
+                  "amount": 10
+                },
+                {
+                  "type": "add_affinity",
+                  "npc": "medico",
+                  "amount": 15
+                },
+                {
+                  "type": "unlock_entry",
+                  "entry": "doutor_lefevre"
+                },
+                {
+                  "type": "unlock_entry",
+                  "entry": "escala_espirita"
+                }
+              ],
+              "on_fail": [
+                {
+                  "type": "notify",
+                  "text": "O doutor sorri: 'Volte quando tiver estudado.'"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Preciso estudar antes",
+          "next": "end"
+        }
+      ]
+    },
+    "convite": {
+      "actions": [
+        {
+          "type": "complete_objective",
+          "quest": "o_cetico",
+          "objective": "convidar"
+        },
+        {
+          "type": "add_affinity",
+          "npc": "medico",
+          "amount": 5
+        },
+        {
+          "type": "unlock_entry",
+          "entry": "controle_universal"
+        }
+      ],
+      "text": [
+        "Hum. Você não me convenceu de que são Espíritos... mas me convenceu de que vale a pena olhar.",
+        "Diga ao seu professor que um médico desconfiado irá à próxima reunião. Apenas para observar!"
+      ]
+    }
+  }
+}

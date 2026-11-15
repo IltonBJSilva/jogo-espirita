@@ -1,0 +1,19 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "nodes": {
+    "inicio": {
+      "text": "Bertrand espera do lado de fora com o fiacre e leva você de volta à praça.",
+      "next": "partir"
+    },
+    "partir": {
+      "actions": [
+        {
+          "type": "change_map",
+          "map": "paris_1857",
+          "spawn": "fiacre"
+        }
+      ]
+    }
+  }
+}

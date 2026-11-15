@@ -1,0 +1,30 @@
+{
+  "id": "o_cetico",
+  "name": "O Cético",
+  "chapter": 1,
+  "description": "O Doutor Lefèvre acha que tudo não passa de truque. Converse com ele com honestidade e respeito: debater não é vencer, é buscar a verdade.",
+  "sequential": true,
+  "requirements": {
+    "quests_completed": [
+      "conhecendo_sociedade"
+    ],
+    "flags": [],
+    "items": []
+  },
+  "objectives": [
+    {
+      "id": "debater",
+      "description": "Responder às objeções do Doutor Lefèvre"
+    },
+    {
+      "id": "convidar",
+      "description": "Convidar o doutor para observar uma reunião"
+    }
+  ],
+  "rewards": {
+    "items": {},
+    "flags": [
+      "lefevre_observador"
+    ]
+  }
+}

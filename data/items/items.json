@@ -1,0 +1,61 @@
+{
+  "items": {
+    "livro_dos_espiritos": {
+      "name": "O Livro dos Espíritos",
+      "description": "Le Livre des Esprits, de Allan Kardec (Paris, 18 de abril de 1857). A primeira edição reúne 501 perguntas feitas aos Espíritos, com as respostas e comentários do autor.",
+      "category": "livro",
+      "icon": "livro",
+      "book": "livro_dos_espiritos"
+    },
+    "carta_recomendacao": {
+      "name": "Carta de recomendação",
+      "description": "Carta assinada por Allan Kardec apresentando você aos membros do grupo de estudos.",
+      "category": "documento",
+      "icon": "cartas"
+    },
+    "marcador_pagina": {
+      "name": "Marcador de página",
+      "description": "Um marcador de couro gravado com uma pena dourada. Presente de Monsieur Gérard por organizar a enciclopédia.",
+      "category": "objeto",
+      "icon": "bilhete"
+    },
+    "caderno_estudos": {
+      "name": "Caderno de estudos",
+      "category": "documento",
+      "icon": "documento",
+      "book": "caderno_estudos",
+      "description": "Suas anotações da primeira reunião de estudos. Pode ser lido no inventário."
+    },
+    "provas_revista": {
+      "name": "Provas da Revista",
+      "category": "documento",
+      "icon": "documento",
+      "description": "Folhas manuscritas do primeiro número da Revista Espírita, para a tipografia."
+    },
+    "revista_espirita_1": {
+      "name": "Revista Espírita nº 1",
+      "category": "livro",
+      "icon": "jornal",
+      "book": "revista_espirita_1",
+      "description": "Exemplar do primeiro número (janeiro de 1858), ainda cheirando a tinta."
+    },
+    "pao": {
+      "name": "Pão fresco",
+      "category": "objeto",
+      "icon": "bilhete",
+      "description": "Um pão ainda morno, presente de Madame Marguerite para Louis."
+    },
+    "agasalho": {
+      "name": "Casaco de lã",
+      "category": "objeto",
+      "icon": "documento",
+      "description": "Um casaco velho, mas quente, doado por Monsieur Gérard."
+    },
+    "pena_presente": {
+      "name": "Pena de escrever",
+      "category": "objeto",
+      "icon": "pena",
+      "description": "Presente de Amélie Boudet: \"Para que você continue anotando o que aprende.\""
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "speaker": "medico",
+  "start": "inicio",
+  "nodes": {
+    "inicio": {
+      "actions": [
+        {
+          "type": "add_affinity",
+          "npc": "medico",
+          "amount": 2
+        }
+      ],
+      "text": [
+        "Observo, apenas observo. Anoto quem está na sala, onde está cada mão, o que se diz.",
+        "Não estou convencido. Mas confesso: o método do professor é mais honesto do que eu imaginava."
+      ]
+    }
+  }
+}

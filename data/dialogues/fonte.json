@@ -1,0 +1,33 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "variants": [
+    {
+      "condition": {
+        "objective_current": {
+          "quest": "conhecendo_sociedade",
+          "objective": "explorar_praca"
+        }
+      },
+      "start": "explorar"
+    }
+  ],
+  "nodes": {
+    "inicio": {
+      "text": "Uma fonte de pedra no centro da praça. A água corre tranquila, refletindo a luz dos lampiões."
+    },
+    "explorar": {
+      "actions": [
+        {
+          "type": "complete_objective",
+          "quest": "conhecendo_sociedade",
+          "objective": "explorar_praca"
+        }
+      ],
+      "text": [
+        "Uma fonte de pedra no centro da praça. A água corre tranquila, refletindo a luz dos lampiões.",
+        "Daqui se vê a Sociedade Espírita, a livraria e a residência de Allan Kardec."
+      ]
+    }
+  }
+}

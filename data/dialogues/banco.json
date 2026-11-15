@@ -1,0 +1,11 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "nodes": {
+    "inicio": {
+      "text": [
+        "Um banco de madeira e ferro fundido. Bom lugar para ler ao fim da tarde."
+      ]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "nodes": {
+    "inicio": {
+      "actions": [
+        {
+          "type": "unlock_entry",
+          "entry": "pestalozzi"
+        }
+      ],
+      "text": "Livros de gramática, aritmética e pedagogia, alguns com o nome H. L. D. Rivail na lombada. E, num lugar de honra, as obras de Pestalozzi."
+    }
+  }
+}

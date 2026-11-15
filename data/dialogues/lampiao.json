@@ -1,0 +1,11 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "nodes": {
+    "inicio": {
+      "text": [
+        "Um lampião a gás. Há décadas Paris vem trocando os antigos lampiões a óleo pela iluminação a gás, que deixa as noites da cidade muito mais claras."
+      ]
+    }
+  }
+}

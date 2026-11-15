@@ -1,0 +1,9 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "nodes": {
+    "inicio": {
+      "text": "Folhas recém-impressas secam no varal. O cheiro de tinta enche a oficina."
+    }
+  }
+}

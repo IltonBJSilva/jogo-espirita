@@ -1,0 +1,78 @@
+{
+  "speaker": "kardec",
+  "start": "inicio",
+  "variants": [
+    {
+      "condition": {
+        "objective_current": {
+          "quest": "perguntas_e_respostas",
+          "objective": "falar_kardec_salao"
+        }
+      },
+      "start": "conclusao"
+    },
+    {
+      "condition": {
+        "quest_status": {
+          "quest": "perguntas_e_respostas",
+          "status": "active"
+        }
+      },
+      "start": "durante"
+    }
+  ],
+  "nodes": {
+    "durante": {
+      "text": "Sente-se, Étienne. Converse com Mademoiselle Aline e depois junte-se a nós à mesa. Aqui ninguém tem pressa: estudamos devagar para estudar bem."
+    },
+    "conclusao": {
+      "actions": [
+        {
+          "type": "complete_objective",
+          "quest": "perguntas_e_respostas",
+          "objective": "falar_kardec_salao"
+        },
+        {
+          "type": "add_affinity",
+          "npc": "kardec",
+          "amount": 10
+        },
+        {
+          "type": "add_virtue",
+          "virtue": "estudo",
+          "amount": 5
+        },
+        {
+          "type": "unlock_entry",
+          "entry": "estudo_em_grupo"
+        },
+        {
+          "type": "unlock_entry",
+          "entry": "allan_kardec"
+        }
+      ],
+      "text": [
+        "Você se saiu bem. Mas lembre-se: mais importante que acertar respostas é compreender por que elas fazem sentido.",
+        "Quando uma ideia não resiste à razão, deixamos de lado, venha de quem vier. Esse é o nosso método.",
+        "Tome este caderno. Anote o que aprender; um dia ele será precioso para você."
+      ]
+    },
+    "inicio": {
+      "text": "Bem-vindo de volta ao salão. Há sempre algo novo para estudar.",
+      "choices": [
+        {
+          "text": "Como o senhor escolhe as perguntas?",
+          "next": "perguntas"
+        },
+        {
+          "text": "Até logo, professor.",
+          "next": "end"
+        }
+      ]
+    },
+    "perguntas": {
+      "text": "Preparamos as perguntas com antecedência, em grupo. Perguntas sérias trazem respostas sérias; a curiosidade frívola atrai respostas levianas.",
+      "next": "inicio"
+    }
+  }
+}

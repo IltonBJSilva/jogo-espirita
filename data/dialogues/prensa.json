@@ -1,0 +1,76 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "variants": [
+    {
+      "condition": {
+        "objective_current": {
+          "quest": "revista_espirita",
+          "objective": "imprimir"
+        }
+      },
+      "start": "imprimir"
+    }
+  ],
+  "nodes": {
+    "imprimir": {
+      "text": "A prensa de ferro espera. M. Bertin limpa as mãos no avental: 'Vamos lá?'",
+      "choices": [
+        {
+          "text": "Imprimir a Revista",
+          "next": "end",
+          "actions": [
+            {
+              "type": "start_minigame",
+              "minigame": "imprensa_etapas",
+              "on_success": [
+                {
+                  "type": "complete_objective",
+                  "quest": "revista_espirita",
+                  "objective": "imprimir"
+                },
+                {
+                  "type": "give_item",
+                  "item": "revista_espirita_1"
+                },
+                {
+                  "type": "set_flag",
+                  "flag": "data_atual",
+                  "value": "Janeiro de 1858"
+                },
+                {
+                  "type": "add_virtue",
+                  "virtue": "estudo",
+                  "amount": 5
+                },
+                {
+                  "type": "add_affinity",
+                  "npc": "impressor",
+                  "amount": 10
+                },
+                {
+                  "type": "unlock_entry",
+                  "entry": "prensa_manual"
+                }
+              ],
+              "on_fail": []
+            }
+          ]
+        },
+        {
+          "text": "Ainda não",
+          "next": "end"
+        }
+      ]
+    },
+    "inicio": {
+      "actions": [
+        {
+          "type": "unlock_entry",
+          "entry": "prensa_manual"
+        }
+      ],
+      "text": "Uma prensa manual de ferro. A alavanca é pesada, mas o mecanismo é preciso como um relógio."
+    }
+  }
+}

@@ -1,0 +1,188 @@
+[gd_scene load_steps=16 format=3]
+
+[ext_resource type="Script" path="res://scripts/maps/game_map.gd" id="1_map"]
+[ext_resource type="PackedScene" path="res://scenes/maps/paris_1857/paris_1857_tiles.tscn" id="2_tiles"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/npc.tscn" id="3_npc"]
+[ext_resource type="Script" path="res://scripts/interaction/interactable.gd" id="4_interactable"]
+[ext_resource type="Script" path="res://scripts/interaction/trigger_zone.gd" id="5_trigger"]
+[ext_resource type="Script" path="res://scripts/maps/spawn_point.gd" id="6_spawn"]
+[ext_resource type="SpriteFrames" path="res://resources/sprite_frames/kardec.tres" id="7_kardec"]
+[ext_resource type="SpriteFrames" path="res://resources/sprite_frames/estudioso.tres" id="8_estudioso"]
+[ext_resource type="SpriteFrames" path="res://resources/sprite_frames/moradora.tres" id="9_moradora"]
+[ext_resource type="PackedScene" path="res://scenes/maps/paris_1857/paris_1857_foreground.tscn" id="10_foreground"]
+[ext_resource type="SpriteFrames" path="res://resources/sprite_frames/cocheiro.tres" id="11_cocheiro"]
+[ext_resource type="SpriteFrames" path="res://resources/sprite_frames/crianca.tres" id="12_crianca"]
+[ext_resource type="SpriteFrames" path="res://resources/sprite_frames/medico.tres" id="13_medico"]
+
+[node name="Paris1857" type="Node2D"]
+script = ExtResource("1_map")
+map_id = "paris_1857"
+display_name = "Paris, 1857"
+map_size = Vector2i(1536, 1024)
+
+[node name="Tiles" parent="." instance=ExtResource("2_tiles")]
+
+[node name="Interactive" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Foreground" parent="Interactive" instance=ExtResource("10_foreground")]
+
+[node name="Kardec" parent="Interactive" instance=ExtResource("3_npc")]
+position = Vector2(795, 452)
+sprite_frames = ExtResource("7_kardec")
+npc_id = "kardec"
+dialogue_id = "kardec"
+
+[node name="Estudioso" parent="Interactive" instance=ExtResource("3_npc")]
+position = Vector2(1000, 572)
+sprite_frames = ExtResource("8_estudioso")
+facing = Vector2(-1, 0)
+npc_id = "estudioso"
+dialogue_id = "estudioso"
+
+[node name="Moradora" parent="Interactive" instance=ExtResource("3_npc")]
+position = Vector2(372, 690)
+sprite_frames = ExtResource("9_moradora")
+facing = Vector2(-1, 0)
+npc_id = "moradora"
+dialogue_id = "moradora"
+
+[node name="PortaLivraria" type="Area2D" parent="Interactive"]
+position = Vector2(110, 604)
+script = ExtResource("4_interactable")
+prompt = "Entrar"
+display_name = "Livraria"
+dialogue_id = "porta_livraria"
+radius = 34.0
+
+[node name="VitrineLivraria" type="Area2D" parent="Interactive"]
+position = Vector2(215, 590)
+script = ExtResource("4_interactable")
+prompt = "Examinar"
+display_name = "Vitrine da livraria"
+dialogue_id = "vitrine_livraria"
+radius = 34.0
+
+[node name="PortaSociedade" type="Area2D" parent="Interactive"]
+position = Vector2(795, 340)
+script = ExtResource("4_interactable")
+prompt = "Examinar"
+display_name = "Sociedade Espírita de Paris"
+dialogue_id = "porta_sociedade"
+radius = 36.0
+
+[node name="PortaResidencia" type="Area2D" parent="Interactive"]
+position = Vector2(1370, 598)
+script = ExtResource("4_interactable")
+prompt = "Examinar"
+display_name = "Residência de Allan Kardec"
+dialogue_id = "porta_residencia"
+radius = 34.0
+
+[node name="Fonte" type="Area2D" parent="Interactive"]
+position = Vector2(757, 640)
+script = ExtResource("4_interactable")
+prompt = "Examinar"
+display_name = "Fonte da praça"
+dialogue_id = "fonte"
+radius = 120.0
+
+[node name="Carruagem" type="Area2D" parent="Interactive"]
+position = Vector2(180, 700)
+script = ExtResource("4_interactable")
+prompt = "Examinar"
+display_name = "Fiacre"
+dialogue_id = "carruagem"
+radius = 100.0
+
+[node name="Lampiao" type="Area2D" parent="Interactive"]
+position = Vector2(568, 530)
+script = ExtResource("4_interactable")
+prompt = "Examinar"
+display_name = "Lampião a gás"
+dialogue_id = "lampiao"
+radius = 30.0
+
+[node name="Banco" type="Area2D" parent="Interactive"]
+position = Vector2(484, 505)
+script = ExtResource("4_interactable")
+prompt = "Examinar"
+display_name = "Banco da praça"
+dialogue_id = "banco"
+radius = 34.0
+
+[node name="Canal" type="Area2D" parent="Interactive"]
+position = Vector2(1100, 860)
+script = ExtResource("4_interactable")
+prompt = "Examinar"
+display_name = "Canal"
+dialogue_id = "canal"
+radius = 60.0
+
+[node name="GatilhoPraca" type="Area2D" parent="Interactive"]
+position = Vector2(757, 650)
+script = ExtResource("5_trigger")
+dialogue_id = "gatilho_praca"
+size = Vector2(380, 300)
+
+[node name="Cocheiro" parent="Interactive" instance=ExtResource("3_npc")]
+position = Vector2(300, 632)
+sprite_frames = ExtResource("11_cocheiro")
+facing = Vector2(1, 0)
+npc_id = "cocheiro"
+dialogue_id = "cocheiro"
+
+[node name="Louis" parent="Interactive" instance=ExtResource("3_npc")]
+position = Vector2(650, 805)
+sprite_frames = ExtResource("12_crianca")
+facing = Vector2(0, -1)
+npc_id = "crianca"
+dialogue_id = "louis"
+
+[node name="Lefevre" parent="Interactive" instance=ExtResource("3_npc")]
+position = Vector2(520, 625)
+sprite_frames = ExtResource("13_medico")
+facing = Vector2(1, 0)
+npc_id = "medico"
+dialogue_id = "lefevre"
+present_when = "{\"not\": {\"quest_status\": {\"quest\": \"o_cetico\", \"status\": \"completed\"}}}"
+
+[node name="JornalBanco" type="Area2D" parent="Interactive"]
+position = Vector2(1047, 505)
+script = ExtResource("4_interactable")
+prompt = "Ler"
+display_name = "Jornal esquecido"
+dialogue_id = "jornal_banco"
+radius = 34.0
+
+[node name="CartazObras" type="Area2D" parent="Interactive"]
+position = Vector2(330, 760)
+script = ExtResource("4_interactable")
+prompt = "Ler"
+display_name = "Cartaz da prefeitura"
+dialogue_id = "cartaz_obras"
+radius = 30.0
+
+[node name="Spawns" type="Node2D" parent="."]
+
+[node name="inicio" type="Marker2D" parent="Spawns"]
+position = Vector2(800, 880)
+script = ExtResource("6_spawn")
+facing = Vector2(0, -1)
+
+[node name="porta_livraria" type="Marker2D" parent="Spawns"]
+position = Vector2(110, 654)
+script = ExtResource("6_spawn")
+
+[node name="porta_residencia" type="Marker2D" parent="Spawns"]
+position = Vector2(1392, 645)
+script = ExtResource("6_spawn")
+
+[node name="porta_sociedade" type="Marker2D" parent="Spawns"]
+position = Vector2(795, 380)
+script = ExtResource("6_spawn")
+
+[node name="fiacre" type="Marker2D" parent="Spawns"]
+position = Vector2(360, 650)
+script = ExtResource("6_spawn")
+facing = Vector2(-1, 0)

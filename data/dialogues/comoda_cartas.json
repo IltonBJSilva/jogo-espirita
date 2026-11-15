@@ -1,0 +1,75 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "variants": [
+    {
+      "condition": {
+        "objective_current": {
+          "quest": "cartas_do_professor",
+          "objective": "organizar_cartas"
+        }
+      },
+      "start": "organizar"
+    }
+  ],
+  "nodes": {
+    "organizar": {
+      "text": "Dezenas de cartas, de Lyon, Bordeaux, Bruxelas, Marselha... todas misturadas.",
+      "choices": [
+        {
+          "text": "Organizar pela data",
+          "next": "end",
+          "actions": [
+            {
+              "type": "start_minigame",
+              "minigame": "cartas_kardec",
+              "on_success": [
+                {
+                  "type": "complete_objective",
+                  "quest": "cartas_do_professor",
+                  "objective": "organizar_cartas"
+                },
+                {
+                  "type": "add_virtue",
+                  "virtue": "estudo",
+                  "amount": 3
+                },
+                {
+                  "type": "read_book",
+                  "book": "carta_de_lyon"
+                }
+              ],
+              "on_fail": []
+            }
+          ]
+        },
+        {
+          "text": "Deixar para depois",
+          "next": "end"
+        }
+      ]
+    },
+    "inicio": {
+      "text": "Cartas de leitores, agora em ordem. Uma delas, de Lyon, está aberta por cima.",
+      "choices": [
+        {
+          "text": "Reler a carta de Lyon",
+          "next": "end",
+          "condition": {
+            "book_read": "carta_de_lyon"
+          },
+          "actions": [
+            {
+              "type": "read_book",
+              "book": "carta_de_lyon"
+            }
+          ]
+        },
+        {
+          "text": "Deixar como está",
+          "next": "end"
+        }
+      ]
+    }
+  }
+}

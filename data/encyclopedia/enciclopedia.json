@@ -1,0 +1,312 @@
+{
+  "entries": {
+    "allan_kardec": {
+      "title": "Allan Kardec",
+      "category": "Personagens",
+      "kind": "fato_historico",
+      "text": "Pseudônimo de Hippolyte Léon Denizard Rivail (Lyon, 3 de outubro de 1804 — Paris, 31 de março de 1869). Educador formado no método de Pestalozzi, autor de livros escolares. A partir de 1855 estudou os fenômenos das 'mesas girantes' e organizou as respostas obtidas em O Livro dos Espíritos (1857). Também fundou a Revista Espírita (1858) e a Sociedade Parisiense de Estudos Espíritas (1858).",
+      "source": "Biografias de Allan Kardec (ex.: Henri Sausse, 'Biografia de Allan Kardec', 1896)"
+    },
+    "amelie_boudet": {
+      "title": "Amélie Boudet",
+      "category": "Personagens",
+      "kind": "fato_historico",
+      "text": "Amélie Gabrielle Boudet (1795–1883), professora, escritora e pintora. Casou-se com Rivail em 1832 e foi sua colaboradora durante toda a vida, apoiando a organização do trabalho e da correspondência. Após 1869, continuou a amparar a difusão da obra.",
+      "source": "Biografias de Allan Kardec (ex.: Henri Sausse, 'Biografia de Allan Kardec', 1896)"
+    },
+    "pestalozzi": {
+      "title": "Johann Heinrich Pestalozzi",
+      "category": "Personagens",
+      "kind": "fato_historico",
+      "text": "Educador suíço (1746–1827) que defendia aprender pela observação e pela experiência, respeitando o desenvolvimento de cada aluno. O jovem Rivail estudou em seu instituto em Yverdon, na Suíça, e levou esse método de estudo — observar, comparar, concluir — para toda a vida.",
+      "source": "Biografias de Allan Kardec (ex.: Henri Sausse, 'Biografia de Allan Kardec', 1896)"
+    },
+    "irmas_fox": {
+      "title": "As irmãs Fox (1848)",
+      "category": "Acontecimentos",
+      "kind": "fato_historico",
+      "text": "Em março de 1848, em Hydesville (Estados Unidos), as irmãs Fox relataram pancadas que respondiam a perguntas. O caso se espalhou e é considerado o início da onda de interesse pelos fenômenos espíritas no Ocidente.",
+      "source": "Histórias do movimento espiritualista do século XIX"
+    },
+    "victor_hugo_jersey": {
+      "title": "Victor Hugo e as mesas de Jersey",
+      "category": "Personagens",
+      "kind": "fato_historico",
+      "text": "Exilado na ilha de Jersey, o escritor Victor Hugo realizou sessões com mesas falantes entre 1853 e 1855 e registrou as respostas em cadernos. Mostra como o tema atraía até grandes nomes da época.",
+      "source": "Registros das sessões de Jersey (publicados no século XX)"
+    },
+    "flaubert_bovary": {
+      "title": "Madame Bovary (1857)",
+      "category": "Obras",
+      "kind": "fato_historico",
+      "text": "Romance de Gustave Flaubert publicado em livro em 1857, depois de um processo por ofensa à moral pública do qual o autor foi absolvido. Um dos livros mais comentados de Paris naquele ano.",
+      "source": "História literária francesa"
+    },
+    "baudelaire_flores": {
+      "title": "As Flores do Mal (1857)",
+      "category": "Obras",
+      "kind": "fato_historico",
+      "text": "Livro de poemas de Charles Baudelaire publicado em junho de 1857. Em agosto, o autor foi condenado e seis poemas foram proibidos.",
+      "source": "História literária francesa"
+    },
+    "dentu": {
+      "title": "O editor Dentu",
+      "category": "Personagens",
+      "kind": "fato_historico",
+      "text": "Édouard Dentu foi um livreiro-editor do Palais-Royal, em Paris. A primeira edição de O Livro dos Espíritos foi vendida por sua casa.",
+      "source": "Folha de rosto da 1ª edição de Le Livre des Esprits (1857)"
+    },
+    "haussmann": {
+      "title": "Barão Haussmann",
+      "category": "Personagens",
+      "kind": "fato_historico",
+      "text": "Georges-Eugène Haussmann foi prefeito do Sena a partir de 1853. Comandou a grande reforma de Paris: avenidas largas, parques, esgotos e novas fachadas, que transformaram a cidade durante as décadas seguintes.",
+      "source": "História urbana de Paris"
+    },
+    "o_livro_dos_espiritos": {
+      "title": "O Livro dos Espíritos",
+      "category": "Obras",
+      "kind": "fato_historico",
+      "text": "Publicado em Paris em 18 de abril de 1857. Reúne, em forma de perguntas e respostas, os ensinos dos Espíritos obtidos por diversos médiuns e organizados por Allan Kardec, com seus comentários. A primeira edição tinha 501 perguntas; a segunda (1860), revista e ampliada, chegou a 1.019. É a obra fundamental do Espiritismo.",
+      "source": "O Livro dos Espíritos (Allan Kardec, 1857; numeração da edição definitiva de 1860)"
+    },
+    "revista_espirita": {
+      "title": "Revista Espírita",
+      "category": "Obras",
+      "kind": "fato_historico",
+      "text": "Jornal mensal fundado e dirigido por Allan Kardec, com o primeiro número em 1º de janeiro de 1858. Publicava estudos, comunicações, cartas de leitores e notícias, servindo de laboratório e de ponto de encontro dos estudiosos. Kardec a dirigiu até 1869.",
+      "source": "Revue Spirite, 1858–1869"
+    },
+    "sociedade_parisiense": {
+      "title": "Sociedade Parisiense de Estudos Espíritas",
+      "category": "Lugares",
+      "kind": "fato_historico",
+      "text": "Fundada por Allan Kardec em 1º de abril de 1858 para estudar os fenômenos com seriedade e método. Suas sessões tinham regras, atas e perguntas preparadas com antecedência.",
+      "source": "Biografias de Allan Kardec (ex.: Henri Sausse, 'Biografia de Allan Kardec', 1896)"
+    },
+    "sede_no_jogo": {
+      "title": "A 'Sociedade Espírita de Paris' do jogo",
+      "category": "Lugares",
+      "kind": "ficcao",
+      "text": "No jogo, o prédio da praça já se chama 'Sociedade Espírita de Paris' em 1857 e abriga o grupo de estudos. Historicamente, a Sociedade Parisiense de Estudos Espíritas só foi fundada em 1º de abril de 1858: a sede é uma licença artística para reunir a história num só lugar.",
+      "source": "Nota editorial do jogo"
+    },
+    "livro_dos_mediuns": {
+      "title": "O Livro dos Médiuns (1861)",
+      "category": "Obras",
+      "kind": "fato_historico",
+      "text": "Segunda obra da codificação, publicada em 1861: um guia prático e cuidadoso sobre a mediunidade, os tipos de médiuns e os riscos de enganos e mistificações.",
+      "source": "Allan Kardec, O Livro dos Médiuns, 1861"
+    },
+    "obras_basicas": {
+      "title": "As obras básicas",
+      "category": "Obras",
+      "kind": "fato_historico",
+      "text": "O Livro dos Espíritos (1857), O Livro dos Médiuns (1861), O Evangelho segundo o Espiritismo (1864), O Céu e o Inferno (1865) e A Gênese (1868) formam a chamada codificação espírita.",
+      "source": "Biografias de Allan Kardec (ex.: Henri Sausse, 'Biografia de Allan Kardec', 1896)"
+    },
+    "espiritismo": {
+      "title": "Espiritismo",
+      "category": "Conceitos",
+      "kind": "conceito_doutrinario",
+      "text": "Palavra criada por Allan Kardec para nomear a nova doutrina e distingui-la do 'espiritualismo' em geral. Apresenta-se ao mesmo tempo como ciência de observação e como doutrina filosófica de consequências morais.",
+      "source": "O Livro dos Espíritos (Allan Kardec, 1857; numeração da edição definitiva de 1860), Introdução"
+    },
+    "deus": {
+      "title": "Deus",
+      "category": "Conceitos",
+      "kind": "conceito_doutrinario",
+      "text": "\"Que é Deus? — Deus é a inteligência suprema, causa primária de todas as coisas.\" Assim começa O Livro dos Espíritos.",
+      "source": "O Livro dos Espíritos (Allan Kardec, 1857; numeração da edição definitiva de 1860), q. 1"
+    },
+    "imortalidade": {
+      "title": "Imortalidade da alma",
+      "category": "Conceitos",
+      "kind": "conceito_doutrinario",
+      "text": "Para o Espiritismo, a alma é o Espírito encarnado. Ela sobrevive à morte do corpo, conserva sua individualidade e continua progredindo.",
+      "source": "O Livro dos Espíritos (Allan Kardec, 1857; numeração da edição definitiva de 1860), Parte 2"
+    },
+    "perispirito": {
+      "title": "Perispírito",
+      "category": "Conceitos",
+      "kind": "conceito_doutrinario",
+      "text": "Envoltório semimaterial que une o Espírito ao corpo durante a vida e o acompanha depois dela. Kardec o comparou ao perisperma que envolve o germe do fruto.",
+      "source": "O Livro dos Espíritos (Allan Kardec, 1857; numeração da edição definitiva de 1860), q. 93 e 135"
+    },
+    "reencarnacao": {
+      "title": "Reencarnação",
+      "category": "Conceitos",
+      "kind": "conceito_doutrinario",
+      "text": "O Espírito vive muitas existências corporais, aprendendo e se melhorando em cada uma. \"Nascer, morrer, renascer ainda e progredir sempre, tal é a lei\" é a frase associada a Kardec e gravada em seu túmulo.",
+      "source": "O Livro dos Espíritos (Allan Kardec, 1857; numeração da edição definitiva de 1860), Parte 2, cap. IV"
+    },
+    "escala_espirita": {
+      "title": "Escala espírita",
+      "category": "Conceitos",
+      "kind": "conceito_doutrinario",
+      "text": "Classificação dos Espíritos conforme o adiantamento: Espíritos imperfeitos (terceira ordem), bons Espíritos (segunda ordem) e Espíritos puros (primeira ordem). Todos podem progredir; ninguém é condenado a ficar para sempre no mesmo grau.",
+      "source": "O Livro dos Espíritos (Allan Kardec, 1857; numeração da edição definitiva de 1860), q. 100"
+    },
+    "livre_arbitrio": {
+      "title": "Livre-arbítrio",
+      "category": "Conceitos",
+      "kind": "conceito_doutrinario",
+      "text": "A liberdade de escolher entre o bem e o mal. Com ela vem a responsabilidade pelas próprias ações.",
+      "source": "O Livro dos Espíritos (Allan Kardec, 1857; numeração da edição definitiva de 1860), Parte 3, cap. X"
+    },
+    "caridade": {
+      "title": "Caridade",
+      "category": "Conceitos",
+      "kind": "conceito_doutrinario",
+      "text": "\"Benevolência para com todos, indulgência para as imperfeições dos outros, perdão das ofensas.\" Para o Espiritismo, a caridade vai muito além da esmola: é o amor ao próximo posto em prática.",
+      "source": "O Livro dos Espíritos (Allan Kardec, 1857; numeração da edição definitiva de 1860), q. 886"
+    },
+    "lei_amor": {
+      "title": "Lei de justiça, amor e caridade",
+      "category": "Conceitos",
+      "kind": "conceito_doutrinario",
+      "text": "Uma das leis morais estudadas em O Livro dos Espíritos. Resume-se em fazer aos outros o que gostaríamos que nos fizessem.",
+      "source": "O Livro dos Espíritos (Allan Kardec, 1857; numeração da edição definitiva de 1860), Parte 3, cap. XI"
+    },
+    "medium": {
+      "title": "Médium",
+      "category": "Conceitos",
+      "kind": "conceito_doutrinario",
+      "text": "Pessoa que serve de intermediária entre os Espíritos e os homens. Kardec insistia que a mediunidade não é um privilégio nem um espetáculo, e que as comunicações devem ser julgadas pelo conteúdo.",
+      "source": "O Livro dos Médiuns (1861)"
+    },
+    "psicografia": {
+      "title": "Psicografia",
+      "category": "Conceitos",
+      "kind": "conceito_doutrinario",
+      "text": "Escrita mediúnica: o Espírito se comunica guiando a mão do médium. Nos primeiros estudos usavam-se cestinhas e pranchetas com um lápis preso; depois o médium passou a segurar o lápis diretamente.",
+      "source": "O Livro dos Médiuns (1861)"
+    },
+    "controle_universal": {
+      "title": "Concordância das comunicações",
+      "category": "Conceitos",
+      "kind": "conceito_doutrinario",
+      "text": "Princípio de método: um ensino só merece confiança quando é confirmado por comunicações independentes, obtidas por médiuns diferentes em lugares diferentes, e quando resiste ao exame da razão. Kardec o chamou mais tarde de 'controle universal do ensino dos Espíritos' (1864).",
+      "source": "O Evangelho segundo o Espiritismo (1864), Introdução"
+    },
+    "mesas_girantes": {
+      "title": "Mesas girantes",
+      "category": "Acontecimentos",
+      "kind": "fato_historico",
+      "text": "Por volta de 1853, virou moda na Europa reunir-se em volta de uma mesa que se movia e respondia a perguntas por pancadas. Para muitos era diversão de salão; Kardec, que viu os fenômenos em 1855, decidiu estudá-los com método.",
+      "source": "Biografias de Allan Kardec (ex.: Henri Sausse, 'Biografia de Allan Kardec', 1896)"
+    },
+    "estudo_em_grupo": {
+      "title": "O estudo em grupo",
+      "category": "Conceitos",
+      "kind": "conceito_doutrinario",
+      "text": "Kardec recomendava reuniões sérias, pequenas, com ordem e recolhimento, perguntas preparadas e registro do que se obtinha. O objetivo era instruir-se e melhorar-se, não buscar curiosidades.",
+      "source": "O Livro dos Médiuns (1861)"
+    },
+    "residencia_kardec": {
+      "title": "A casa dos Rivail",
+      "category": "Lugares",
+      "kind": "fato_historico",
+      "text": "Segundo as biografias, nessa época o casal Rivail morava na rue des Martyrs, em Paris, onde Kardec trabalhava em seus escritos. No jogo, a residência fica na praça, ao lado da Sociedade.",
+      "source": "Biografias de Allan Kardec (ex.: Henri Sausse, 'Biografia de Allan Kardec', 1896)"
+    },
+    "fiacre": {
+      "title": "Fiacre",
+      "category": "Lugares",
+      "kind": "fato_historico",
+      "text": "Carruagem de aluguel de Paris. O nome vem do Hôtel Saint-Fiacre, onde, no século XVII, ficavam os primeiros carros de aluguel.",
+      "source": "História dos transportes de Paris"
+    },
+    "iluminacao_gas": {
+      "title": "Iluminação a gás",
+      "category": "Lugares",
+      "kind": "fato_historico",
+      "text": "Ao longo da primeira metade do século XIX, Paris substituiu os lampiões a óleo por milhares de lampiões a gás, deixando as noites da cidade muito mais claras.",
+      "source": "História urbana de Paris"
+    },
+    "canal_saint_martin": {
+      "title": "Canal Saint-Martin",
+      "category": "Lugares",
+      "kind": "fato_historico",
+      "text": "Canal parisiense inaugurado em 1825 para abastecer a cidade de água e facilitar o transporte de mercadorias.",
+      "source": "História urbana de Paris"
+    },
+    "prensa_manual": {
+      "title": "A prensa manual",
+      "category": "Lugares",
+      "kind": "fato_historico",
+      "text": "Nas pequenas tipografias do século XIX ainda se compunha o texto letra por letra com tipos móveis e se imprimia em prensas de ferro acionadas por alavanca; os grandes jornais já usavam prensas mecânicas.",
+      "source": "História da imprensa"
+    },
+    "etienne": {
+      "title": "Étienne",
+      "category": "Personagens",
+      "kind": "ficcao",
+      "text": "Personagem do jogador: um jovem estudante recém-chegado de Lyon, curioso e disposto a aprender.",
+      "source": "Ficção do jogo"
+    },
+    "monsieur_gerard": {
+      "title": "Monsieur Gérard",
+      "category": "Personagens",
+      "kind": "ficcao",
+      "text": "Livreiro da praça, conhece cada livro da loja e acompanha as novidades literárias de 1857.",
+      "source": "Ficção do jogo"
+    },
+    "professor_delaunay": {
+      "title": "Professor Delaunay",
+      "category": "Personagens",
+      "kind": "ficcao",
+      "text": "Membro do grupo de estudos. Metódico, anota tudo o que observa.",
+      "source": "Ficção do jogo"
+    },
+    "madame_marguerite": {
+      "title": "Madame Marguerite",
+      "category": "Personagens",
+      "kind": "ficcao",
+      "text": "Moradora da praça, conhece todo mundo e todas as novidades do bairro.",
+      "source": "Ficção do jogo"
+    },
+    "mademoiselle_aline": {
+      "title": "Mademoiselle Aline",
+      "category": "Personagens",
+      "kind": "ficcao",
+      "text": "Jovem médium do grupo de estudos. Simples e serena, prefere ser útil a ser admirada. Inspirada nas jovens médiuns que colaboraram com Kardec, como as irmãs Baudin, mas é uma personagem fictícia.",
+      "source": "Ficção do jogo"
+    },
+    "doutor_lefevre": {
+      "title": "Doutor Lefèvre",
+      "category": "Personagens",
+      "kind": "ficcao",
+      "text": "Médico cético da vizinhança. Representa a crítica honesta da época: muitos cientistas desconfiavam dos fenômenos, e Kardec respondia propondo exame e método.",
+      "source": "Ficção do jogo"
+    },
+    "louis": {
+      "title": "Louis",
+      "category": "Personagens",
+      "kind": "ficcao",
+      "text": "Menino da praça, filho de uma lavadeira. Lembra que a caridade começa perto de nós.",
+      "source": "Ficção do jogo"
+    },
+    "monsieur_bertin": {
+      "title": "Monsieur Bertin",
+      "category": "Personagens",
+      "kind": "ficcao",
+      "text": "Tipógrafo experiente, de mãos sempre sujas de tinta. Imprime a Revista no jogo.",
+      "source": "Ficção do jogo"
+    },
+    "bertrand_cocheiro": {
+      "title": "Bertrand, o cocheiro",
+      "category": "Personagens",
+      "kind": "ficcao",
+      "text": "Cocheiro de fiacre que conhece cada rua de Paris e leva o jogador aos novos destinos.",
+      "source": "Ficção do jogo"
+    },
+    "irmas_baudin": {
+      "title": "As irmãs Baudin",
+      "category": "Personagens",
+      "kind": "fato_historico",
+      "text": "Caroline e Julie Baudin, jovens médiuns por meio das quais Kardec obteve muitas das respostas reunidas em O Livro dos Espíritos, em reuniões na casa da família, por volta de 1855–1856.",
+      "source": "Biografias de Allan Kardec (ex.: Henri Sausse, 'Biografia de Allan Kardec', 1896)"
+    }
+  }
+}

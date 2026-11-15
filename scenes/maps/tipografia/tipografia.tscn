@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/maps/game_map.gd" id="1_map"]
+[ext_resource type="PackedScene" path="res://scenes/maps/tipografia/tipografia_tiles.tscn" id="2_tiles"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/npc.tscn" id="3_npc"]
+[ext_resource type="Script" path="res://scripts/interaction/interactable.gd" id="4_interactable"]
+[ext_resource type="Script" path="res://scripts/interaction/trigger_zone.gd" id="5_trigger"]
+[ext_resource type="Script" path="res://scripts/maps/spawn_point.gd" id="6_spawn"]
+[ext_resource type="SpriteFrames" path="res://resources/sprite_frames/impressor.tres" id="7_impressor"]
+
+[node name="Tipografia" type="Node2D"]
+script = ExtResource("1_map")
+map_id = "tipografia"
+display_name = "Tipografia de M. Bertin — Paris"
+map_size = Vector2i(960, 544)
+
+[node name="Tiles" parent="." instance=ExtResource("2_tiles")]
+
+[node name="Interactive" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Bertin" parent="Interactive" instance=ExtResource("3_npc")]
+position = Vector2(464, 280)
+sprite_frames = ExtResource("7_impressor")
+npc_id = "impressor"
+dialogue_id = "bertin"
+
+[node name="Prensa" type="Area2D" parent="Interactive"]
+position = Vector2(288, 330)
+script = ExtResource("4_interactable")
+prompt = "Usar"
+display_name = "Prensa manual"
+dialogue_id = "prensa"
+radius = 64.0
+
+[node name="CartazOficina" type="Area2D" parent="Interactive"]
+position = Vector2(416, 166)
+script = ExtResource("4_interactable")
+prompt = "Ler"
+display_name = "Regras da oficina"
+dialogue_id = "cartaz_tipografo"
+radius = 40.0
+
+[node name="Varal" type="Area2D" parent="Interactive"]
+position = Vector2(720, 166)
+script = ExtResource("4_interactable")
+prompt = "Examinar"
+display_name = "Varal de folhas"
+dialogue_id = "varal_folhas"
+radius = 40.0
+
+[node name="GatilhoEntrada" type="Area2D" parent="Interactive"]
+position = Vector2(480, 455)
+script = ExtResource("5_trigger")
+dialogue_id = "gatilho_tipografia"
+size = Vector2(160, 110)
+
+[node name="Saida" type="Area2D" parent="Interactive"]
+position = Vector2(480, 522)
+script = ExtResource("4_interactable")
+prompt = "Sair"
+display_name = "Fiacre"
+dialogue_id = "porta_saida_tipografia"
+radius = 36.0
+
+[node name="Spawns" type="Node2D" parent="."]
+
+[node name="entrada" type="Marker2D" parent="Spawns"]
+position = Vector2(480, 470)
+script = ExtResource("6_spawn")
+facing = Vector2(0, -1)

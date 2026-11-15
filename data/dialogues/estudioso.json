@@ -1,0 +1,35 @@
+{
+  "speaker": "estudioso",
+  "start": "inicio",
+  "variants": [
+    {"condition": {"flag": "apresentado_ao_grupo"}, "start": "membro"}
+  ],
+  "nodes": {
+    "inicio": {
+      "text": [
+        "Boa noite. Sou o professor Delaunay; frequento as reuniões de estudo do senhor Rivail.",
+        "Ele insiste que anotemos tudo: a data, o médium, as perguntas e as respostas. Diz que só assim se separa o fato da fantasia."
+      ],
+      "next": "perguntas"
+    },
+    "perguntas": {
+      "text": "Quer saber mais alguma coisa?",
+      "choices": [
+        {"text": "O que são médiuns?", "next": "mediuns"},
+        {"text": "Como são as reuniões?", "next": "reunioes"},
+        {"text": "Obrigado, professor.", "next": "end"}
+      ]
+    },
+    "mediuns": {
+      "text": "São pessoas que servem de intermediárias entre os Espíritos e os homens. Umas escrevem, outras ouvem ou veem. O senhor Kardec compara as respostas de vários médiuns antes de aceitar qualquer ensino.",
+      "next": "perguntas"
+    },
+    "reunioes": {
+      "text": "São calmas e respeitosas. Nada de espetáculo: perguntas preparadas com antecedência e muita atenção ao que se recebe.",
+      "next": "perguntas"
+    },
+    "membro": {
+      "text": "Bem-vindo ao grupo, Étienne! Sugiro começar pela parte sobre as leis morais. A lei de justiça, amor e caridade resume muito do que estudamos."
+    }
+  }
+}

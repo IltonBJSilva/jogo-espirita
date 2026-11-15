@@ -1,0 +1,32 @@
+{
+  "entries": {
+    "mundo_espiritual": {
+      "title": "Mundo espiritual",
+      "category": "Conceitos",
+      "kind": "conceito_doutrinario",
+      "text": "Para o Espiritismo, o mundo dos Espíritos é o mundo normal e primitivo; o mundo corporal é secundário. Os Espíritos estão por toda parte, e o estado de cada um depende do seu adiantamento moral, não de um lugar físico.",
+      "source": "O Livro dos Espíritos (numeração da edição definitiva de 1860), Parte 2 (q. 84-87)"
+    },
+    "prece": {
+      "title": "Prece",
+      "category": "Conceitos",
+      "kind": "conceito_doutrinario",
+      "text": "A prece é um ato de adoração e de pensamento elevado. O que lhe dá valor é a sinceridade, não a quantidade de palavras.",
+      "source": "O Livro dos Espíritos (numeração da edição definitiva de 1860), Parte 3, cap. II (Lei de adoração), q. 658 e seguintes"
+    },
+    "jardim_jogo": {
+      "title": "O Jardim da Reflexão (no jogo)",
+      "category": "Lugares",
+      "kind": "ficcao",
+      "text": "Representação artística criada para o jogo: um lugar sereno onde o jogador revisa, em recolhimento, as ideias que estudou. Não pretende descrever literalmente o plano espiritual.",
+      "source": "Ficção do jogo"
+    },
+    "irma_clara": {
+      "title": "Irmã Clara",
+      "category": "Personagens",
+      "kind": "ficcao",
+      "text": "Espírito benfeitor fictício que acolhe Étienne no Jardim da Reflexão. Suas falas são criação do jogo, inspiradas em conceitos de O Livro dos Espíritos, e não citações reais.",
+      "source": "Ficção do jogo"
+    }
+  }
+}

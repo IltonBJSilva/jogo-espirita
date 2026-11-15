@@ -1,0 +1,72 @@
+{
+  "intro": "Hoje a mesa estuda O Livro dos Espíritos. Responda às perguntas do grupo. Não tenha pressa: cada resposta traz uma explicação.",
+  "pass_score": 4,
+  "questions": [
+    {
+      "question": "Como começa O Livro dos Espíritos? \"Que é Deus?\"",
+      "options": [
+        "A inteligência suprema, causa primária de todas as coisas.",
+        "Uma força cega da natureza.",
+        "Um Espírito igual aos outros."
+      ],
+      "answer": 0,
+      "explanation": "É a resposta da primeira pergunta do livro.",
+      "source": "O Livro dos Espíritos (numeração da edição definitiva de 1860), q. 1"
+    },
+    {
+      "question": "Como Kardec obteve as respostas reunidas no livro?",
+      "options": [
+        "Escreveu tudo sozinho, de memória.",
+        "Perguntou aos Espíritos por meio de vários médiuns e comparou as respostas.",
+        "Copiou um livro antigo."
+      ],
+      "answer": 1,
+      "explanation": "Ele usou muitos médiuns e só aceitou o que era concordante e razoável.",
+      "source": "O Livro dos Espíritos, Introdução"
+    },
+    {
+      "question": "Em quantas ordens a escala espírita divide os Espíritos?",
+      "options": [
+        "Duas.",
+        "Três: imperfeitos, bons e puros.",
+        "Sete."
+      ],
+      "answer": 1,
+      "explanation": "E todos podem progredir de uma ordem para outra.",
+      "source": "O Livro dos Espíritos (numeração da edição definitiva de 1860), q. 100"
+    },
+    {
+      "question": "O que é o perispírito?",
+      "options": [
+        "Outro nome para o cérebro.",
+        "Um Espírito protetor.",
+        "O envoltório semimaterial que une o Espírito ao corpo."
+      ],
+      "answer": 2,
+      "explanation": "Ele acompanha o Espírito depois da morte do corpo.",
+      "source": "O Livro dos Espíritos (numeração da edição definitiva de 1860), q. 93 e 135"
+    },
+    {
+      "question": "Qual o sentido da caridade, segundo o livro?",
+      "options": [
+        "Benevolência para com todos, indulgência para as imperfeições dos outros, perdão das ofensas.",
+        "Dar esmolas apenas aos conhecidos.",
+        "Ser sempre severo com os erros alheios."
+      ],
+      "answer": 0,
+      "explanation": "A caridade é o amor ao próximo posto em prática.",
+      "source": "O Livro dos Espíritos (numeração da edição definitiva de 1860), q. 886"
+    },
+    {
+      "question": "Quantas perguntas tinha a primeira edição, de 1857?",
+      "options": [
+        "100.",
+        "501.",
+        "1.019."
+      ],
+      "answer": 1,
+      "explanation": "A edição ampliada de 1860 chegou a 1.019 perguntas.",
+      "source": "1ª e 2ª edições de Le Livre des Esprits"
+    }
+  ]
+}

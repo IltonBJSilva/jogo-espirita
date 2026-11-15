@@ -1,0 +1,41 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "variants": [
+    {
+      "condition": {
+        "flag": "sociedade_aberta"
+      },
+      "start": "entrar"
+    },
+    {
+      "condition": {
+        "objective_current": {
+          "quest": "conhecendo_sociedade",
+          "objective": "retornar_sociedade"
+        }
+      },
+      "start": "voltar"
+    }
+  ],
+  "nodes": {
+    "inicio": {
+      "text": [
+        "Sociedade Espírita de Paris. A porta está fechada.",
+        "Uma placa informa: \"Reuniões de estudo às terças-feiras. Entrada mediante apresentação.\""
+      ]
+    },
+    "voltar": {
+      "text": "A porta está fechada. Allan Kardec espera por você logo ali, diante da escadaria."
+    },
+    "entrar": {
+      "actions": [
+        {
+          "type": "change_map",
+          "map": "sociedade_salao",
+          "spawn": "entrada"
+        }
+      ]
+    }
+  }
+}

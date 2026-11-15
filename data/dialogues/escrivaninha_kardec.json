@@ -1,0 +1,18 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "nodes": {
+    "inicio": {
+      "actions": [
+        {
+          "type": "unlock_entry",
+          "entry": "obras_basicas"
+        }
+      ],
+      "text": [
+        "A escrivaninha do professor: provas de impressão corrigidas com tinta, listas de perguntas e uma pilha de livros de referência.",
+        "Você não mexe em nada. É o lugar de trabalho de alguém que escreve com muito cuidado."
+      ]
+    }
+  }
+}

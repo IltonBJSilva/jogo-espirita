@@ -1,0 +1,120 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/book_reader.gd" id="1_reader"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_paper"]
+content_margin_left = 34.0
+content_margin_top = 22.0
+content_margin_right = 34.0
+content_margin_bottom = 18.0
+bg_color = Color(0.89, 0.83, 0.68, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.36, 0.13, 0.17, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_color = Color(0, 0, 0, 0.5)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rule"]
+bg_color = Color(0.55, 0.36, 0.2, 1)
+content_margin_top = 1.0
+content_margin_bottom = 1.0
+
+[node name="BookReader" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_reader")
+
+[node name="Dim" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.02, 0.06, 0.72)
+
+[node name="Paper" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -240.0
+offset_right = 300.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_paper")
+
+[node name="VBox" type="VBoxContainer" parent="Paper"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Title" type="Label" parent="Paper/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.36, 0.11, 0.16, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 22
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Meta" type="Label" parent="Paper/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45, 0.32, 0.2, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 13
+horizontal_alignment = 1
+
+[node name="Rule" type="PanelContainer" parent="Paper/VBox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rule")
+
+[node name="Text" type="RichTextLabel" parent="Paper/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.2, 0.12, 0.09, 1)
+theme_override_font_sizes/normal_font_size = 17
+theme_override_font_sizes/italics_font_size = 14
+bbcode_enabled = true
+
+[node name="Footer" type="HBoxContainer" parent="Paper/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PrevButton" type="Button" parent="Paper/VBox/Footer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "◂ Anterior"
+
+[node name="PageLabel" type="Label" parent="Paper/VBox/Footer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.45, 0.32, 0.2, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+horizontal_alignment = 1
+
+[node name="NextButton" type="Button" parent="Paper/VBox/Footer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Próxima ▸"
+
+[node name="CloseButton" type="Button" parent="Paper/VBox/Footer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Fechar (Esc)"

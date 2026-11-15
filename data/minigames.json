@@ -1,0 +1,76 @@
+{
+  "minigames": {
+    "organizar_livros": {
+      "scene": "res://scenes/minigames/organizar_livros.tscn",
+      "title": "Organizar a enciclopédia",
+      "description": "Coloque os cinco tomos em ordem, do I ao V."
+    },
+    "questionario_le": {
+      "scene": "res://scenes/minigames/quiz.tscn",
+      "title": "Estudo de O Livro dos Espíritos",
+      "description": "Responda às perguntas do grupo de estudos.",
+      "params": {
+        "questions_file": "res://data/quizzes/questionario_le.json"
+      }
+    },
+    "debate_cetico": {
+      "scene": "res://scenes/minigames/quiz.tscn",
+      "title": "Conversa com o Doutor Lefèvre",
+      "description": "Responda às objeções com honestidade e respeito.",
+      "params": {
+        "questions_file": "res://data/quizzes/debate_cetico.json"
+      }
+    },
+    "cartas_kardec": {
+      "scene": "res://scenes/minigames/ordenar.tscn",
+      "title": "As cartas dos leitores",
+      "description": "Organize as cartas pela data em que chegaram.",
+      "params": {
+        "instructions": "Coloque as cartas em ordem de chegada, da mais antiga para a mais recente.",
+        "items": [
+          "Lyon, 2 de maio de 1857 — um antigo aluno agradece o livro.",
+          "Bordeaux, 19 de junho de 1857 — um médico pede mais explicações.",
+          "Bruxelas, 30 de agosto de 1857 — um leitor descreve reuniões em família.",
+          "Marselha, 12 de outubro de 1857 — uma professora pergunta como estudar em grupo.",
+          "Metz, 3 de dezembro de 1857 — um grupo pede um jornal para trocar experiências."
+        ],
+        "conclusion": "As cartas são fictícias, mas o fato é histórico: a correspondência dos leitores foi um dos motivos que levaram Kardec a lançar a Revista Espírita em 1858."
+      }
+    },
+    "imprensa_etapas": {
+      "scene": "res://scenes/minigames/ordenar.tscn",
+      "title": "Na prensa de M. Bertin",
+      "description": "Ponha em ordem as etapas da impressão.",
+      "params": {
+        "instructions": "Organize as etapas para imprimir a primeira folha da Revista.",
+        "items": [
+          "Compor o texto letra por letra no componedor.",
+          "Montar as linhas na forma e travá-las.",
+          "Passar tinta na forma com o rolo.",
+          "Colocar a folha e baixar a platina com a alavanca.",
+          "Pendurar as folhas no varal para secar.",
+          "Dobrar e reunir os cadernos da revista."
+        ],
+        "conclusion": "Assim trabalhavam as pequenas tipografias de prensa manual."
+      }
+    },
+    "linha_do_tempo": {
+      "scene": "res://scenes/minigames/ordenar.tscn",
+      "title": "Linha do tempo",
+      "description": "Ordene os acontecimentos.",
+      "params": {
+        "instructions": "No quadro-negro, ordene os acontecimentos do mais antigo ao mais recente.",
+        "items": [
+          "As irmãs Fox e as pancadas de Hydesville.",
+          "As mesas girantes viram moda nos salões da Europa.",
+          "O professor Rivail assiste pela primeira vez às mesas girantes.",
+          "Publicação de O Livro dos Espíritos.",
+          "Primeiro número da Revista Espírita.",
+          "Fundação da Sociedade Parisiense de Estudos Espíritas.",
+          "Publicação de O Livro dos Médiuns."
+        ],
+        "conclusion": "1848 · c. 1853 · 1855 · 18/04/1857 · 01/01/1858 · 01/04/1858 · 1861."
+      }
+    }
+  }
+}

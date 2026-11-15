@@ -1,0 +1,28 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "nodes": {
+    "inicio": {
+      "text": "Um círculo de luz suave. Se quiser, você pode encerrar a prece e voltar ao salão.",
+      "choices": [
+        {
+          "text": "Voltar ao salão",
+          "next": "voltar"
+        },
+        {
+          "text": "Continuar no jardim",
+          "next": "end"
+        }
+      ]
+    },
+    "voltar": {
+      "actions": [
+        {
+          "type": "change_map",
+          "map": "sociedade_salao",
+          "spawn": "entrada"
+        }
+      ]
+    }
+  }
+}

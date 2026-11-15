@@ -1,0 +1,45 @@
+{
+  "speaker": "cocheiro",
+  "start": "inicio",
+  "nodes": {
+    "inicio": {
+      "text": "Bonsoir! Bertrand, às suas ordens. Este fiacre conhece cada pedra de Paris.",
+      "choices": [
+        {
+          "text": "Quero viajar",
+          "next": "end",
+          "actions": [
+            {
+              "type": "open_travel"
+            }
+          ]
+        },
+        {
+          "text": "Como é a vida de cocheiro?",
+          "next": "vida"
+        },
+        {
+          "text": "Até logo, Bertrand.",
+          "next": "end"
+        }
+      ]
+    },
+    "vida": {
+      "actions": [
+        {
+          "type": "unlock_entry",
+          "entry": "fiacre"
+        },
+        {
+          "type": "unlock_entry",
+          "entry": "haussmann"
+        }
+      ],
+      "text": [
+        "Muito trabalho! E agora, com as obras do barão Haussmann, metade das ruas está esburacada.",
+        "Mas eu gosto. Cada passageiro traz uma história."
+      ],
+      "next": "inicio"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "nodes": {
+    "inicio": {
+      "branches": [
+        {
+          "condition": {
+            "objective_current": {
+              "quest": "perguntas_e_respostas",
+              "objective": "entrar_salao"
+            }
+          },
+          "next": "entrar"
+        }
+      ]
+    },
+    "entrar": {
+      "actions": [
+        {
+          "type": "complete_objective",
+          "quest": "perguntas_e_respostas",
+          "objective": "entrar_salao"
+        },
+        {
+          "type": "unlock_entry",
+          "entry": "sede_no_jogo"
+        }
+      ],
+      "text": "O salão está iluminado por velas. Em volta da mesa, o grupo conversa em voz baixa. Ninguém aqui parece esperar um espetáculo."
+    }
+  }
+}

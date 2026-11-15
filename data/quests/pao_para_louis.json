@@ -1,0 +1,32 @@
+{
+  "id": "pao_para_louis",
+  "name": "Pão para Louis",
+  "chapter": 1,
+  "description": "Louis, um menino da praça, está com fome e com frio. Talvez os vizinhos possam ajudar.",
+  "sequential": false,
+  "requirements": {
+    "quests_completed": [],
+    "flags": [],
+    "items": []
+  },
+  "objectives": [
+    {
+      "id": "pedir_pao",
+      "description": "Pedir um pão a Madame Marguerite"
+    },
+    {
+      "id": "pedir_agasalho",
+      "description": "Conseguir um agasalho com Monsieur Gérard"
+    },
+    {
+      "id": "entregar_louis",
+      "description": "Levar o pão e o agasalho a Louis"
+    }
+  ],
+  "rewards": {
+    "items": {},
+    "flags": [
+      "louis_ajudado"
+    ]
+  }
+}

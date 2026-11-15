@@ -1,0 +1,9 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "nodes": {
+    "inicio": {
+      "text": "Um globo terrestre. Cartas chegam de tantos países que o professor às vezes o gira para encontrar a cidade do remetente."
+    }
+  }
+}

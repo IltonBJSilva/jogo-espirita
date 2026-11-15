@@ -1,0 +1,9 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "nodes": {
+    "inicio": {
+      "text": "O fogo estala na lareira. Acima dela, um retrato de família e um relógio dourado que marca as horas com paciência."
+    }
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "speaker": "medium",
+  "start": "inicio",
+  "variants": [
+    {
+      "condition": {
+        "all": [
+          {
+            "quest_status": {
+              "quest": "revista_espirita",
+              "status": "completed"
+            }
+          },
+          {
+            "quest_status": {
+              "quest": "jardim_da_reflexao",
+              "status": "not_started"
+            }
+          }
+        ]
+      },
+      "start": "prece_convite"
+    },
+    {
+      "condition": {
+        "quest_status": {
+          "quest": "jardim_da_reflexao",
+          "status": "active"
+        }
+      },
+      "start": "prece_retorno"
+    },
+    {
+      "condition": {
+        "quest_status": {
+          "quest": "jardim_da_reflexao",
+          "status": "completed"
+        }
+      },
+      "start": "pos_jardim"
+    },
+    {
+      "condition": {
+        "objective_current": {
+          "quest": "perguntas_e_respostas",
+          "objective": "conversar_aline"
+        }
+      },
+      "start": "explica"
+    },
+    {
+      "condition": {
+        "flag": "lefevre_observador"
+      },
+      "start": "com_lefevre"
+    }
+  ],
+  "nodes": {
+    "explica": {
+      "actions": [
+        {
+          "type": "complete_objective",
+          "quest": "perguntas_e_respostas",
+          "objective": "conversar_aline"
+        },
+        {
+          "type": "add_affinity",
+          "npc": "medium",
+          "amount": 10
+        },
+        {
+          "type": "unlock_entry",
+          "entry": "medium"
+        },
+        {
+          "type": "unlock_entry",
+          "entry": "psicografia"
+        },
+        {
+          "type": "unlock_entry",
+          "entry": "irmas_baudin"
+        }
+      ],
+      "text": [
+        "Boa noite! Sou Aline. Não se impressione: ser médium não me faz melhor do que ninguém.",
+        "Nos primeiros estudos, as respostas vinham por pancadas e por uma cestinha com um lápis preso. Hoje eu seguro o lápis e escrevo. Chamamos isso de psicografia.",
+        "O professor nunca aceita uma resposta só porque veio por um médium. Ele compara com o que outros grupos receberam e examina se é razoável.",
+        "Agora vá até a mesa: o estudo vai começar."
+      ]
+    },
+    "inicio": {
+      "text": "Boa noite, Étienne. Gosto destas reuniões tranquilas, com estudo e prece.",
+      "choices": [
+        {
+          "text": "Você tem medo dos Espíritos?",
+          "next": "medo"
+        },
+        {
+          "text": "Boa noite, Aline.",
+          "next": "end"
+        }
+      ]
+    },
+    "medo": {
+      "text": "Medo, não. Os Espíritos são as almas dos que viveram, como nós. Com seriedade e boas intenções não há o que temer.",
+      "next": "end"
+    },
+    "com_lefevre": {
+      "text": "O Doutor Lefèvre veio observar! Ele anota tudo, desconfiado. O professor diz que um bom cético nos obriga a ser mais cuidadosos.",
+      "actions": [
+        {
+          "type": "add_affinity",
+          "npc": "medium",
+          "amount": 2
+        }
+      ]
+    },
+    "prece_convite": {
+      "text": [
+        "Étienne! Que alegria ver a Revista impressa. O professor está radiante.",
+        "Antes de cada estudo fazemos alguns minutos de prece em silêncio. Quer nos acompanhar hoje?"
+      ],
+      "choices": [
+        {
+          "text": "Fazer a prece em silêncio",
+          "next": "prece",
+          "actions": [
+            {
+              "type": "start_quest",
+              "quest": "jardim_da_reflexao"
+            }
+          ]
+        },
+        {
+          "text": "Agora não",
+          "next": "end"
+        }
+      ]
+    },
+    "prece": {
+      "text": "Feche os olhos e pense no que aprendeu. Sem pressa.",
+      "next": "ir_jardim"
+    },
+    "ir_jardim": {
+      "actions": [
+        {
+          "type": "change_map",
+          "map": "plano_espiritual",
+          "spawn": "entrada"
+        }
+      ]
+    },
+    "prece_retorno": {
+      "text": "Quer voltar à prece em silêncio?",
+      "choices": [
+        {
+          "text": "Sim",
+          "next": "prece"
+        },
+        {
+          "text": "Agora não",
+          "next": "end"
+        }
+      ]
+    },
+    "pos_jardim": {
+      "text": "Você parece em paz, Étienne. A prece sincera faz isso com a gente."
+    }
+  }
+}

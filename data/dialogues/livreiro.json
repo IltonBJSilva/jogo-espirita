@@ -1,0 +1,119 @@
+{
+  "speaker": "livreiro",
+  "start": "inicio",
+  "variants": [
+    {
+      "condition": {
+        "all": [
+          {
+            "quest_status": {
+              "quest": "pao_para_louis",
+              "status": "active"
+            }
+          },
+          {
+            "not": {
+              "objective_done": {
+                "quest": "pao_para_louis",
+                "objective": "pedir_agasalho"
+              }
+            }
+          },
+          {
+            "not": {
+              "objective_current": {
+                "quest": "conhecendo_sociedade",
+                "objective": "encontrar_livro"
+              }
+            }
+          }
+        ]
+      },
+      "start": "agasalho_louis"
+    },
+    {
+      "condition": {
+        "objective_current": {
+          "quest": "conhecendo_sociedade",
+          "objective": "encontrar_livro"
+        }
+      },
+      "start": "procura"
+    },
+    {
+      "condition": {
+        "has_item": "livro_dos_espiritos"
+      },
+      "start": "depois"
+    }
+  ],
+  "nodes": {
+    "inicio": {
+      "text": [
+        "Bienvenue! Livros novos, usados e raros. Fique à vontade.",
+        "Este ano tem sido agitado: o romance de Monsieur Flaubert foi parar nos tribunais, e agora todo mundo quer lê-lo!"
+      ],
+      "next": "perguntas"
+    },
+    "perguntas": {
+      "text": "Posso ajudá-lo?",
+      "choices": [
+        {
+          "text": "Tem algo sobre os Espíritos?",
+          "next": "espiritos"
+        },
+        {
+          "text": "Posso ajudar em algo?",
+          "next": "ajuda",
+          "condition": {
+            "not_flag": "enciclopedia_organizada"
+          }
+        },
+        {
+          "text": "Só estou olhando.",
+          "next": "end"
+        }
+      ]
+    },
+    "espiritos": {
+      "text": "Ah, \"O Livro dos Espíritos\", do senhor Allan Kardec! Saiu em abril, pelo editor Dentu. Os exemplares ficam na estante ao lado da janela.",
+      "next": "perguntas"
+    },
+    "ajuda": {
+      "text": "Bem que eu gostaria! Alguém desarrumou os tomos da enciclopédia na estante da esquerda. Se puder colocá-los em ordem, eu agradeço.",
+      "next": "perguntas"
+    },
+    "procura": {
+      "text": [
+        "Procurando \"O Livro dos Espíritos\"? Saiu em abril, pelo editor Dentu, e está quase esgotado!",
+        "Guardei os últimos exemplares na estante ao lado da janela. Pode levar um: o professor Rivail já acertou comigo."
+      ]
+    },
+    "depois": {
+      "text": "Boa leitura! E diga ao professor que ainda tenho alguns exemplares.",
+      "next": "perguntas"
+    },
+    "agasalho_louis": {
+      "actions": [
+        {
+          "type": "give_item",
+          "item": "agasalho"
+        },
+        {
+          "type": "complete_objective",
+          "quest": "pao_para_louis",
+          "objective": "pedir_agasalho"
+        },
+        {
+          "type": "add_affinity",
+          "npc": "livreiro",
+          "amount": 5
+        }
+      ],
+      "text": [
+        "Um agasalho para um menino? Hum... tenho aqui um casaco de lã que alguém esqueceu e nunca voltou para buscar.",
+        "Está velho, mas é quente. Leve, leve! Livros aquecem a alma; o casaco, o resto."
+      ]
+    }
+  }
+}

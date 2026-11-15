@@ -1,0 +1,11 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "nodes": {
+    "inicio": {
+      "text": [
+        "Na vitrine, um cartaz anuncia: \"Le Livre des Esprits, par Allan Kardec. À venda aqui.\""
+      ]
+    }
+  }
+}

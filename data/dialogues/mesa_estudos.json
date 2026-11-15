@@ -1,0 +1,93 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "variants": [
+    {
+      "condition": {
+        "objective_current": {
+          "quest": "perguntas_e_respostas",
+          "objective": "questionario"
+        }
+      },
+      "start": "estudo"
+    }
+  ],
+  "nodes": {
+    "estudo": {
+      "text": "O grupo abre O Livro dos Espíritos sobre a mesa. Professor Delaunay toma nota. Kardec lê a primeira pergunta.",
+      "choices": [
+        {
+          "text": "Participar do estudo",
+          "next": "end",
+          "actions": [
+            {
+              "type": "start_minigame",
+              "minigame": "questionario_le",
+              "on_success": [
+                {
+                  "type": "complete_objective",
+                  "quest": "perguntas_e_respostas",
+                  "objective": "questionario"
+                },
+                {
+                  "type": "add_virtue",
+                  "virtue": "estudo",
+                  "amount": 10
+                },
+                {
+                  "type": "unlock_entry",
+                  "entry": "deus"
+                },
+                {
+                  "type": "unlock_entry",
+                  "entry": "escala_espirita"
+                },
+                {
+                  "type": "unlock_entry",
+                  "entry": "perispirito"
+                }
+              ],
+              "on_fail": [
+                {
+                  "type": "notify",
+                  "text": "Tente de novo quando quiser."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Ainda não",
+          "next": "end"
+        }
+      ]
+    },
+    "inicio": {
+      "text": "Sobre a mesa, o livro de atas e várias folhas com perguntas preparadas.",
+      "choices": [
+        {
+          "text": "Rever o estudo (questionário)",
+          "next": "end",
+          "condition": {
+            "quest_status": {
+              "quest": "perguntas_e_respostas",
+              "status": "completed"
+            }
+          },
+          "actions": [
+            {
+              "type": "start_minigame",
+              "minigame": "questionario_le",
+              "on_success": [],
+              "on_fail": []
+            }
+          ]
+        },
+        {
+          "text": "Deixar a mesa",
+          "next": "end"
+        }
+      ]
+    }
+  }
+}

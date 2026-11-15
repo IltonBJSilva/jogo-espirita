@@ -1,0 +1,14 @@
+{
+  "start": "inicio",
+  "nodes": {
+    "inicio": {
+      "actions": [
+        {
+          "type": "change_map",
+          "map": "livraria",
+          "spawn": "entrada"
+        }
+      ]
+    }
+  }
+}

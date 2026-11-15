@@ -1,0 +1,18 @@
+{
+  "id": "conhecendo_sociedade",
+  "name": "Conhecendo a Sociedade Espírita",
+  "description": "Recém-chegado a Paris, você ouviu falar de um professor que estuda com método os fenômenos atribuídos aos Espíritos. Conheça a praça, encontre Allan Kardec e descubra o livro de que todos falam.",
+  "sequential": true,
+  "requirements": {"quests_completed": [], "flags": [], "items": []},
+  "objectives": [
+    {"id": "explorar_praca", "description": "Explorar a praça de Paris"},
+    {"id": "conversar_kardec", "description": "Conversar com Allan Kardec"},
+    {"id": "visitar_livraria", "description": "Visitar a livraria"},
+    {"id": "encontrar_livro", "description": "Encontrar um livro sobre os estudos espíritas"},
+    {"id": "retornar_sociedade", "description": "Retornar à Sociedade Espírita"}
+  ],
+  "rewards": {
+    "items": {"carta_recomendacao": 1},
+    "flags": ["apresentado_ao_grupo"]
+  }
+}

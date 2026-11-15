@@ -1,0 +1,68 @@
+{
+  "characters": {
+    "narrador": {
+      "name": "",
+      "portrait": ""
+    },
+    "kardec": {
+      "name": "Allan Kardec",
+      "title": "Professor e pesquisador",
+      "portrait": "res://assets/characters/kardec/kardec_portrait.png"
+    },
+    "estudante": {
+      "name": "Étienne",
+      "title": "Estudante recém-chegado de Lyon (jogador)",
+      "portrait": "res://assets/characters/estudante/estudante_portrait.png"
+    },
+    "livreiro": {
+      "name": "Monsieur Gérard",
+      "title": "Livreiro",
+      "portrait": "res://assets/characters/livreiro/livreiro_portrait.png"
+    },
+    "estudioso": {
+      "name": "Professor Delaunay",
+      "title": "Membro do grupo de estudos",
+      "portrait": "res://assets/characters/estudioso/estudioso_portrait.png"
+    },
+    "moradora": {
+      "name": "Madame Marguerite",
+      "title": "Moradora da praça",
+      "portrait": "res://assets/characters/moradora/moradora_portrait.png"
+    },
+    "amelie": {
+      "name": "Amélie Boudet",
+      "title": "Professora, esposa de Allan Kardec",
+      "portrait": "res://assets/characters/amelie/amelie_portrait.png"
+    },
+    "medium": {
+      "name": "Mademoiselle Aline",
+      "title": "Médium do grupo de estudos",
+      "portrait": "res://assets/characters/medium/medium_portrait.png"
+    },
+    "medico": {
+      "name": "Doutor Lefèvre",
+      "title": "Médico cético",
+      "portrait": "res://assets/characters/medico/medico_portrait.png"
+    },
+    "crianca": {
+      "name": "Louis",
+      "title": "Menino da praça",
+      "portrait": "res://assets/characters/crianca/crianca_portrait.png"
+    },
+    "impressor": {
+      "name": "Monsieur Bertin",
+      "title": "Tipógrafo",
+      "portrait": "res://assets/characters/impressor/impressor_portrait.png"
+    },
+    "cocheiro": {
+      "name": "Bertrand",
+      "title": "Cocheiro de fiacre",
+      "portrait": "res://assets/characters/cocheiro/cocheiro_portrait.png"
+    },
+    "espirito_guia": {
+      "name": "Irmã Clara",
+      "title": "Espírito benfeitor (personagem fictícia)",
+      "portrait": "res://assets/characters/espirito_guia/espirito_guia_portrait.png"
+    }
+  }
+}

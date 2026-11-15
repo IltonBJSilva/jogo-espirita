@@ -1,0 +1,177 @@
+{
+  "speaker": "amelie",
+  "start": "apresentacao",
+  "variants": [
+    {
+      "condition": {
+        "objective_current": {
+          "quest": "cartas_do_professor",
+          "objective": "voltar_amelie"
+        }
+      },
+      "start": "agradece"
+    },
+    {
+      "condition": {
+        "quest_status": {
+          "quest": "cartas_do_professor",
+          "status": "active"
+        }
+      },
+      "start": "lembrete"
+    },
+    {
+      "condition": {
+        "flag": "louis_quer_ler"
+      },
+      "start": "louis"
+    },
+    {
+      "condition": {
+        "quest_status": {
+          "quest": "cartas_do_professor",
+          "status": "completed"
+        }
+      },
+      "start": "conversa"
+    }
+  ],
+  "nodes": {
+    "apresentacao": {
+      "actions": [
+        {
+          "type": "add_affinity",
+          "npc": "amelie",
+          "amount": 5
+        },
+        {
+          "type": "unlock_entry",
+          "entry": "amelie_boudet"
+        }
+      ],
+      "text": [
+        "Seja bem-vindo, Étienne. Sou Amélie, a esposa do professor Rivail. Ele me falou de você.",
+        "Fui professora por muitos anos, como ele. Talvez por isso nos entendamos tão bem.",
+        "Desde que o livro saiu, as cartas não param de chegar. Estão todas misturadas na cômoda..."
+      ],
+      "choices": [
+        {
+          "text": "Posso organizá-las para a senhora",
+          "next": "aceita",
+          "actions": [
+            {
+              "type": "start_quest",
+              "quest": "cartas_do_professor"
+            },
+            {
+              "type": "add_virtue",
+              "virtue": "caridade",
+              "amount": 3
+            }
+          ]
+        },
+        {
+          "text": "Talvez outra hora",
+          "next": "end"
+        }
+      ]
+    },
+    "aceita": {
+      "text": "Que gentileza! Ponha as cartas em ordem de chegada, da mais antiga para a mais nova."
+    },
+    "lembrete": {
+      "text": "As cartas estão na cômoda, perto das estantes."
+    },
+    "agradece": {
+      "actions": [
+        {
+          "type": "complete_objective",
+          "quest": "cartas_do_professor",
+          "objective": "voltar_amelie"
+        },
+        {
+          "type": "add_affinity",
+          "npc": "amelie",
+          "amount": 15
+        },
+        {
+          "type": "add_virtue",
+          "virtue": "fraternidade",
+          "amount": 5
+        },
+        {
+          "type": "unlock_entry",
+          "entry": "residencia_kardec"
+        },
+        {
+          "type": "unlock_entry",
+          "entry": "revista_espirita"
+        }
+      ],
+      "text": [
+        "Perfeitas! Agora ele poderá responder a cada uma.",
+        "Sabe, são tantas cartas que o professor pensa em criar um jornal para responder a todos de uma vez. Mas não conte que eu lhe disse!",
+        "Tome esta pena. Para que você continue anotando o que aprende."
+      ]
+    },
+    "conversa": {
+      "text": "O professor trabalha até tarde todas as noites. Eu cuido para que ele ao menos jante!",
+      "choices": [
+        {
+          "text": "Como a senhora conheceu o professor?",
+          "next": "historia"
+        },
+        {
+          "text": "Boa noite, madame.",
+          "next": "end"
+        }
+      ]
+    },
+    "historia": {
+      "actions": [
+        {
+          "type": "add_affinity",
+          "npc": "amelie",
+          "amount": 3
+        },
+        {
+          "type": "unlock_entry",
+          "entry": "pestalozzi"
+        }
+      ],
+      "text": [
+        "Éramos dois professores apaixonados por ensinar. Casamo-nos em 1832.",
+        "Ele aprendeu com o grande Pestalozzi que se ensina pelo exemplo e pela observação. Nunca esqueceu essa lição."
+      ],
+      "next": "end"
+    },
+    "louis": {
+      "actions": [
+        {
+          "type": "set_flag",
+          "flag": "louis_quer_ler",
+          "value": false
+        },
+        {
+          "type": "set_flag",
+          "flag": "amelie_ensina_louis",
+          "value": true
+        },
+        {
+          "type": "add_affinity",
+          "npc": "amelie",
+          "amount": 5
+        },
+        {
+          "type": "add_virtue",
+          "virtue": "caridade",
+          "amount": 5
+        }
+      ],
+      "text": [
+        "Louis quer aprender a ler? Mande-o aqui às quintas-feiras, depois do almoço.",
+        "Ensinar uma criança a ler é abrir uma porta que ninguém mais fecha."
+      ]
+    }
+  }
+}

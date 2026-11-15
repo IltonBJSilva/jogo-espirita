@@ -1,0 +1,208 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/pause_menu.gd" id="1_pause"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+layer = 30
+script = ExtResource("1_pause")
+
+[node name="Dim" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.02, 0.06, 0.6)
+
+[node name="MainPage" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -190.0
+offset_right = 150.0
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="MainPage"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="MainPage/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.74, 0.38, 1)
+theme_override_font_sizes/font_size = 26
+text = "Pausa"
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="MainPage/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Continuar"
+
+[node name="JournalButton" type="Button" parent="MainPage/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Diário de missões"
+
+[node name="InventoryButton" type="Button" parent="MainPage/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Inventário"
+
+[node name="CompendiumButton" type="Button" parent="MainPage/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Compêndio"
+
+[node name="SaveButton" type="Button" parent="MainPage/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Salvar jogo"
+
+[node name="TitleButton" type="Button" parent="MainPage/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Voltar ao título"
+
+[node name="QuitButton" type="Button" parent="MainPage/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Sair do jogo"
+
+[node name="JournalPage" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -380.0
+offset_top = -220.0
+offset_right = 380.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="JournalPage"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Header" type="HBoxContainer" parent="JournalPage/VBox"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="JournalPage/VBox/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.92, 0.74, 0.38, 1)
+theme_override_font_sizes/font_size = 24
+text = "Diário de missões"
+
+[node name="JournalBack" type="Button" parent="JournalPage/VBox/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Voltar"
+
+[node name="HBox" type="HBoxContainer" parent="JournalPage/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+
+[node name="QuestList" type="ItemList" parent="JournalPage/VBox/HBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+
+[node name="Details" type="VBoxContainer" parent="JournalPage/VBox/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="QuestTitle" type="Label" parent="JournalPage/VBox/HBox/Details"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.74, 0.38, 1)
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 3
+
+[node name="QuestDetails" type="RichTextLabel" parent="JournalPage/VBox/HBox/Details"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+
+[node name="InventoryPage" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -380.0
+offset_top = -220.0
+offset_right = 380.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="InventoryPage"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Header" type="HBoxContainer" parent="InventoryPage/VBox"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="InventoryPage/VBox/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.92, 0.74, 0.38, 1)
+theme_override_font_sizes/font_size = 24
+text = "Inventário"
+
+[node name="InventoryBack" type="Button" parent="InventoryPage/VBox/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Voltar"
+
+[node name="HBox" type="HBoxContainer" parent="InventoryPage/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+
+[node name="ItemsList" type="ItemList" parent="InventoryPage/VBox/HBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+
+[node name="Details" type="VBoxContainer" parent="InventoryPage/VBox/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ItemTitle" type="Label" parent="InventoryPage/VBox/HBox/Details"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.74, 0.38, 1)
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 3
+
+[node name="ItemDetails" type="RichTextLabel" parent="InventoryPage/VBox/HBox/Details"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+
+[node name="ReadItemButton" type="Button" parent="InventoryPage/VBox/HBox/Details"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Ler"

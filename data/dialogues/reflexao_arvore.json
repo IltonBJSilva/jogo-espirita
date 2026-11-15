@@ -1,0 +1,59 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "variants": [
+    {
+      "condition": {
+        "all": [
+          {
+            "objective_done": {
+              "quest": "jardim_da_reflexao",
+              "objective": "conversar_guia"
+            }
+          },
+          {
+            "not": {
+              "objective_done": {
+                "quest": "jardim_da_reflexao",
+                "objective": "refletir_arvore"
+              }
+            }
+          }
+        ]
+      },
+      "start": "refletir"
+    }
+  ],
+  "nodes": {
+    "inicio": {
+      "text": "A árvore luminosa tem folhas novas brotando ao lado das antigas."
+    },
+    "refletir": {
+      "actions": [
+        {
+          "type": "complete_objective",
+          "quest": "jardim_da_reflexao",
+          "objective": "refletir_arvore"
+        },
+        {
+          "type": "add_virtue",
+          "virtue": "estudo",
+          "amount": 5
+        },
+        {
+          "type": "unlock_entry",
+          "entry": "reencarnacao"
+        },
+        {
+          "type": "unlock_entry",
+          "entry": "escala_espirita"
+        }
+      ],
+      "text": [
+        "A árvore luminosa tem folhas novas brotando ao lado das antigas.",
+        "Como as estações, as existências se sucedem. Em cada uma, o Espírito aprende um pouco mais.",
+        "Ninguém fica para sempre no mesmo grau: todos podem progredir."
+      ]
+    }
+  }
+}

@@ -1,0 +1,140 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/title_screen.gd" id="1_title"]
+[ext_resource type="Texture2D" path="res://assets/tilesets/paris_1857/paris_1857_atlas.png" id="2_bg"]
+[ext_resource type="Texture2D" path="res://assets/characters/kardec/kardec_portrait.png" id="3_portrait"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_title")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Shade" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07, 0.03, 0.08, 0.62)
+
+[node name="PortraitFrame" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 60.0
+offset_top = -170.0
+offset_right = 280.0
+offset_bottom = 170.0
+grow_vertical = 2
+
+[node name="Portrait" type="TextureRect" parent="PortraitFrame"]
+texture_filter = 2
+layout_mode = 2
+texture = ExtResource("3_portrait")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Menu" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -560.0
+offset_top = -170.0
+offset_right = -60.0
+offset_bottom = 170.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="GameTitle" type="Label" parent="Menu"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.93, 0.75, 0.4, 1)
+theme_override_colors/font_shadow_color = Color(0.1, 0.02, 0.06, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 52
+text = "Jogo Espírita"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Menu"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Paris, 1857"
+horizontal_alignment = 1
+
+[node name="Tagline" type="Label" parent="Menu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.78, 0.9, 1)
+theme_override_font_sizes/font_size = 15
+text = "Uma jornada pela vida e pelos estudos de Allan Kardec"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Spacer" type="Control" parent="Menu"]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+
+[node name="NewGameButton" type="Button" parent="Menu"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "Novo jogo"
+
+[node name="ContinueButton" type="Button" parent="Menu"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "Continuar"
+
+[node name="QuitButton" type="Button" parent="Menu"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "Sair"
+
+[node name="Controls" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -470.0
+offset_top = -40.0
+offset_right = 470.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.85, 0.78, 0.66, 0.85)
+theme_override_font_sizes/font_size = 13
+text = "WASD/Setas: mover  ·  Shift: correr  ·  E: interagir  ·  J: diário  ·  I: inventário  ·  C: compêndio  ·  Esc: pausa  ·  F11: tela cheia"
+horizontal_alignment = 1

@@ -1,0 +1,73 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "nodes": {
+    "inicio": {
+      "branches": [
+        {
+          "condition": {
+            "flag": "linha_do_tempo_feita"
+          },
+          "next": "feito"
+        }
+      ],
+      "text": "No quadro-negro, alguém escreveu datas soltas e pediu: 'Quem põe a história em ordem?'",
+      "choices": [
+        {
+          "text": "Organizar a linha do tempo",
+          "next": "end",
+          "actions": [
+            {
+              "type": "start_minigame",
+              "minigame": "linha_do_tempo",
+              "on_success": [
+                {
+                  "type": "set_flag",
+                  "flag": "linha_do_tempo_feita",
+                  "value": true
+                },
+                {
+                  "type": "add_virtue",
+                  "virtue": "estudo",
+                  "amount": 8
+                },
+                {
+                  "type": "unlock_entry",
+                  "entry": "irmas_fox"
+                },
+                {
+                  "type": "unlock_entry",
+                  "entry": "mesas_girantes"
+                },
+                {
+                  "type": "unlock_entry",
+                  "entry": "o_livro_dos_espiritos"
+                },
+                {
+                  "type": "unlock_entry",
+                  "entry": "revista_espirita"
+                },
+                {
+                  "type": "unlock_entry",
+                  "entry": "sociedade_parisiense"
+                },
+                {
+                  "type": "unlock_entry",
+                  "entry": "livro_dos_mediuns"
+                }
+              ],
+              "on_fail": []
+            }
+          ]
+        },
+        {
+          "text": "Deixar para depois",
+          "next": "end"
+        }
+      ]
+    },
+    "feito": {
+      "text": "A linha do tempo está no quadro: 1848, 1853, 1855, 1857, 1858, 1861... e muito ainda por escrever."
+    }
+  }
+}

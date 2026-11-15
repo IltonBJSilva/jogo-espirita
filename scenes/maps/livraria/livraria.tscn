@@ -1,0 +1,96 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/maps/game_map.gd" id="1_map"]
+[ext_resource type="PackedScene" path="res://scenes/maps/livraria/livraria_tiles.tscn" id="2_tiles"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/npc.tscn" id="3_npc"]
+[ext_resource type="Script" path="res://scripts/interaction/interactable.gd" id="4_interactable"]
+[ext_resource type="Script" path="res://scripts/interaction/trigger_zone.gd" id="5_trigger"]
+[ext_resource type="Script" path="res://scripts/maps/spawn_point.gd" id="6_spawn"]
+[ext_resource type="SpriteFrames" path="res://resources/sprite_frames/livreiro.tres" id="7_livreiro"]
+
+[node name="Livraria" type="Node2D"]
+script = ExtResource("1_map")
+map_id = "livraria"
+display_name = "Livraria — Paris, 1857"
+map_size = Vector2i(960, 544)
+
+[node name="Tiles" parent="." instance=ExtResource("2_tiles")]
+
+[node name="Interactive" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Livreiro" parent="Interactive" instance=ExtResource("3_npc")]
+position = Vector2(790, 214)
+sprite_frames = ExtResource("7_livreiro")
+npc_id = "livreiro"
+dialogue_id = "livreiro"
+talk_radius = 92.0
+
+[node name="Saida" type="Area2D" parent="Interactive"]
+position = Vector2(480, 522)
+script = ExtResource("4_interactable")
+prompt = "Sair"
+display_name = "Praça"
+dialogue_id = "porta_saida_livraria"
+radius = 36.0
+
+[node name="EstanteRomances" type="Area2D" parent="Interactive"]
+position = Vector2(130, 166)
+script = ExtResource("4_interactable")
+prompt = "Examinar"
+display_name = "Estante de romances"
+dialogue_id = "estante_romances"
+radius = 44.0
+
+[node name="EstanteEnciclopedia" type="Area2D" parent="Interactive"]
+position = Vector2(320, 166)
+script = ExtResource("4_interactable")
+prompt = "Examinar"
+display_name = "Enciclopédia desarrumada"
+dialogue_id = "estante_enciclopedia"
+radius = 44.0
+
+[node name="Janela" type="Area2D" parent="Interactive"]
+position = Vector2(480, 166)
+script = ExtResource("4_interactable")
+prompt = "Olhar"
+display_name = "Janela"
+dialogue_id = "janela_livraria"
+radius = 36.0
+
+[node name="EstanteJanela" type="Area2D" parent="Interactive"]
+position = Vector2(620, 166)
+script = ExtResource("4_interactable")
+prompt = "Examinar"
+display_name = "Estante ao lado da janela"
+dialogue_id = "estante_janela"
+radius = 44.0
+
+[node name="EstantePedagogia" type="Area2D" parent="Interactive"]
+position = Vector2(850, 166)
+script = ExtResource("4_interactable")
+prompt = "Examinar"
+display_name = "Estante de pedagogia"
+dialogue_id = "estante_pedagogia"
+radius = 44.0
+
+[node name="MesaLeitura" type="Area2D" parent="Interactive"]
+position = Vector2(270, 316)
+script = ExtResource("4_interactable")
+prompt = "Ler"
+display_name = "Mesa de leitura"
+dialogue_id = "mesa_leitura"
+radius = 72.0
+
+[node name="GatilhoEntrada" type="Area2D" parent="Interactive"]
+position = Vector2(480, 455)
+script = ExtResource("5_trigger")
+dialogue_id = "gatilho_livraria"
+size = Vector2(160, 110)
+
+[node name="Spawns" type="Node2D" parent="."]
+
+[node name="entrada" type="Marker2D" parent="Spawns"]
+position = Vector2(480, 470)
+script = ExtResource("6_spawn")
+facing = Vector2(0, -1)

@@ -1,0 +1,83 @@
+{
+  "speaker": "moradora",
+  "start": "inicio",
+  "nodes": {
+    "inicio": {
+      "text": [
+        "Boa noite, mocinho! Cuidado com o fiacre: o cocheiro foi tomar um café e o cavalo é impaciente.",
+        "Dizem que o barão Haussmann vai abrir avenidas largas por toda Paris. Daqui a pouco não reconheço a minha cidade!"
+      ],
+      "next": "perguntas"
+    },
+    "perguntas": {
+      "text": "Precisa de alguma coisa?",
+      "choices": [
+        {
+          "text": "A senhora conhece o senhor Kardec?",
+          "next": "kardec"
+        },
+        {
+          "text": "Onde fica a livraria?",
+          "next": "livraria"
+        },
+        {
+          "text": "Boa noite, madame.",
+          "next": "end"
+        }
+      ]
+    },
+    "kardec": {
+      "text": "O professor Rivail? Homem sério e educado; deu aulas a muitas crianças do bairro. Agora anda às voltas com essas mesas que \"falam\"... Mas dizem que o livro dele está vendendo muito bem!",
+      "next": "perguntas"
+    },
+    "livraria": {
+      "text": "Ali, do lado esquerdo da praça, com o toldo listrado roxo. Monsieur Gérard conhece cada livro da loja.",
+      "next": "perguntas"
+    },
+    "pao_louis": {
+      "actions": [
+        {
+          "type": "give_item",
+          "item": "pao"
+        },
+        {
+          "type": "complete_objective",
+          "quest": "pao_para_louis",
+          "objective": "pedir_pao"
+        },
+        {
+          "type": "add_affinity",
+          "npc": "moradora",
+          "amount": 5
+        }
+      ],
+      "text": [
+        "Para o pequeno Louis? Pobrezinho, a mãe trabalha o dia inteiro na lavanderia.",
+        "Tome, um pão que acabou de sair do forno. E diga a ele que pode bater na minha porta quando precisar."
+      ]
+    }
+  },
+  "variants": [
+    {
+      "condition": {
+        "all": [
+          {
+            "quest_status": {
+              "quest": "pao_para_louis",
+              "status": "active"
+            }
+          },
+          {
+            "not": {
+              "objective_done": {
+                "quest": "pao_para_louis",
+                "objective": "pedir_pao"
+              }
+            }
+          }
+        ]
+      },
+      "start": "pao_louis"
+    }
+  ]
+}

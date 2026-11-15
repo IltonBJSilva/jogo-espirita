@@ -1,0 +1,70 @@
+{
+  "speaker": "impressor",
+  "start": "inicio",
+  "variants": [
+    {
+      "condition": {
+        "objective_current": {
+          "quest": "revista_espirita",
+          "objective": "falar_bertin"
+        }
+      },
+      "start": "provas"
+    },
+    {
+      "condition": {
+        "objective_current": {
+          "quest": "revista_espirita",
+          "objective": "imprimir"
+        }
+      },
+      "start": "lembrete"
+    },
+    {
+      "condition": {
+        "quest_status": {
+          "quest": "revista_espirita",
+          "status": "completed"
+        }
+      },
+      "start": "depois"
+    }
+  ],
+  "nodes": {
+    "inicio": {
+      "text": "Cuidado com a tinta, ela não sai da roupa! Bertin, tipógrafo há vinte anos."
+    },
+    "provas": {
+      "actions": [
+        {
+          "type": "remove_item",
+          "item": "provas_revista"
+        },
+        {
+          "type": "complete_objective",
+          "quest": "revista_espirita",
+          "objective": "falar_bertin"
+        },
+        {
+          "type": "add_affinity",
+          "npc": "impressor",
+          "amount": 10
+        },
+        {
+          "type": "unlock_entry",
+          "entry": "monsieur_bertin"
+        }
+      ],
+      "text": [
+        "Ah, as provas do professor Rivail! A letra dele é miúda, mas as correções são perfeitas.",
+        "Revista Espírita... Um jornal mensal, hein? Pois bem: me ajude na prensa e o primeiro número sai a tempo."
+      ]
+    },
+    "lembrete": {
+      "text": "A prensa está pronta. É só seguir as etapas, uma de cada vez."
+    },
+    "depois": {
+      "text": "Já penso no segundo número! Se o professor continuar escrevendo assim, vou precisar de mais papel."
+    }
+  }
+}

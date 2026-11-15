@@ -1,0 +1,46 @@
+{
+  "id": "jardim_da_reflexao",
+  "name": "O Jardim da Reflexão",
+  "chapter": 2,
+  "description": "Depois do primeiro número da Revista, Mademoiselle Aline convida você para uma prece em silêncio. Em recolhimento, você se vê num jardim sereno, uma representação artística do plano espiritual, onde uma benfeitora o ajuda a refletir sobre o que estudou.",
+  "sequential": false,
+  "requirements": {
+    "quests_completed": [
+      "revista_espirita"
+    ],
+    "flags": [],
+    "items": []
+  },
+  "objectives": [
+    {
+      "id": "chegar_jardim",
+      "description": "Chegar ao Jardim da Reflexão"
+    },
+    {
+      "id": "conversar_guia",
+      "description": "Conversar com Irmã Clara"
+    },
+    {
+      "id": "refletir_fonte",
+      "description": "Refletir diante da fonte"
+    },
+    {
+      "id": "refletir_arvore",
+      "description": "Refletir diante da árvore"
+    },
+    {
+      "id": "refletir_portico",
+      "description": "Refletir diante do pórtico"
+    },
+    {
+      "id": "despedir_guia",
+      "description": "Despedir-se de Irmã Clara"
+    }
+  ],
+  "rewards": {
+    "items": {},
+    "flags": [
+      "capitulo2_epilogo"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "variants": [
+    {
+      "condition": {
+        "all": [
+          {
+            "objective_done": {
+              "quest": "jardim_da_reflexao",
+              "objective": "conversar_guia"
+            }
+          },
+          {
+            "not": {
+              "objective_done": {
+                "quest": "jardim_da_reflexao",
+                "objective": "refletir_fonte"
+              }
+            }
+          }
+        ]
+      },
+      "start": "refletir"
+    }
+  ],
+  "nodes": {
+    "inicio": {
+      "text": "A água da fonte corre clara, sem nunca se esgotar."
+    },
+    "refletir": {
+      "actions": [
+        {
+          "type": "complete_objective",
+          "quest": "jardim_da_reflexao",
+          "objective": "refletir_fonte"
+        },
+        {
+          "type": "add_virtue",
+          "virtue": "estudo",
+          "amount": 5
+        },
+        {
+          "type": "unlock_entry",
+          "entry": "imortalidade"
+        }
+      ],
+      "text": [
+        "A água da fonte corre clara, sem nunca se esgotar.",
+        "Você se lembra da carta de Lyon: a mãe que encontrou consolo ao ler que a alma sobrevive ao corpo.",
+        "A vida continua. Quem partiu não deixou de existir; apenas mudou de estado."
+      ]
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "nodes": {
+    "inicio": {
+      "text": [
+        "Residência de Allan Kardec.",
+        "Uma pequena placa de latão diz: \"H. L. D. Rivail, professor\". Ele mora aqui com a esposa, Amélie Boudet, que também foi professora."
+      ]
+    },
+    "entrar": {
+      "actions": [
+        {
+          "type": "change_map",
+          "map": "residencia_kardec",
+          "spawn": "entrada"
+        }
+      ]
+    }
+  },
+  "variants": [
+    {
+      "condition": {
+        "quest_status": {
+          "quest": "conhecendo_sociedade",
+          "status": "completed"
+        }
+      },
+      "start": "entrar"
+    }
+  ]
+}

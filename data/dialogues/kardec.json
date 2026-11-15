@@ -1,0 +1,333 @@
+{
+  "speaker": "kardec",
+  "start": "cedo",
+  "variants": [
+    {
+      "condition": {
+        "objective_current": {
+          "quest": "revista_espirita",
+          "objective": "entregar_kardec"
+        }
+      },
+      "start": "revista_entrega"
+    },
+    {
+      "condition": {
+        "quest_status": {
+          "quest": "revista_espirita",
+          "status": "active"
+        }
+      },
+      "start": "revista_lembrete"
+    },
+    {
+      "condition": {
+        "all": [
+          {
+            "quest_status": {
+              "quest": "perguntas_e_respostas",
+              "status": "completed"
+            }
+          },
+          {
+            "quest_status": {
+              "quest": "revista_espirita",
+              "status": "not_started"
+            }
+          }
+        ]
+      },
+      "start": "revista_convite"
+    },
+    {
+      "condition": {
+        "quest_status": {
+          "quest": "perguntas_e_respostas",
+          "status": "active"
+        }
+      },
+      "start": "estudo_lembrete"
+    },
+    {
+      "condition": {
+        "all": [
+          {
+            "quest_status": {
+              "quest": "conhecendo_sociedade",
+              "status": "completed"
+            }
+          },
+          {
+            "quest_status": {
+              "quest": "perguntas_e_respostas",
+              "status": "not_started"
+            }
+          }
+        ]
+      },
+      "start": "convite_estudo"
+    },
+    {
+      "condition": {
+        "quest_status": {
+          "quest": "conhecendo_sociedade",
+          "status": "completed"
+        }
+      },
+      "start": "pos_missao"
+    },
+    {
+      "condition": {
+        "objective_current": {
+          "quest": "conhecendo_sociedade",
+          "objective": "retornar_sociedade"
+        }
+      },
+      "start": "entrega"
+    },
+    {
+      "condition": {
+        "any": [
+          {
+            "objective_current": {
+              "quest": "conhecendo_sociedade",
+              "objective": "visitar_livraria"
+            }
+          },
+          {
+            "objective_current": {
+              "quest": "conhecendo_sociedade",
+              "objective": "encontrar_livro"
+            }
+          }
+        ]
+      },
+      "start": "lembrete"
+    },
+    {
+      "condition": {
+        "objective_current": {
+          "quest": "conhecendo_sociedade",
+          "objective": "conversar_kardec"
+        }
+      },
+      "start": "apresentacao"
+    }
+  ],
+  "nodes": {
+    "cedo": {
+      "text": [
+        "Bonsoir, meu jovem. Que noite agradável para caminhar por Paris.",
+        "Dê uma volta pela praça: a fonte fica muito bonita sob os lampiões. Depois venha conversar comigo."
+      ]
+    },
+    "apresentacao": {
+      "text": [
+        "Bonsoir! Você deve ser Étienne, o estudante recém-chegado de Lyon. Também nasci lá, em 1804.",
+        "Meu nome de batismo é Hippolyte Léon Denizard Rivail. Mas assino meus estudos sobre os Espíritos como Allan Kardec."
+      ],
+      "next": "perguntas"
+    },
+    "perguntas": {
+      "text": "Em que posso ajudá-lo?",
+      "choices": [
+        {
+          "text": "Por que o senhor usa um pseudônimo?",
+          "next": "pseudonimo"
+        },
+        {
+          "text": "O que o senhor estuda?",
+          "next": "estudos"
+        },
+        {
+          "text": "O que é este edifício?",
+          "next": "edificio"
+        },
+        {
+          "text": "Quero aprender mais. Por onde começo?",
+          "next": "tarefa"
+        }
+      ]
+    },
+    "pseudonimo": {
+      "text": [
+        "Segundo uma comunicação que recebi, numa existência passada, entre os druidas da antiga Gália, meu nome teria sido Allan Kardec.",
+        "Adotei-o para separar estas obras dos meus livros de pedagogia, que assino como professor Rivail."
+      ],
+      "next": "perguntas"
+    },
+    "estudos": {
+      "text": [
+        "Em 1855 assisti pela primeira vez às famosas \"mesas girantes\", que divertiam os salões de Paris.",
+        "Onde muitos viam só um passatempo, eu vi um fenômeno que merecia estudo sério: observar, comparar e nada aceitar sem exame.",
+        "Fiz perguntas aos Espíritos por meio de vários médiuns e organizei as respostas com método. Assim nasceu um livro."
+      ],
+      "next": "perguntas"
+    },
+    "edificio": {
+      "text": "É aqui que nosso grupo se reúne para estudar com seriedade. Esperamos, em breve, fundar uma sociedade dedicada a esses estudos.",
+      "next": "perguntas"
+    },
+    "tarefa": {
+      "actions": [
+        {
+          "type": "complete_objective",
+          "quest": "conhecendo_sociedade",
+          "objective": "conversar_kardec"
+        }
+      ],
+      "text": [
+        "Comece pela leitura! Em 18 de abril deste ano publiquei \"O Livro dos Espíritos\".",
+        "A livraria de Monsieur Gérard, à esquerda da praça, deve ter um exemplar. Encontre-o e traga-o aqui, diante da Sociedade."
+      ]
+    },
+    "lembrete": {
+      "text": "A livraria fica à esquerda da praça, sob o toldo listrado. Procure \"O Livro dos Espíritos\" e volte aqui."
+    },
+    "entrega": {
+      "branches": [
+        {
+          "condition": {
+            "not_item": "livro_dos_espiritos"
+          },
+          "next": "sem_livro"
+        }
+      ],
+      "text": [
+        "Ah, você encontrou um exemplar! Veja: são 501 perguntas, com as respostas dos Espíritos e meus comentários.",
+        "Elas tratam de Deus, da imortalidade da alma, da reencarnação e da lei de amor e caridade.",
+        "Leia sem pressa e com espírito crítico. Uma crença só é firme quando resiste ao exame da razão."
+      ],
+      "next": "conclusao"
+    },
+    "conclusao": {
+      "actions": [
+        {
+          "type": "complete_objective",
+          "quest": "conhecendo_sociedade",
+          "objective": "retornar_sociedade"
+        }
+      ],
+      "text": "Sua curiosidade sincera é bem-vinda aqui. Leve esta carta: ela o apresentará aos membros do nosso grupo de estudos."
+    },
+    "sem_livro": {
+      "text": "Ainda não encontrou o livro? Monsieur Gérard, o livreiro, certamente pode ajudá-lo."
+    },
+    "pos_missao": {
+      "text": "Volte sempre, Étienne. Há muito a estudar, e cada pergunta bem feita já é um passo.",
+      "choices": [
+        {
+          "text": "O que significa \"Espiritismo\"?",
+          "next": "espiritismo"
+        },
+        {
+          "text": "Até logo, professor.",
+          "next": "end"
+        }
+      ]
+    },
+    "espiritismo": {
+      "text": [
+        "É uma palavra nova. Criei-a para nomear esta doutrina, pois \"espiritualismo\" já designa qualquer crença na alma.",
+        "O Espiritismo estuda a natureza, a origem e o destino dos Espíritos, e as suas relações com o mundo corporal."
+      ]
+    },
+    "convite_estudo": {
+      "actions": [
+        {
+          "type": "start_quest",
+          "quest": "perguntas_e_respostas"
+        },
+        {
+          "type": "set_flag",
+          "flag": "sociedade_aberta",
+          "value": true
+        },
+        {
+          "type": "add_affinity",
+          "npc": "kardec",
+          "amount": 5
+        },
+        {
+          "type": "unlock_entry",
+          "entry": "allan_kardec"
+        },
+        {
+          "type": "unlock_entry",
+          "entry": "espiritismo"
+        }
+      ],
+      "text": [
+        "Étienne, hoje à noite nosso grupo se reúne no salão para estudar.",
+        "Gostaria de participar? A porta estará aberta. Traga suas perguntas: são bem-vindas."
+      ]
+    },
+    "estudo_lembrete": {
+      "text": "O grupo já está no salão. Entre pela porta da Sociedade, logo atrás de mim."
+    },
+    "revista_convite": {
+      "actions": [
+        {
+          "type": "start_quest",
+          "quest": "revista_espirita"
+        },
+        {
+          "type": "give_item",
+          "item": "provas_revista"
+        },
+        {
+          "type": "set_flag",
+          "flag": "tipografia_conhecida",
+          "value": true
+        },
+        {
+          "type": "set_flag",
+          "flag": "data_atual",
+          "value": "Dezembro de 1857"
+        }
+      ],
+      "text": [
+        "Algumas semanas se passaram. Paris amanhece fria em dezembro de 1857.",
+        "Recebo cartas de toda parte, Étienne. Não consigo responder a todas uma por uma.",
+        "Por isso vou publicar um jornal mensal: a Revista Espírita. O primeiro número deve sair em 1º de janeiro.",
+        "Leve estas provas à tipografia de M. Bertin. O cocheiro Bertrand, perto da carruagem, sabe o caminho."
+      ]
+    },
+    "revista_lembrete": {
+      "text": "As provas precisam chegar à tipografia. Bertrand, o cocheiro, leva você até lá."
+    },
+    "revista_entrega": {
+      "actions": [
+        {
+          "type": "complete_objective",
+          "quest": "revista_espirita",
+          "objective": "entregar_kardec"
+        },
+        {
+          "type": "add_affinity",
+          "npc": "kardec",
+          "amount": 10
+        },
+        {
+          "type": "add_virtue",
+          "virtue": "estudo",
+          "amount": 10
+        },
+        {
+          "type": "unlock_entry",
+          "entry": "revista_espirita"
+        },
+        {
+          "type": "unlock_entry",
+          "entry": "sociedade_parisiense"
+        }
+      ],
+      "text": [
+        "O primeiro número! Ainda cheira a tinta.",
+        "Que esta revista seja um lugar de estudo sério, aberto às críticas e às boas ideias.",
+        "E tenho outra notícia: em abril pretendemos fundar oficialmente a Sociedade Parisiense de Estudos Espíritas.",
+        "Mas isso, meu jovem, já é outro capítulo da nossa história."
+      ]
+    }
+  }
+}

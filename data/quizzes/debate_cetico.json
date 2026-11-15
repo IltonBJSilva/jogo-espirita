@@ -1,0 +1,50 @@
+{
+  "intro": "O Doutor Lefèvre aceita conversar, mas não vai facilitar. Para cada objeção, escolha a resposta mais honesta e respeitosa. Debater não é vencer: é buscar a verdade juntos.",
+  "pass_score": 3,
+  "questions": [
+    {
+      "question": "\"Essas mesas giram porque alguém as empurra, meu jovem.\"",
+      "options": [
+        "O senhor não entende nada, doutor.",
+        "Às vezes há fraude, sim. Por isso Kardec propõe observar com rigor e descartar o que não resiste ao exame.",
+        "É preciso acreditar sem perguntar."
+      ],
+      "answer": 1,
+      "explanation": "Reconhecer a possibilidade de fraude faz parte do método.",
+      "source": "O Livro dos Médiuns (1861), sobre fraudes e mistificações"
+    },
+    {
+      "question": "\"Se fossem Espíritos, por que tantas respostas tolas?\"",
+      "options": [
+        "Todas as respostas são sempre verdadeiras.",
+        "Porque os médiuns inventam tudo.",
+        "Há Espíritos de vários graus; nem toda comunicação merece crédito, e o conteúdo deve ser julgado."
+      ],
+      "answer": 2,
+      "explanation": "A escala espírita explica a variedade das comunicações.",
+      "source": "O Livro dos Espíritos (numeração da edição definitiva de 1860), q. 100"
+    },
+    {
+      "question": "\"A ciência não pode estudar uma coisa dessas.\"",
+      "options": [
+        "Kardec aplica a observação: comparar, repetir e só concluir diante de fatos concordantes.",
+        "A ciência é inimiga da fé.",
+        "Não precisamos estudar, basta sentir."
+      ],
+      "answer": 0,
+      "explanation": "Kardec apresentava o Espiritismo como ciência de observação.",
+      "source": "O Livro dos Espíritos, Introdução"
+    },
+    {
+      "question": "\"E de que serve tudo isso, afinal?\"",
+      "options": [
+        "Para prever o futuro e ganhar dinheiro.",
+        "Se a alma sobrevive, viver com mais justiça, amor e caridade passa a fazer ainda mais sentido.",
+        "Para assustar as pessoas."
+      ],
+      "answer": 1,
+      "explanation": "Para Kardec, o valor do Espiritismo está nas consequências morais.",
+      "source": "O Livro dos Espíritos (numeração da edição definitiva de 1860), Conclusão"
+    }
+  ]
+}

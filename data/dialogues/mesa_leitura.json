@@ -1,0 +1,12 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "nodes": {
+    "inicio": {
+      "text": [
+        "Sobre a mesa, um jornal aberto comenta as \"mesas girantes\", moda que tomou os salões da Europa por volta de 1853.",
+        "Mais abaixo, alguém anotou a lápis: \"Fenômeno ou fraude? É preciso examinar.\""
+      ]
+    }
+  }
+}

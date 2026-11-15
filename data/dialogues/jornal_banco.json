@@ -1,0 +1,13 @@
+{
+  "start": "inicio",
+  "nodes": {
+    "inicio": {
+      "actions": [
+        {
+          "type": "read_book",
+          "book": "gazeta_mesas"
+        }
+      ]
+    }
+  }
+}

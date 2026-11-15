@@ -1,0 +1,51 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "nodes": {
+    "inicio": {
+      "branches": [
+        {
+          "condition": {
+            "flag": "enciclopedia_organizada"
+          },
+          "next": "pronto"
+        }
+      ],
+      "text": "Os cinco tomos de uma enciclopédia estão fora de ordem. Quer organizá-los?",
+      "choices": [
+        {
+          "text": "Organizar os tomos",
+          "next": "end",
+          "actions": [
+            {
+              "type": "start_minigame",
+              "minigame": "organizar_livros",
+              "on_success": [
+                {
+                  "type": "set_flag",
+                  "flag": "enciclopedia_organizada"
+                },
+                {
+                  "type": "notify",
+                  "text": "Monsieur Gérard agradece a ajuda!"
+                },
+                {
+                  "type": "give_item",
+                  "item": "marcador_pagina"
+                }
+              ],
+              "on_fail": []
+            }
+          ]
+        },
+        {
+          "text": "Deixar para depois",
+          "next": "end"
+        }
+      ]
+    },
+    "pronto": {
+      "text": "Os tomos estão em ordem, do I ao V. Monsieur Gérard vai gostar."
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "nodes": {
+    "inicio": {
+      "text": [
+        "Obras de pedagogia. Algumas trazem o nome H. L. D. Rivail: o próprio Allan Kardec, que por décadas foi professor e autor de livros escolares.",
+        "Na juventude, ele estudou em Yverdon, na Suíça, com o célebre educador Johann Heinrich Pestalozzi."
+      ]
+    }
+  }
+}

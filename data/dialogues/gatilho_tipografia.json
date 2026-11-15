@@ -1,0 +1,29 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "nodes": {
+    "inicio": {
+      "branches": [
+        {
+          "condition": {
+            "objective_current": {
+              "quest": "revista_espirita",
+              "objective": "ir_tipografia"
+            }
+          },
+          "next": "chegar"
+        }
+      ]
+    },
+    "chegar": {
+      "actions": [
+        {
+          "type": "complete_objective",
+          "quest": "revista_espirita",
+          "objective": "ir_tipografia"
+        }
+      ],
+      "text": "O fiacre para diante de uma porta manchada de tinta: a tipografia de M. Bertin."
+    }
+  }
+}

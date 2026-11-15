@@ -1,0 +1,38 @@
+{
+  "id": "revista_espirita",
+  "name": "A Revista Espírita",
+  "chapter": 2,
+  "description": "Kardec prepara um jornal mensal para continuar o estudo e responder aos leitores. O primeiro número deve sair em 1º de janeiro de 1858, e as provas precisam chegar à tipografia.",
+  "sequential": true,
+  "requirements": {
+    "quests_completed": [
+      "perguntas_e_respostas"
+    ],
+    "flags": [],
+    "items": []
+  },
+  "objectives": [
+    {
+      "id": "ir_tipografia",
+      "description": "Ir de fiacre até a tipografia"
+    },
+    {
+      "id": "falar_bertin",
+      "description": "Entregar as provas a Monsieur Bertin"
+    },
+    {
+      "id": "imprimir",
+      "description": "Ajudar na impressão"
+    },
+    {
+      "id": "entregar_kardec",
+      "description": "Levar a Revista Espírita a Allan Kardec"
+    }
+  ],
+  "rewards": {
+    "items": {},
+    "flags": [
+      "capitulo2_revista"
+    ]
+  }
+}

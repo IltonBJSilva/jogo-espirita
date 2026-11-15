@@ -1,0 +1,58 @@
+{
+  "destinations": [
+    {
+      "id": "praca",
+      "name": "Praça da Sociedade",
+      "map": "paris_1857",
+      "spawn": "fiacre",
+      "pin": [
+        0.46,
+        0.42
+      ],
+      "description": "A praça com a Sociedade, a livraria e a residência de Allan Kardec."
+    },
+    {
+      "id": "tipografia",
+      "name": "Tipografia de M. Bertin",
+      "map": "tipografia",
+      "spawn": "entrada",
+      "pin": [
+        0.62,
+        0.56
+      ],
+      "description": "Oficina de impressão do outro lado do Sena.",
+      "condition": {
+        "flag": "tipografia_conhecida"
+      },
+      "locked_hint": "Descubra este lugar na história."
+    },
+    {
+      "id": "universidade",
+      "name": "Universidade",
+      "map": "",
+      "pin": [
+        0.55,
+        0.72
+      ],
+      "description": "Estudantes, professores e debates.",
+      "condition": {
+        "flag": "__futuro__"
+      },
+      "locked_hint": "Em um capítulo futuro."
+    },
+    {
+      "id": "pere_lachaise",
+      "name": "Cemitério do Père-Lachaise",
+      "map": "",
+      "pin": [
+        0.78,
+        0.3
+      ],
+      "description": "Monumentos e memória.",
+      "condition": {
+        "flag": "__futuro__"
+      },
+      "locked_hint": "Em um capítulo futuro."
+    }
+  ]
+}

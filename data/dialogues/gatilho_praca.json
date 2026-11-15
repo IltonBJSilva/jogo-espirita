@@ -1,0 +1,32 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "nodes": {
+    "inicio": {
+      "branches": [
+        {
+          "condition": {
+            "objective_current": {
+              "quest": "conhecendo_sociedade",
+              "objective": "explorar_praca"
+            }
+          },
+          "next": "explorar"
+        }
+      ]
+    },
+    "explorar": {
+      "actions": [
+        {
+          "type": "complete_objective",
+          "quest": "conhecendo_sociedade",
+          "objective": "explorar_praca"
+        }
+      ],
+      "text": [
+        "A praça central de Paris se abre diante de você.",
+        "Ao norte, a Sociedade Espírita de Paris. À esquerda, a livraria; à direita, a residência de Allan Kardec."
+      ]
+    }
+  }
+}

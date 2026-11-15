@@ -1,0 +1,89 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://scripts/maps/game_map.gd" id="1_map"]
+[ext_resource type="PackedScene" path="res://scenes/maps/sociedade_salao/sociedade_salao_tiles.tscn" id="2_tiles"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/npc.tscn" id="3_npc"]
+[ext_resource type="Script" path="res://scripts/interaction/interactable.gd" id="4_interactable"]
+[ext_resource type="Script" path="res://scripts/interaction/trigger_zone.gd" id="5_trigger"]
+[ext_resource type="Script" path="res://scripts/maps/spawn_point.gd" id="6_spawn"]
+[ext_resource type="SpriteFrames" path="res://resources/sprite_frames/kardec.tres" id="7_kardec"]
+[ext_resource type="SpriteFrames" path="res://resources/sprite_frames/medium.tres" id="8_medium"]
+[ext_resource type="SpriteFrames" path="res://resources/sprite_frames/medico.tres" id="9_medico"]
+
+[node name="SociedadeSalao" type="Node2D"]
+script = ExtResource("1_map")
+map_id = "sociedade_salao"
+display_name = "Salão da Sociedade — Paris"
+map_size = Vector2i(960, 544)
+
+[node name="Tiles" parent="." instance=ExtResource("2_tiles")]
+
+[node name="Interactive" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="KardecSalao" parent="Interactive" instance=ExtResource("3_npc")]
+position = Vector2(480, 205)
+sprite_frames = ExtResource("7_kardec")
+npc_id = "kardec"
+dialogue_id = "kardec_salao"
+talk_radius = 64.0
+
+[node name="Aline" parent="Interactive" instance=ExtResource("3_npc")]
+position = Vector2(176, 215)
+sprite_frames = ExtResource("8_medium")
+facing = Vector2(1, 0)
+npc_id = "medium"
+dialogue_id = "aline"
+
+[node name="LefevreSalao" parent="Interactive" instance=ExtResource("3_npc")]
+position = Vector2(832, 316)
+sprite_frames = ExtResource("9_medico")
+facing = Vector2(-1, 0)
+npc_id = "medico"
+dialogue_id = "lefevre_salao"
+present_when = "{\"quest_status\": {\"quest\": \"o_cetico\", \"status\": \"completed\"}}"
+
+[node name="MesaEstudos" type="Area2D" parent="Interactive"]
+position = Vector2(480, 300)
+script = ExtResource("4_interactable")
+prompt = "Estudar"
+display_name = "Mesa de estudos"
+dialogue_id = "mesa_estudos"
+radius = 70.0
+
+[node name="Quadro" type="Area2D" parent="Interactive"]
+position = Vector2(320, 166)
+script = ExtResource("4_interactable")
+prompt = "Examinar"
+display_name = "Quadro-negro"
+dialogue_id = "quadro_linha_tempo"
+radius = 44.0
+
+[node name="Programa" type="Area2D" parent="Interactive"]
+position = Vector2(110, 240)
+script = ExtResource("4_interactable")
+prompt = "Ler"
+display_name = "Programa da sessão"
+dialogue_id = "programa_sessao_obj"
+radius = 40.0
+
+[node name="GatilhoEntrada" type="Area2D" parent="Interactive"]
+position = Vector2(480, 455)
+script = ExtResource("5_trigger")
+dialogue_id = "gatilho_salao"
+size = Vector2(160, 110)
+
+[node name="Saida" type="Area2D" parent="Interactive"]
+position = Vector2(480, 522)
+script = ExtResource("4_interactable")
+prompt = "Sair"
+display_name = "Praça"
+dialogue_id = "porta_saida_salao"
+radius = 36.0
+
+[node name="Spawns" type="Node2D" parent="."]
+
+[node name="entrada" type="Marker2D" parent="Spawns"]
+position = Vector2(480, 470)
+script = ExtResource("6_spawn")
+facing = Vector2(0, -1)

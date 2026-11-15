@@ -1,0 +1,12 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "nodes": {
+    "inicio": {
+      "text": [
+        "Romances recentes. Em destaque, \"Madame Bovary\", de Gustave Flaubert, lançado em livro neste ano de 1857, depois de um processo por ofensa à moral pública.",
+        "Ao lado, \"As Flores do Mal\", de Charles Baudelaire, publicado em junho e também levado aos tribunais."
+      ]
+    }
+  }
+}

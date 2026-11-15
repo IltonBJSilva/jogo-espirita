@@ -1,0 +1,41 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "nodes": {
+    "inicio": {
+      "branches": [
+        {
+          "condition": {
+            "all": [
+              {
+                "quest_status": {
+                  "quest": "jardim_da_reflexao",
+                  "status": "active"
+                }
+              },
+              {
+                "not": {
+                  "objective_done": {
+                    "quest": "jardim_da_reflexao",
+                    "objective": "chegar_jardim"
+                  }
+                }
+              }
+            ]
+          },
+          "next": "chegar"
+        }
+      ]
+    },
+    "chegar": {
+      "actions": [
+        {
+          "type": "complete_objective",
+          "quest": "jardim_da_reflexao",
+          "objective": "chegar_jardim"
+        }
+      ],
+      "text": "Em silêncio, você sente o coração sossegar. Quando abre os olhos, está num jardim sereno, banhado por uma luz suave."
+    }
+  }
+}

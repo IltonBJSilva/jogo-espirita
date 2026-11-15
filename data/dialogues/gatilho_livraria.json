@@ -1,0 +1,29 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "nodes": {
+    "inicio": {
+      "branches": [
+        {
+          "condition": {
+            "objective_current": {
+              "quest": "conhecendo_sociedade",
+              "objective": "visitar_livraria"
+            }
+          },
+          "next": "visitar"
+        }
+      ]
+    },
+    "visitar": {
+      "actions": [
+        {
+          "type": "complete_objective",
+          "quest": "conhecendo_sociedade",
+          "objective": "visitar_livraria"
+        }
+      ],
+      "text": "O cheiro de papel e couro enche o ar. Estantes do chão ao teto: esta é a livraria de Monsieur Gérard."
+    }
+  }
+}

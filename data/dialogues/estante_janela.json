@@ -1,0 +1,47 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "variants": [
+    {
+      "condition": {
+        "objective_current": {
+          "quest": "conhecendo_sociedade",
+          "objective": "encontrar_livro"
+        }
+      },
+      "start": "achou"
+    },
+    {
+      "condition": {
+        "has_item": "livro_dos_espiritos"
+      },
+      "start": "ja_tem"
+    }
+  ],
+  "nodes": {
+    "inicio": {
+      "text": "Livros de filosofia e ciências. Há uma pilha de volumes novos com uma etiqueta: \"reservado\"."
+    },
+    "achou": {
+      "text": "Entre os livros de filosofia, uma pilha de volumes novos: \"Le Livre des Esprits\", por Allan Kardec. Paris, 1857.",
+      "next": "pegar"
+    },
+    "pegar": {
+      "actions": [
+        {
+          "type": "give_item",
+          "item": "livro_dos_espiritos"
+        },
+        {
+          "type": "complete_objective",
+          "quest": "conhecendo_sociedade",
+          "objective": "encontrar_livro"
+        }
+      ],
+      "text": "Você pega um exemplar com cuidado. Agora é hora de voltar à Sociedade Espírita."
+    },
+    "ja_tem": {
+      "text": "Restam poucos exemplares de \"O Livro dos Espíritos\". Você já tem o seu."
+    }
+  }
+}

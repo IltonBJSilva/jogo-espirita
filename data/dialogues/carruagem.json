@@ -1,0 +1,12 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "nodes": {
+    "inicio": {
+      "text": [
+        "Um fiacre, a carruagem de aluguel que leva passageiros por Paris. O nome vem do Hôtel Saint-Fiacre, onde os primeiros carros de aluguel ficavam, no século XVII.",
+        "O cavalo resfolega, esperando o cocheiro."
+      ]
+    }
+  }
+}

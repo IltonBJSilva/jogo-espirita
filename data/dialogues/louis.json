@@ -1,0 +1,155 @@
+{
+  "speaker": "crianca",
+  "start": "inicio",
+  "variants": [
+    {
+      "condition": {
+        "quest_status": {
+          "quest": "pao_para_louis",
+          "status": "completed"
+        }
+      },
+      "start": "depois"
+    },
+    {
+      "condition": {
+        "all": [
+          {
+            "quest_status": {
+              "quest": "pao_para_louis",
+              "status": "active"
+            }
+          },
+          {
+            "has_item": "pao"
+          },
+          {
+            "has_item": "agasalho"
+          }
+        ]
+      },
+      "start": "entrega"
+    },
+    {
+      "condition": {
+        "quest_status": {
+          "quest": "pao_para_louis",
+          "status": "active"
+        }
+      },
+      "start": "esperando"
+    }
+  ],
+  "nodes": {
+    "inicio": {
+      "text": [
+        "Oi... você tem um pedaço de pão? Minha mãe é lavadeira e só volta à noite.",
+        "E está tão frio hoje..."
+      ],
+      "choices": [
+        {
+          "text": "Vou conseguir ajuda para você",
+          "next": "promessa",
+          "actions": [
+            {
+              "type": "start_quest",
+              "quest": "pao_para_louis"
+            },
+            {
+              "type": "add_affinity",
+              "npc": "crianca",
+              "amount": 5
+            },
+            {
+              "type": "add_virtue",
+              "virtue": "caridade",
+              "amount": 3
+            }
+          ]
+        },
+        {
+          "text": "Agora não posso",
+          "next": "end"
+        }
+      ]
+    },
+    "promessa": {
+      "text": "Sério? Madame Marguerite sempre tem pão... e o livreiro guarda um monte de coisas velhas na loja."
+    },
+    "esperando": {
+      "text": "Estou esperando aqui perto da fonte. Não vou sair, prometo!"
+    },
+    "entrega": {
+      "actions": [
+        {
+          "type": "remove_item",
+          "item": "pao"
+        },
+        {
+          "type": "remove_item",
+          "item": "agasalho"
+        },
+        {
+          "type": "complete_objective",
+          "quest": "pao_para_louis",
+          "objective": "entregar_louis"
+        },
+        {
+          "type": "add_virtue",
+          "virtue": "caridade",
+          "amount": 15
+        },
+        {
+          "type": "add_affinity",
+          "npc": "crianca",
+          "amount": 20
+        },
+        {
+          "type": "unlock_entry",
+          "entry": "caridade"
+        },
+        {
+          "type": "unlock_entry",
+          "entry": "louis"
+        }
+      ],
+      "text": [
+        "Pão! E um casaco de verdade! Obrigado, obrigado!",
+        "Quando eu crescer, também quero ajudar as pessoas. Igual você."
+      ]
+    },
+    "depois": {
+      "branches": [
+        {
+          "condition": {
+            "all": [
+              {
+                "quest_status": {
+                  "quest": "cartas_do_professor",
+                  "status": "completed"
+                }
+              },
+              {
+                "not": {
+                  "flag": "louis_quer_ler"
+                }
+              }
+            ]
+          },
+          "next": "ler"
+        }
+      ],
+      "text": "O casaco é tão quente! Hoje eu nem senti frio."
+    },
+    "ler": {
+      "actions": [
+        {
+          "type": "set_flag",
+          "flag": "louis_quer_ler",
+          "value": true
+        }
+      ],
+      "text": "Sabia que a senhora da casa ao lado da Sociedade é professora? Será que ela me ensinaria a ler?"
+    }
+  }
+}

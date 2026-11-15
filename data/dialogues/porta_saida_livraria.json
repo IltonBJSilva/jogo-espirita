@@ -1,0 +1,14 @@
+{
+  "start": "inicio",
+  "nodes": {
+    "inicio": {
+      "actions": [
+        {
+          "type": "change_map",
+          "map": "paris_1857",
+          "spawn": "porta_livraria"
+        }
+      ]
+    }
+  }
+}

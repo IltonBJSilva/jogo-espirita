@@ -1,0 +1,143 @@
+{
+  "speaker": "espirito_guia",
+  "start": "acolhida",
+  "variants": [
+    {
+      "condition": {
+        "quest_status": {
+          "quest": "jardim_da_reflexao",
+          "status": "completed"
+        }
+      },
+      "start": "depois"
+    },
+    {
+      "condition": {
+        "all": [
+          {
+            "all": [
+              {
+                "objective_done": {
+                  "quest": "jardim_da_reflexao",
+                  "objective": "refletir_fonte"
+                }
+              },
+              {
+                "objective_done": {
+                  "quest": "jardim_da_reflexao",
+                  "objective": "refletir_arvore"
+                }
+              },
+              {
+                "objective_done": {
+                  "quest": "jardim_da_reflexao",
+                  "objective": "refletir_portico"
+                }
+              }
+            ]
+          },
+          {
+            "not": {
+              "objective_done": {
+                "quest": "jardim_da_reflexao",
+                "objective": "despedir_guia"
+              }
+            }
+          }
+        ]
+      },
+      "start": "despedida"
+    },
+    {
+      "condition": {
+        "objective_done": {
+          "quest": "jardim_da_reflexao",
+          "objective": "conversar_guia"
+        }
+      },
+      "start": "lembrete"
+    }
+  ],
+  "nodes": {
+    "acolhida": {
+      "actions": [
+        {
+          "type": "complete_objective",
+          "quest": "jardim_da_reflexao",
+          "objective": "conversar_guia"
+        },
+        {
+          "type": "add_affinity",
+          "npc": "espirito_guia",
+          "amount": 10
+        },
+        {
+          "type": "unlock_entry",
+          "entry": "mundo_espiritual"
+        },
+        {
+          "type": "unlock_entry",
+          "entry": "prece"
+        },
+        {
+          "type": "unlock_entry",
+          "entry": "irma_clara"
+        }
+      ],
+      "text": [
+        "Seja bem-vindo, Étienne. Não tenha receio: você está em prece, e a prece aproxima.",
+        "Pode me chamar de Clara. Este jardim é apenas uma imagem para ajudar você a pensar com calma.",
+        "Caminhe por ele. A fonte, a árvore e o pórtico guardam lembranças do que você estudou. Depois venha conversar comigo."
+      ]
+    },
+    "lembrete": {
+      "text": "Sem pressa. Visite a fonte, a árvore e o pórtico, e depois volte aqui."
+    },
+    "despedida": {
+      "actions": [
+        {
+          "type": "complete_objective",
+          "quest": "jardim_da_reflexao",
+          "objective": "despedir_guia"
+        },
+        {
+          "type": "add_virtue",
+          "virtue": "fraternidade",
+          "amount": 10
+        },
+        {
+          "type": "add_virtue",
+          "virtue": "estudo",
+          "amount": 5
+        },
+        {
+          "type": "add_affinity",
+          "npc": "espirito_guia",
+          "amount": 10
+        },
+        {
+          "type": "unlock_entry",
+          "entry": "jardim_jogo"
+        }
+      ],
+      "text": [
+        "Você refletiu bem. Estudar é importante, mas o estudo só se completa no bem que fazemos.",
+        "Volte agora ao salão. Seus amigos o esperam, e há muito trabalho pela frente."
+      ],
+      "next": "voltar"
+    },
+    "voltar": {
+      "actions": [
+        {
+          "type": "change_map",
+          "map": "sociedade_salao",
+          "spawn": "entrada"
+        }
+      ]
+    },
+    "depois": {
+      "text": "Que a paz acompanhe você, Étienne.",
+      "next": "voltar"
+    }
+  }
+}

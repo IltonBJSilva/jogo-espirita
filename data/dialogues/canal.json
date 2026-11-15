@@ -1,0 +1,11 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "nodes": {
+    "inicio": {
+      "text": [
+        "Um canal de águas calmas, como o Canal Saint-Martin, aberto em 1825 para levar água e mercadorias a Paris."
+      ]
+    }
+  }
+}

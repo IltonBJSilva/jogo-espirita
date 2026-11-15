@@ -1,0 +1,40 @@
+{
+  "id": "perguntas_e_respostas",
+  "name": "Perguntas e Respostas",
+  "chapter": 1,
+  "description": "Allan Kardec convidou você para uma reunião de estudos no salão da Sociedade. É a chance de ver como o grupo estuda com método: perguntas preparadas, comparação de respostas e nenhuma pressa em concluir.",
+  "sequential": true,
+  "requirements": {
+    "quests_completed": [
+      "conhecendo_sociedade"
+    ],
+    "flags": [],
+    "items": []
+  },
+  "objectives": [
+    {
+      "id": "entrar_salao",
+      "description": "Ir ao salão da Sociedade"
+    },
+    {
+      "id": "conversar_aline",
+      "description": "Conversar com a médium Aline"
+    },
+    {
+      "id": "questionario",
+      "description": "Participar do estudo à mesa"
+    },
+    {
+      "id": "falar_kardec_salao",
+      "description": "Conversar com Allan Kardec no salão"
+    }
+  ],
+  "rewards": {
+    "items": {
+      "caderno_estudos": 1
+    },
+    "flags": [
+      "capitulo1_concluido"
+    ]
+  }
+}

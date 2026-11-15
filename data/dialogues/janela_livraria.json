@@ -1,0 +1,11 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "nodes": {
+    "inicio": {
+      "text": [
+        "Lá fora, os lampiões a gás iluminam a praça. Um fiacre passa devagar pelas pedras da rua."
+      ]
+    }
+  }
+}

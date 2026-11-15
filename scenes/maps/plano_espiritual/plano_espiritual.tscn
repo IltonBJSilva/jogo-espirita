@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/maps/game_map.gd" id="1_map"]
+[ext_resource type="PackedScene" path="res://scenes/maps/plano_espiritual/plano_espiritual_tiles.tscn" id="2_tiles"]
+[ext_resource type="PackedScene" path="res://scenes/npcs/npc.tscn" id="3_npc"]
+[ext_resource type="Script" path="res://scripts/interaction/interactable.gd" id="4_interactable"]
+[ext_resource type="Script" path="res://scripts/interaction/trigger_zone.gd" id="5_trigger"]
+[ext_resource type="Script" path="res://scripts/maps/spawn_point.gd" id="6_spawn"]
+[ext_resource type="SpriteFrames" path="res://resources/sprite_frames/espirito_guia.tres" id="7_espirito_guia"]
+
+[node name="PlanoEspiritual" type="Node2D"]
+script = ExtResource("1_map")
+map_id = "plano_espiritual"
+display_name = "Jardim da Reflexão — Plano espiritual"
+map_size = Vector2i(960, 544)
+
+[node name="Tiles" parent="." instance=ExtResource("2_tiles")]
+
+[node name="Interactive" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="IrmaClara" parent="Interactive" instance=ExtResource("3_npc")]
+position = Vector2(600, 436)
+sprite_frames = ExtResource("7_espirito_guia")
+facing = Vector2(-1, 0)
+npc_id = "espirito_guia"
+dialogue_id = "irma_clara"
+
+[node name="Fonte" type="Area2D" parent="Interactive"]
+position = Vector2(480, 352)
+script = ExtResource("4_interactable")
+prompt = "Refletir"
+display_name = "Fonte"
+dialogue_id = "reflexao_fonte"
+radius = 70.0
+
+[node name="Arvore" type="Area2D" parent="Interactive"]
+position = Vector2(176, 290)
+script = ExtResource("4_interactable")
+prompt = "Refletir"
+display_name = "Árvore luminosa"
+dialogue_id = "reflexao_arvore"
+radius = 60.0
+
+[node name="Portico" type="Area2D" parent="Interactive"]
+position = Vector2(480, 190)
+script = ExtResource("4_interactable")
+prompt = "Refletir"
+display_name = "Pórtico"
+dialogue_id = "reflexao_portico"
+radius = 50.0
+
+[node name="CirculoLuz" type="Area2D" parent="Interactive"]
+position = Vector2(480, 500)
+script = ExtResource("4_interactable")
+prompt = "Encerrar a prece"
+display_name = "Círculo de luz"
+dialogue_id = "jardim_saida"
+radius = 26.0
+
+[node name="GatilhoEntrada" type="Area2D" parent="Interactive"]
+position = Vector2(480, 455)
+script = ExtResource("5_trigger")
+dialogue_id = "gatilho_jardim"
+size = Vector2(160, 110)
+
+[node name="Spawns" type="Node2D" parent="."]
+
+[node name="entrada" type="Marker2D" parent="Spawns"]
+position = Vector2(480, 470)
+script = ExtResource("6_spawn")
+facing = Vector2(0, -1)

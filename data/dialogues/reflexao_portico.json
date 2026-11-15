@@ -1,0 +1,59 @@
+{
+  "speaker": "narrador",
+  "start": "inicio",
+  "variants": [
+    {
+      "condition": {
+        "all": [
+          {
+            "objective_done": {
+              "quest": "jardim_da_reflexao",
+              "objective": "conversar_guia"
+            }
+          },
+          {
+            "not": {
+              "objective_done": {
+                "quest": "jardim_da_reflexao",
+                "objective": "refletir_portico"
+              }
+            }
+          }
+        ]
+      },
+      "start": "refletir"
+    }
+  ],
+  "nodes": {
+    "inicio": {
+      "text": "Uma luz serena atravessa o pórtico de pedra branca."
+    },
+    "refletir": {
+      "actions": [
+        {
+          "type": "complete_objective",
+          "quest": "jardim_da_reflexao",
+          "objective": "refletir_portico"
+        },
+        {
+          "type": "add_virtue",
+          "virtue": "caridade",
+          "amount": 5
+        },
+        {
+          "type": "unlock_entry",
+          "entry": "caridade"
+        },
+        {
+          "type": "unlock_entry",
+          "entry": "lei_amor"
+        }
+      ],
+      "text": [
+        "Uma luz serena atravessa o pórtico de pedra branca.",
+        "Você pensa em Louis, no pão e no casaco, e no Doutor Lefèvre ouvido com respeito.",
+        "Benevolência, indulgência, perdão: a caridade é o caminho que atravessa este pórtico."
+      ]
+    }
+  }
+}

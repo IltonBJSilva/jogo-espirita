@@ -1,0 +1,30 @@
+{
+  "id": "cartas_do_professor",
+  "name": "As Cartas do Professor",
+  "chapter": 1,
+  "description": "Desde que o livro foi publicado, chegam cartas de toda parte. Amélie Boudet pediu ajuda para colocar a correspondência em ordem.",
+  "sequential": true,
+  "requirements": {
+    "quests_completed": [
+      "conhecendo_sociedade"
+    ],
+    "flags": [],
+    "items": []
+  },
+  "objectives": [
+    {
+      "id": "organizar_cartas",
+      "description": "Organizar as cartas na cômoda"
+    },
+    {
+      "id": "voltar_amelie",
+      "description": "Avisar Amélie Boudet"
+    }
+  ],
+  "rewards": {
+    "items": {
+      "pena_presente": 1
+    },
+    "flags": []
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "books": {
+    "livro_dos_espiritos": {
+      "title": "O Livro dos Espíritos",
+      "author": "Allan Kardec (Paris, 1857)",
+      "kind": "livro",
+      "pages": [
+        "Publicado em 18 de abril de 1857, o livro reúne perguntas feitas aos Espíritos por intermédio de vários médiuns, com as respostas obtidas e os comentários de Allan Kardec.\n\nEsta é uma [b]leitura guiada do jogo[/b]: um resumo de algumas ideias, com as citações indicadas.",
+        "[b]Pergunta 1.[/b] Que é Deus?\n\n[i]\"Deus é a inteligência suprema, causa primária de todas as coisas.\"[/i]",
+        "[b]Os Espíritos.[/b] Os Espíritos são os seres inteligentes da criação. A alma é o Espírito encarnado: ela sobrevive à morte do corpo e conserva a sua individualidade.\n\nUm envoltório semimaterial, o [b]perispírito[/b], une o Espírito ao corpo.",
+        "[b]A escala espírita.[/b] Os Espíritos são classificados pelo seu adiantamento: imperfeitos, bons e puros. Todos podem progredir. Por isso, nem toda comunicação merece crédito: é preciso julgar o que se recebe pela razão e pelo bom senso.",
+        "[b]Caridade.[/b] Perguntado sobre o verdadeiro sentido da palavra caridade, o livro responde:\n\n[i]\"Benevolência para com todos, indulgência para as imperfeições dos outros, perdão das ofensas.\"[/i]"
+      ],
+      "unlocks": [
+        "o_livro_dos_espiritos",
+        "deus",
+        "imortalidade",
+        "perispirito",
+        "escala_espirita",
+        "caridade"
+      ],
+      "source": "O Livro dos Espíritos (numeração da edição definitiva de 1860): q. 1, 93, 100, 886. Resumo para fins educativos; não substitui a leitura da obra."
+    },
+    "gazeta_mesas": {
+      "title": "Gazette du Quartier",
+      "author": "Jornal do bairro (fictício)",
+      "kind": "jornal",
+      "pages": [
+        "[b]AS MESAS QUE FALAM[/b]\n\nHá alguns anos não se fala de outra coisa nos salões: senhoras e senhores colocam as mãos sobre uma mesa, que se põe a girar e a dar pancadas em resposta às perguntas.",
+        "Dizem que tudo começou na América, em 1848, com as irmãs Fox. Dizem também que o poeta Victor Hugo, no exílio em Jersey, passa noites inteiras conversando com mesas!\n\nFraude? Brincadeira? Ou algo que merece estudo? O leitor que decida."
+      ],
+      "unlocks": [
+        "mesas_girantes",
+        "irmas_fox",
+        "victor_hugo_jersey"
+      ],
+      "source": "Jornal fictício; os fatos citados (Hydesville 1848, sessões de Jersey 1853–1855) são históricos."
+    },
+    "cartaz_obras": {
+      "title": "Aviso da Prefeitura do Sena",
+      "author": "Cartaz (fictício)",
+      "kind": "documento",
+      "pages": [
+        "[b]AVISO AOS MORADORES[/b]\n\nPor ordem do Prefeito do Sena, as obras de alargamento das ruas e de melhoria dos esgotos prosseguirão neste bairro. Pede-se paciência aos moradores e cuidado aos cocheiros.\n\nParis se transforma."
+      ],
+      "unlocks": [
+        "haussmann"
+      ],
+      "source": "Cartaz fictício inspirado na reforma de Paris dirigida por Haussmann a partir de 1853."
+    },
+    "carta_de_lyon": {
+      "title": "Carta de um antigo aluno",
+      "author": "Lyon, 2 de maio de 1857 (fictícia)",
+      "kind": "carta",
+      "pages": [
+        "Prezado professor Rivail,\n\nRecebi o seu livro com grande emoção. Lembro-me das suas aulas, em que o senhor nos ensinava a observar antes de concluir.",
+        "Encontrei no livro o mesmo método: perguntar, comparar, refletir. Minha mãe, que perdeu meu pai no inverno, leu as páginas sobre a sobrevivência da alma e chorou de consolo.\n\nCom gratidão e respeito,\num antigo aluno."
+      ],
+      "unlocks": [],
+      "source": "Carta fictícia. Historicamente, Kardec recebeu muitas cartas de leitores após 1857."
+    },
+    "programa_sessao": {
+      "title": "Programa da sessão de estudos",
+      "author": "Grupo de estudos (fictício)",
+      "kind": "documento",
+      "pages": [
+        "[b]Ordem dos trabalhos[/b]\n\n1. Prece de abertura.\n2. Leitura da ata da sessão anterior.\n3. Perguntas preparadas com antecedência.\n4. Comparação com respostas obtidas por outros médiuns.\n5. Anotação de tudo, inclusive do que parecer duvidoso.\n6. Prece de encerramento.",
+        "[i]Lembrete: não se fazem perguntas por mera curiosidade. Estudamos para nos instruirmos e nos melhorarmos.[/i]"
+      ],
+      "unlocks": [
+        "estudo_em_grupo"
+      ],
+      "source": "Documento fictício baseado nas recomendações de Kardec para reuniões sérias (O Livro dos Médiuns, 1861)."
+    },
+    "caderno_estudos": {
+      "title": "Caderno de estudos de Étienne",
+      "author": "Anotações do jogador (fictício)",
+      "kind": "documento",
+      "pages": [
+        "[b]O que aprendi na primeira reunião[/b]\n\n• A alma sobrevive ao corpo e conserva a individualidade.\n• Os Espíritos têm graus diferentes de adiantamento.\n• Uma resposta só merece confiança quando concorda com outras, obtidas por médiuns diferentes, e quando resiste à razão.",
+        "[b]Para estudar depois[/b]\n\n• Reencarnação: viver muitas vezes para aprender.\n• Livre-arbítrio: cada escolha é nossa responsabilidade.\n• Caridade: começa perto de nós."
+      ],
+      "unlocks": [
+        "reencarnacao",
+        "livre_arbitrio",
+        "controle_universal"
+      ],
+      "source": "Anotações fictícias que resumem conceitos de O Livro dos Espíritos."
+    },
+    "manual_tipografo": {
+      "title": "Ofício de tipógrafo",
+      "author": "Cartaz da oficina (fictício)",
+      "kind": "documento",
+      "pages": [
+        "[b]Regras da oficina[/b]\n\n• O compositor monta o texto letra por letra no componedor.\n• Linhas prontas vão para a forma, que é travada com cunhas.\n• A forma recebe tinta com o rolo.\n• A folha é colocada e a platina desce pela força da alavanca.\n• As folhas secam no varal antes de serem dobradas."
+      ],
+      "unlocks": [
+        "prensa_manual"
+      ],
+      "source": "Descrição geral do processo de impressão com prensa manual no século XIX."
+    },
+    "revista_espirita_1": {
+      "title": "Revista Espírita — nº 1",
+      "author": "Allan Kardec (Paris, janeiro de 1858)",
+      "kind": "jornal",
+      "pages": [
+        "[b]Revue Spirite — Journal d'études psychologiques[/b]\n\nPrimeiro número, 1º de janeiro de 1858, fundado e dirigido por Allan Kardec.",
+        "A revista nasceu para continuar o estudo começado em O Livro dos Espíritos: publicar fatos e comunicações com espírito crítico, responder às cartas dos leitores e reunir os que estudam o tema com seriedade.\n\n[i]Resumo para o jogo; não é transcrição do texto original.[/i]"
+      ],
+      "unlocks": [
+        "revista_espirita"
+      ],
+      "source": "Revue Spirite, janeiro de 1858 (resumo)."
+    }
+  }
+}
