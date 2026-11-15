@@ -16,7 +16,7 @@ const STYLES := {
 	"passear": {"special": "", "emote": "", "interval": 0.0, "bob": 0},
 	"reuniao": {"special": "", "emote": "estudo", "interval": 18.0, "bob": 0},
 	"prece": {"special": "", "emote": "prece", "interval": 12.0, "bob": 0, "face_down": true},
-	"brincar": {"special": "", "emote": "musica", "interval": 10.0, "bob": 2},
+	"brincar": {"special": "", "emote": "musica", "interval": 10.0, "bob": 0},
 	"cuidar_casa": {"special": "", "emote": "trabalho", "interval": 12.0, "bob": 1},
 	"dormir": {"special": "", "emote": "sono", "interval": 5.0, "bob": 0},
 }

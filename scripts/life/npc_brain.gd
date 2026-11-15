@@ -23,6 +23,21 @@ const GIVE_UP_AFTER := 6.0
 ## Jogador parado no caminho por mais que isto: o NPC contorna (evita impasse).
 const PLAYER_PATIENCE := 3.0
 
+## Passeio ocioso: durante estas atividades, NPCs secundários andam um pouco
+## em volta do seu ponto (raio em células, espera mínima/máxima em segundos).
+const WANDER := {
+	"brincar": {"radius": 3, "wait": [1.5, 4.0]},
+	"passear": {"radius": 3, "wait": [4.0, 9.0]},
+	"conversar": {"radius": 2, "wait": [6.0, 14.0]},
+	"trabalhar": {"radius": 1, "wait": [8.0, 16.0]},
+}
+## Só nos mapas abertos (nos interiores os NPCs ficam nos seus postos).
+const WANDER_MAPS := ["paris_1857"]
+## Personagens principais não passeiam (o jogador precisa achá-los).
+const NO_WANDER := ["kardec", "espirito_guia"]
+## Desliga o passeio (testes que conferem posições exatas).
+static var wander_enabled := true
+
 ## Perfil de desempenho (tempo gasto em _physics_process por todos os cérebros).
 static var prof_usec := 0
 static var prof_calls := 0
@@ -47,6 +62,9 @@ var _state_before_dialogue := S.IDLE
 var _bubble: EmoteBubble
 var _reserved := Vector2i(-999, -999)
 var _player_wait := 0.0
+var _home := Vector2.INF
+var _wandering := false
+var _wander_t := 0.0
 
 
 func setup(target: NPC, id: String, current_map: String) -> void:
@@ -64,6 +82,8 @@ func setup(target: NPC, id: String, current_map: String) -> void:
 ## Coloca o NPC imediatamente no spot (usado ao carregar o mapa).
 func place_at(pos: Vector2, facing: Vector2, new_activity: String, new_spot: String) -> void:
 	_release_cell()
+	_wandering = false
+	_home = Vector2.INF
 	npc.global_position = pos
 	_path = PackedVector2Array()
 	activity = new_activity
@@ -79,6 +99,8 @@ func go_to(pos: Vector2, facing: Vector2, new_activity: String, new_spot: String
 	activity = new_activity
 	spot_id = new_spot
 	_final_facing = facing
+	_wandering = false
+	_home = Vector2.INF
 	if npc.global_position.distance_to(pos) < 4.0:
 		npc.global_position = pos
 		_arrive(facing)
@@ -215,6 +237,15 @@ func _finish_walk() -> void:
 
 
 func _arrive(facing: Vector2) -> void:
+	if _wandering:
+		# Fim de um passeio curto: continua a mesma atividade, sem avisar o LifeManager.
+		_wandering = false
+		npc.sprite.offset.y = -46.0
+		state = S.ACTIVITY
+		_style = LifeAnimator.apply(npc, activity, facing)
+		_reserve(LifeNavGrid.to_cell(npc.global_position))
+		_reset_wander_timer()
+		return
 	if facing != Vector2.ZERO:
 		_final_facing = facing
 	npc.sprite.offset.y = -46.0
@@ -222,7 +253,79 @@ func _arrive(facing: Vector2) -> void:
 	_style = LifeAnimator.apply(npc, activity, facing)
 	_emote_wait = randf_range(1.5, 4.0)
 	_reserve(LifeNavGrid.to_cell(npc.global_position))
+	_home = npc.global_position
+	_reset_wander_timer()
 	LifeManager._on_brain_arrived(npc_id, map_id, spot_id)
+
+
+# --- Passeio ocioso ------------------------------------------------------------------
+
+func _can_wander() -> bool:
+	if not wander_enabled or not WANDER.has(activity) or _home == Vector2.INF:
+		return false
+	if not map_id in WANDER_MAPS or npc_id in NO_WANDER:
+		return false
+	var st: Dictionary = LifeManager._states.get(npc_id, {})
+	return not st.get("pinned", false) and not st.get("busy", false)
+
+
+func _reset_wander_timer() -> void:
+	var wait: Array = WANDER.get(activity, {}).get("wait", [6.0, 12.0])
+	_wander_t = randf_range(wait[0], wait[1])
+
+
+func _update_wander(delta: float) -> void:
+	if not GameManager.is_playing() or not _can_wander():
+		return
+	_wander_t -= delta
+	if _wander_t > 0.0:
+		return
+	_reset_wander_timer()
+	var player := _player()
+	if player and player.global_position.distance_to(npc.global_position) < REACT_RADIUS:
+		return  # o jogador está perto (talvez querendo conversar): fica
+	var target := _pick_wander_target(player)
+	if target == Vector2.INF:
+		return
+	var path := LifeNavGrid.find_path(map_id, npc.global_position, target)
+	var radius: int = WANDER[activity]["radius"]
+	if path.is_empty() or path.size() > radius * 2 + 2:
+		return
+	_path = path
+	_path[_path.size() - 1] = target
+	_path_i = 0
+	_blocked = 0.0
+	_wandering = true
+	_final_facing = [Vector2.DOWN, Vector2.LEFT, Vector2.RIGHT, Vector2.UP].pick_random() \
+			if activity == "brincar" else _final_facing
+	state = S.WALKING
+	npc.play_special("")
+
+
+## Célula livre e desocupada perto do ponto de origem (ou volta para ele).
+func _pick_wander_target(player: Node2D) -> Vector2:
+	if npc.global_position.distance_to(_home) > 8.0 and randf() < 0.35:
+		return _home
+	var radius: int = WANDER[activity]["radius"]
+	var home_cell := LifeNavGrid.to_cell(_home)
+	var here := LifeNavGrid.to_cell(npc.global_position)
+	var options: Array[Vector2i] = []
+	for dx in range(-radius, radius + 1):
+		for dy in range(-radius, radius + 1):
+			var c := home_cell + Vector2i(dx, dy)
+			if c == here or absi(dx) + absi(dy) > radius:
+				continue
+			var pos := LifeNavGrid.cell_center(c)
+			if not LifeNavGrid.is_free(map_id, pos):
+				continue
+			if LifeManager._reserved.get(c, "") not in ["", npc_id]:
+				continue
+			if player and player.global_position.distance_to(pos) < PLAYER_STOP:
+				continue
+			options.append(c)
+	if options.is_empty():
+		return Vector2.INF
+	return LifeNavGrid.cell_center(options.pick_random())
 
 
 func _vanish() -> void:
@@ -243,6 +346,7 @@ func _animate_activity(delta: float) -> void:
 		if _emote_wait <= 0.0:
 			_emote_wait = interval * randf_range(0.7, 1.3)
 			emote(_style.get("emote", ""))
+	_update_wander(delta)
 	_react_to_player()
 
 

@@ -48,6 +48,19 @@ Implementação das seções 3, 7 e 8 de [VIDA_CONTRATOS.md](VIDA_CONTRATOS.md).
 - Nunca atravessa paredes: o caminho usa só células livres do layout, e o teste confere isso
   a cada frame.
 
+### Passeio ocioso
+
+Na praça (`paris_1857`), durante `brincar`, `passear`, `conversar` e `trabalhar`, os NPCs
+secundários andam um pouco em volta do ponto e voltam (raio de 1 a 3 células, pausas de 1,5 s a
+16 s; ver `NPCBrain.WANDER`). Não passeiam: Kardec e a Irmã Clara, quem está com pin de missão ou
+num encontro social, e ninguém sai quando o jogador está a menos de 64 px (para não fugir de quem
+quer conversar). Os passeios não avisam o `LifeManager` (a atividade e o spot continuam os mesmos)
+e usam as reservas de célula, então ninguém para dentro de outro NPC. `NPCBrain.wander_enabled`
+desliga o recurso. Teste: `tests/wander_test.tscn`.
+
+Nos encontros sociais (`walk_to(npc, mapa, "@outro")`), o NPC para a ~40 px do outro, do lado de
+onde vem; se esse lado for parede ou estiver ocupado, tenta o outro lado, embaixo e em cima.
+
 ## Animações (atividade → apresentação)
 
 | Atividade | Apresentação (só sprites existentes) | Balão |
@@ -59,7 +72,7 @@ Implementação das seções 3, 7 e 8 de [VIDA_CONTRATOS.md](VIDA_CONTRATOS.md).
 | descansar | idle (no banco ou na poltrona) | música |
 | reunião | idle no lugar da mesa | estudo |
 | prece | idle_down | prece |
-| brincar | idle + bob de 2 px | música |
+| brincar | idle + passeio ocioso (corre em volta do ponto) | música |
 | dormir | fora da tela (balão de sono se ocorrer num mapa) | sono |
 | andar | `walk_down` / `walk_up` / `walk_side` (espelhado) | — |
 

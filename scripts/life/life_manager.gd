@@ -146,15 +146,31 @@ func walk_to(npc_id: String, map_id: String, spot_id: String) -> void:
 		var other := get_npc_node(spot_id.substr(1))
 		if other == null:
 			return
-		var side := Vector2(28, 0) if npc_node_x(npc_id) > other.global_position.x else Vector2(-28, 0)
-		var pos := other.global_position + side
-		var cell := LifeNavGrid.nearest_free(map_id, LifeNavGrid.to_cell(pos))
-		pos = LifeNavGrid.cell_center(cell) if not LifeNavGrid.is_free(map_id, pos) else pos
+		var pos := _beside(npc_id, map_id, other)
 		brain.go_to(pos, (other.global_position - pos).normalized(), st.get("activity", "conversar"), st.get("spot", ""))
 	else:
 		var spot := _spot(map_id, spot_id)
 		if not spot.is_empty():
 			brain.go_to(_vec(spot["pos"]), _vec(spot["facing"]), st.get("activity", "passear"), spot_id)
+
+
+## Lugar ao lado de outro NPC para conversar: ~40 px (os sprites não se
+## encavalam), do lado de onde vem; se estiver ocupado ou for parede, tenta o
+## outro lado, embaixo e em cima.
+func _beside(npc_id: String, map_id: String, other: Node2D) -> Vector2:
+	var s := 1.0 if npc_node_x(npc_id) > other.global_position.x else -1.0
+	for off in [Vector2(40 * s, 0), Vector2(-40 * s, 0), Vector2(0, 36), Vector2(0, -36)]:
+		var pos: Vector2 = other.global_position + off
+		var cell := LifeNavGrid.to_cell(pos)
+		if not LifeNavGrid.is_free(map_id, pos):
+			continue
+		if _reserved.get(cell, "") not in ["", npc_id]:
+			continue
+		if cell == LifeNavGrid.to_cell(other.global_position):
+			continue
+		return pos
+	var fallback := other.global_position + Vector2(40 * s, 0)
+	return LifeNavGrid.cell_center(LifeNavGrid.nearest_free(map_id, LifeNavGrid.to_cell(fallback)))
 
 
 func npc_node_x(npc_id: String) -> float:
