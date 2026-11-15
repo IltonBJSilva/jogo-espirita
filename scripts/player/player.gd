@@ -20,9 +20,13 @@ func _physics_process(_delta: float) -> void:
 	var input := Vector2.ZERO
 	if GameManager.is_playing():
 		input = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	# Apenas 4 direcoes: na diagonal, mantem o eixo da direcao atual.
+	# Apenas 4 direcoes. Teclado na diagonal (eixos iguais): mantem o eixo da
+	# direcao atual. Joystick (eixos diferentes): segue o eixo mais inclinado.
 	if input.x != 0 and input.y != 0:
-		if facing.x != 0:
+		var keep_x := facing.x != 0
+		if not is_equal_approx(absf(input.x), absf(input.y)):
+			keep_x = absf(input.x) > absf(input.y)
+		if keep_x:
 			input.y = 0
 		else:
 			input.x = 0

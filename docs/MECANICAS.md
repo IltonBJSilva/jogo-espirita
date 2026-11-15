@@ -114,9 +114,10 @@ Para estender, acrescente um `case` em `check()` ou em `_run_one()` e documente-
 
 ## Controles de toque (Android)
 - Autoload `TouchControls` (`scripts/ui/touch_controls.gd`): joystick virtual (empurrar até a borda corre),
+  o personagem segue o eixo mais inclinado do joystick (4 direções),
   botões **Agir** (acende quando há algo para interagir) e **Correr** (liga/desliga), e atalhos **Menu**,
   **Diário**, **Itens** e **Comp.** Eles geram as mesmas ações do teclado, então os sistemas não mudam.
-- Aparecem só no estado PLAYING e só em aparelhos com toque; para testar no PC:
+- Aparecem só no estado PLAYING e só no celular/tablet (Android/iOS); no PC o jogo é no teclado. Para testar no PC:
   `godot --path . -- --touch` (o mouse faz o papel do dedo).
 - O botão **voltar** do Android funciona como Esc (abre/fecha a pausa, fecha telas); no título, fecha o app.
 - No celular, os botões das telas ganham altura mínima de 40 px para caber o dedo.

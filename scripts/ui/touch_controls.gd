@@ -7,7 +7,7 @@ extends CanvasLayer
 ## ações do teclado (project.godot -> [input]), então nenhum sistema do jogo
 ## precisa saber que existe toque.
 ##
-## Aparece só durante o jogo (estado PLAYING) e só em aparelhos com toque.
+## Aparece só durante o jogo (estado PLAYING) e só no celular/tablet.
 ## Para testar no PC:  godot --path . -- --touch   (o mouse faz o papel do dedo).
 ##
 ## O botão "voltar" do Android abre/fecha o menu de pausa (ou fecha a tela aberta).
@@ -36,8 +36,9 @@ var _font: Font
 func _ready() -> void:
 	layer = 25
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	active = OS.has_feature("mobile") or DisplayServer.is_touchscreen_available() \
-			or "--touch" in OS.get_cmdline_user_args()
+	# Só no celular/tablet (Android/iOS). No PC o jogo é no teclado, mesmo com
+	# tela sensível ao toque; --touch força os controles para testar.
+	active = OS.has_feature("mobile") or "--touch" in OS.get_cmdline_user_args()
 	if "--touch" in OS.get_cmdline_user_args():
 		Input.emulate_touch_from_mouse = true
 	_root = Control.new()

@@ -82,6 +82,7 @@ func _run() -> void:
 	TouchControls._on_state_changed(GameManager.State.PLAYING, GameManager.State.PLAYING)
 	await _frames(2)
 	var joy: Vector2 = TouchControls._joy_center()
+
 	var start := player.global_position
 	await _touch(0, joy, true)
 	await _drag(0, joy + Vector2(50, 0))
@@ -89,7 +90,28 @@ func _run() -> void:
 	for i in 30:
 		await get_tree().physics_frame
 	_check(player.global_position.x > start.x + 10, "jogador anda com o joystick (%.0f -> %.0f)" % [start.x, player.global_position.x])
+	# Joystick com um pouco de diagonal (como o dedo faz): segue o eixo mais
+	# inclinado, mesmo virado para outro lado.
+	for dir in [Vector2(-50, 18), Vector2(15, 50), Vector2(50, -20), Vector2(-12, -50)]:
+		player.face(Vector2.DOWN if dir.x != 0 and absf(dir.x) > absf(dir.y) else Vector2.RIGHT)
+		var before := player.global_position
+		await _drag(0, joy + dir)
+		for i in 20:
+			await get_tree().physics_frame
+		var moved := player.global_position - before
+		var main_axis := 0 if absf(dir.x) > absf(dir.y) else 1
+		_check(signf(moved[main_axis]) == signf(dir[main_axis]) and absf(moved[main_axis]) > 10,
+				"joystick %s anda para o lado certo (%s)" % [dir, moved.round()])
+	# Um gatilho de diálogo da praça pode abrir no caminho: o joystick é solto
+	# (comportamento esperado) e o dedo precisa tocar de novo.
+	if GameManager.state != GameManager.State.PLAYING:
+		DialogueManager.end()
+		await _frames(3)
+		GameManager.set_state(GameManager.State.PLAYING)
+	if TouchControls._joy_touch == -1:
+		await _touch(0, joy, true)
 	await _drag(0, joy + Vector2(0, -62))
+
 	_check(Input.is_action_pressed("run") and Input.get_action_strength("move_up") > 0.9, "joystick no limite = correr")
 	if out != "":
 		await _shot(out.path_join("touch_controls.png"))
