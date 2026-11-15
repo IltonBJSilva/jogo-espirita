@@ -131,10 +131,10 @@ func _run() -> void:
 	SocialManager._familiarity["livreiro|moradora"] = 77
 	TimeManager.set_datetime(1858, 5, 4, 10, 0)
 	await _frames(3)
-	_check(SaveManager.save_game(), "jogo salvo")
+	_check(SaveManager.save_game("1"), "jogo salvo")
 	await GameManager.new_game()
 	_check(SocialManager.get_familiarity("livreiro", "moradora") != 77, "novo jogo zera familiaridade")
-	await SaveManager.load_game()
+	await SaveManager.load_game("1")
 	await _frames(3)
 	_check(SocialManager.get_familiarity("livreiro", "moradora") == 77, "familiaridade restaurada")
 	SaveManager.delete_save()

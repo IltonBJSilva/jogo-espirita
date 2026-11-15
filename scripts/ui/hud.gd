@@ -25,6 +25,9 @@ func _ready() -> void:
 	# --- expansão: data da história (flag "data_atual") ---
 	GameManager.flag_changed.connect(_on_flag_changed)
 	_refresh_date()
+	# No celular as dicas de teclado não fazem sentido.
+	if TouchControls.active:
+		$Hints.hide()
 
 
 func _on_map_changed(_map_id: String, display_name: String) -> void:
@@ -45,7 +48,8 @@ func _refresh_date() -> void:
 func _on_focus_changed(interactable: Interactable) -> void:
 	prompt_panel.visible = interactable != null
 	if interactable:
-		prompt_label.text = "[E]  %s" % interactable.get_prompt_text()
+		var key := "Agir ▸" if TouchControls.active else "[E]"
+		prompt_label.text = "%s  %s" % [key, interactable.get_prompt_text()]
 
 
 func _on_state_changed(new_state: int, _old: int) -> void:

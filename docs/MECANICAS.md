@@ -95,15 +95,31 @@ Para estender, acrescente um `case` em `check()` ou em `_run_one()` e documente-
 - **Para estender:** use `add_virtue` e `virtue_at_least`. Uma virtude nova entra em `ProgressManager.VIRTUES`
   e em `compendium.tscn` (uma barra nova).
 
-## Salvar e continuar
-- O jogo é salvo em `user://save.json`, com versão, data, mapa, posição do jogador e o `save_data()`
-  de cada sistema listado em `SaveManager.SYSTEMS`.
-- Para salvar, use **Salvar jogo** no menu de pausa (ou a ação `save_game`). Para carregar, use
-  **Continuar** na tela de título, que só aparece quando existe um jogo salvo.
+## Salvar e carregar
+- Há um **salvamento automático** e **3 espaços manuais**, cada um em `user://saves/<auto|1|2|3>.json`
+  com versão, data real, tempo de jogo, mapa, posição do jogador, um resumo (`meta`: local, data/hora do
+  jogo, missão ativa) e o `save_data()` de cada sistema listado em `SaveManager.SYSTEMS`.
+- O salvamento automático acontece ao trocar de mapa, a cada 3 minutos jogando, ao voltar ao título/sair e
+  quando o app vai para segundo plano ou é fechado (no Android o sistema pode encerrar o app sem aviso).
+  Não salva durante transições e minigames.
+- **Salvar jogo** (pausa) abre a tela de espaços (`scripts/ui/save_slots.gd`); gravar por cima ou apagar
+  pede confirmação (tocar duas vezes). **Carregar jogo** existe na pausa e no título. **Continuar** (título)
+  carrega o save mais recente e mostra onde você parou.
+- A gravação usa arquivo temporário + troca, então um app encerrado no meio não corrompe o save anterior.
+  Um save corrompido aparece como vazio. O antigo `user://save.json` vira o Espaço 1 automaticamente.
+- Cenas de teste (`res://tests/...`) usam `user://test_saves` e nunca tocam no jogo salvo do jogador.
 - O carregamento emite `new_game_started` (todos os sistemas se zeram), aplica os dados salvos, chama
   `SceneManager.start_game(map)` e reposiciona o jogador.
 - **Para estender:** um sistema novo com estado implementa `save_data()` e `load_data()` e entra em `SYSTEMS`.
 
+## Controles de toque (Android)
+- Autoload `TouchControls` (`scripts/ui/touch_controls.gd`): joystick virtual (empurrar até a borda corre),
+  botões **Agir** (acende quando há algo para interagir) e **Correr** (liga/desliga), e atalhos **Menu**,
+  **Diário**, **Itens** e **Comp.** Eles geram as mesmas ações do teclado, então os sistemas não mudam.
+- Aparecem só no estado PLAYING e só em aparelhos com toque; para testar no PC:
+  `godot --path . -- --touch` (o mouse faz o papel do dedo).
+- O botão **voltar** do Android funciona como Esc (abre/fecha a pausa, fecha telas); no título, fecha o app.
+- No celular, os botões das telas ganham altura mínima de 40 px para caber o dedo.
 ## Viagens (fiacre)
 - Os dados ficam em `data/travel.json`:
   `{"destinations": [{id, name, description, map, spawn, pin:[x,y], condition, locked_hint}]}`.

@@ -12,6 +12,7 @@ RPG 2D em pixel art 16-bit (Godot 4.7, GDScript) sobre a vida e os estudos de Al
   **Conhecendo a Sociedade Espírita**, minigame **Organizar a enciclopédia**, HUD, pausa, diário e inventário.
 
 **Controles:** WASD/Setas mover · Shift correr · E interagir · J diário · I inventário · Esc pausa · F11 tela cheia.
+No celular: joystick na tela, botões Agir/Correr/Menu/Diário/Itens/Comp. e o botão voltar do Android (ver docs/MECANICAS.md).
 
 ## Estrutura
 
@@ -84,7 +85,9 @@ JDK 17 configurados no Godot, exporte pelo menu ou execute:
 godot --headless --path . --export-debug "Android (teste)" build/android/JogoEspirita-debug.apk
 ```
 
-O APK é assinado com chave de depuração e fica fora do Git em `build/android/`.
+O APK é assinado com chave de depuração e fica fora do Git em `build/android/`. Para instalar com o celular no USB
+(depuração USB ligada): `adb install -r build/android/JogoEspirita-debug.apk`. Para ver os controles de toque no PC:
+`godot --path . -- --touch`.
 
 ## Como adicionar conteúdo
 

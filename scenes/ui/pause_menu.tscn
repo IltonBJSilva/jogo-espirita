@@ -68,6 +68,11 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Salvar jogo"
 
+[node name="LoadButton" type="Button" parent="MainPage/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Carregar jogo"
+
 [node name="TitleButton" type="Button" parent="MainPage/VBox"]
 unique_name_in_owner = true
 layout_mode = 2

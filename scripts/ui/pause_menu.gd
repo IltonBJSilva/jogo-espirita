@@ -2,7 +2,7 @@ extends CanvasLayer
 ## Menu de pausa com as paginas Diario de missoes e Inventario.
 ##   Esc: abre/fecha a pausa   J: diario   I: inventario
 
-enum Page { NONE, MAIN, JOURNAL, INVENTORY }
+enum Page { NONE, MAIN, JOURNAL, INVENTORY, SLOTS }
 
 var _status_labels := {
 	QuestManager.Status.ACTIVE: "Em andamento",
@@ -12,6 +12,8 @@ var _status_labels := {
 var page: Page = Page.NONE
 var _quest_ids: Array[String] = []
 var _item_ids: Array[String] = []
+var _slots: SaveSlotsPanel
+var _slots_mode := SaveSlotsPanel.Mode.SAVE
 
 @onready var pages := {
 	Page.MAIN: %MainPage,
@@ -25,14 +27,19 @@ func _ready() -> void:
 	%JournalButton.pressed.connect(open.bind(Page.JOURNAL))
 	%InventoryButton.pressed.connect(open.bind(Page.INVENTORY))
 	%TitleButton.pressed.connect(_on_title_pressed)
-	%QuitButton.pressed.connect(get_tree().quit)
+	%QuitButton.pressed.connect(_on_quit_pressed)
 	%JournalBack.pressed.connect(open.bind(Page.MAIN))
 	%InventoryBack.pressed.connect(open.bind(Page.MAIN))
 	%QuestList.item_selected.connect(_show_quest)
 	%ItemsList.item_selected.connect(_show_item)
 	# --- expansão ---
 	%CompendiumButton.pressed.connect(_on_compendium_pressed)
-	%SaveButton.pressed.connect(_on_save_pressed)
+	%SaveButton.pressed.connect(open_slots.bind(SaveSlotsPanel.Mode.SAVE))
+	%LoadButton.pressed.connect(open_slots.bind(SaveSlotsPanel.Mode.LOAD))
+	_slots = SaveSlotsPanel.new()
+	add_child(_slots)
+	pages[Page.SLOTS] = _slots
+	_slots.closed.connect(open.bind(Page.MAIN))
 	%ReadItemButton.pressed.connect(_on_read_item_pressed)
 
 
@@ -75,6 +82,8 @@ func open(target: Page) -> void:
 			_fill_journal()
 		Page.INVENTORY:
 			_fill_inventory()
+		Page.SLOTS:
+			_slots.open(_slots_mode)
 
 
 func close() -> void:
@@ -86,9 +95,20 @@ func close() -> void:
 	GameManager.set_state(GameManager.State.PLAYING)
 
 
+func open_slots(mode: SaveSlotsPanel.Mode) -> void:
+	_slots_mode = mode
+	open(Page.SLOTS)
+
+
 func _on_title_pressed() -> void:
+	SaveManager.autosave(true)
 	page = Page.NONE
 	SceneManager.go_to_title()
+
+
+func _on_quit_pressed() -> void:
+	SaveManager.autosave(true)
+	get_tree().quit()
 
 
 # --- Diario -----------------------------------------------------------------
@@ -181,11 +201,6 @@ func _on_compendium_pressed() -> void:
 	close()
 	compendium.open()
 
-
-func _on_save_pressed() -> void:
-	%SaveButton.text = "Jogo salvo!" if SaveManager.save_game() else "Não foi possível salvar"
-	await get_tree().create_timer(1.2).timeout
-	%SaveButton.text = "Salvar jogo"
 
 
 func _on_read_item_pressed() -> void:
