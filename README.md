@@ -75,6 +75,17 @@ godot --path . res://tests/screenshots.tscn -- <pasta>           # captura telas
 
 Inclua `*.json` em *Projeto › Exportar › Recursos › Filtros para exportar arquivos que não são recursos*.
 
+### Android (APK de teste)
+
+O preset `Android (teste)` gera um APK de depuração para aparelhos ARM 32/64-bit. Com o Android SDK e o
+JDK 17 configurados no Godot, exporte pelo menu ou execute:
+
+```bash
+godot --headless --path . --export-debug "Android (teste)" build/android/JogoEspirita-debug.apk
+```
+
+O APK é assinado com chave de depuração e fica fora do Git em `build/android/`.
+
 ## Como adicionar conteúdo
 
 - **NPC:** instancie `scenes/npcs/npc.tscn` na camada `Interactive` e defina `sprite_frames`, `npc_id`
