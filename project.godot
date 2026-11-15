@@ -31,6 +31,11 @@ RelationshipManager="*res://scripts/managers/relationship_manager.gd"
 ProgressManager="*res://scripts/managers/progress_manager.gd"
 TravelManager="*res://scripts/managers/travel_manager.gd"
 SaveManager="*res://scripts/managers/save_manager.gd"
+TimeManager="*res://scripts/world/time_manager.gd"
+EnvironmentManager="*res://scripts/world/environment_manager.gd"
+LifeManager="*res://scripts/life/life_manager.gd"
+SocialManager="*res://scripts/social/social_manager.gd"
+WorldEventManager="*res://scripts/events/world_event_manager.gd"
 
 [display]
 

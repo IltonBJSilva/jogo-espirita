@@ -19,6 +19,12 @@ extends Actor
 
 var _presence_condition: Variant = null
 
+# --- sistema de vida --- (LifeManager, docs/VIDA_CONTRATOS.md)
+## false = a rotina colocou este NPC em outro lugar (o nó fica oculto).
+var life_present := true
+## true = o LifeManager controla a posição/animação deste nó (rotina ativa).
+var life_controlled := false
+
 var _rest_facing := Vector2.DOWN
 
 @onready var interactable: Interactable = $Interactable
@@ -43,7 +49,13 @@ func _ready() -> void:
 
 
 func is_present() -> bool:
-	return _presence_condition == null or GameActions.check(_presence_condition)
+	return life_present and (_presence_condition == null or GameActions.check(_presence_condition))
+
+
+## Usado pelo LifeManager para mostrar/ocultar o nó conforme a rotina.
+func set_life_present(value: bool) -> void:
+	life_present = value
+	_refresh_presence()
 
 
 func _refresh_presence() -> void:

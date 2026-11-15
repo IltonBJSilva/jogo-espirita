@@ -19,6 +19,10 @@ const SYSTEMS := {
 	"library": "LibraryManager",
 	"relationships": "RelationshipManager",
 	"progress": "ProgressManager",
+	# --- sistema de vida ---
+	"time": "TimeManager",
+	"life": "LifeManager",
+	"social": "SocialManager",
 }
 
 

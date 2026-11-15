@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=7 format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/characters/player.tscn" id="1_player"]
 [ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="2_hud"]
 [ext_resource type="PackedScene" path="res://scenes/ui/dialogue_box.tscn" id="3_dialogue"]
 [ext_resource type="PackedScene" path="res://scenes/ui/pause_menu.tscn" id="4_pause"]
 [ext_resource type="PackedScene" path="res://scenes/ui/compendium.tscn" id="5_compendium"]
+[ext_resource type="PackedScene" path="res://scenes/ui/clock_widget.tscn" id="6_clock"]
 
 [node name="Game" type="Node"]
 
@@ -20,4 +21,7 @@ unique_name_in_owner = true
 [node name="PauseMenu" parent="." instance=ExtResource("4_pause")]
 
 [node name="Compendium" parent="." instance=ExtResource("5_compendium")]
+unique_name_in_owner = true
+
+[node name="ClockWidget" parent="." instance=ExtResource("6_clock")]
 unique_name_in_owner = true
