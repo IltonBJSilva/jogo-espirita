@@ -1,0 +1,135 @@
+{
+  "settings": {
+    "check_every_minutes": 5,
+    "pair_cooldown_minutes": 120,
+    "encounter_chance": 0.45,
+    "onscreen_max_distance": 220,
+    "familiarity_gain": 3,
+    "bark_seconds": 2.6,
+    "greet_distance": 72,
+    "greet_cooldown_minutes": 90,
+    "greet_chance": 0.6
+  },
+  "relations": [
+    {"a": "kardec", "b": "amelie", "type": "cônjuge", "familiarity": 100, "fact": "Casados desde 1832 (fato histórico)."},
+    {"a": "kardec", "b": "estudioso", "type": "colega de estudo", "familiarity": 60},
+    {"a": "kardec", "b": "medium", "type": "colega de estudo", "familiarity": 55},
+    {"a": "kardec", "b": "livreiro", "type": "conhecido", "familiarity": 40},
+    {"a": "kardec", "b": "impressor", "type": "colega de trabalho", "familiarity": 30,
+     "condition": {"quest_status": {"quest": "revista_espirita", "status": "completed"}}},
+    {"a": "amelie", "b": "moradora", "type": "vizinha", "familiarity": 50},
+    {"a": "amelie", "b": "medium", "type": "amiga", "familiarity": 40},
+    {"a": "amelie", "b": "crianca", "type": "professora e aluno", "familiarity": 35,
+     "condition": {"flag": "amelie_ensina_louis"}},
+    {"a": "estudioso", "b": "medium", "type": "colega de estudo", "familiarity": 50},
+    {"a": "estudioso", "b": "medico", "type": "cético e estudioso", "familiarity": 20},
+    {"a": "estudioso", "b": "livreiro", "type": "cliente", "familiarity": 45},
+    {"a": "livreiro", "b": "moradora", "type": "vizinho", "familiarity": 60},
+    {"a": "moradora", "b": "crianca", "type": "vizinha", "familiarity": 55},
+    {"a": "moradora", "b": "cocheiro", "type": "vizinho", "familiarity": 45},
+    {"a": "cocheiro", "b": "crianca", "type": "conhecido", "familiarity": 30},
+    {"a": "cocheiro", "b": "impressor", "type": "conhecido", "familiarity": 25},
+    {"a": "medico", "b": "livreiro", "type": "cliente", "familiarity": 35},
+    {"a": "medico", "b": "moradora", "type": "médico do bairro", "familiarity": 30},
+    {"a": "medium", "b": "crianca", "type": "conhecida", "familiarity": 25}
+  ],
+  "conversations": [
+    {"id": "casal_cotidiano", "participants": ["kardec", "amelie"], "lines": [
+      [0, "As cartas de hoje chegaram de Bordeaux e de Lyon."],
+      [1, "Então separe uma hora para respondê-las. E outra para descansar."],
+      [0, "Você tem razão, como sempre."]]},
+    {"id": "casal_jantar", "participants": ["kardec", "amelie"], "lines": [
+      [1, "O jantar está quase pronto."],
+      [0, "Termino esta página e já vou."]]},
+    {"id": "estudo_metodo", "participants": ["kardec", "estudioso"], "lines": [
+      [1, "Anotei as respostas da última sessão, professor."],
+      [0, "Ótimo. Vamos compará-las com as de outros grupos."],
+      [1, "Concordam em quase tudo."]]},
+    {"id": "estudo_preparar", "participants": ["kardec", "medium"], "lines": [
+      [0, "As perguntas de terça já estão prontas."],
+      [1, "Vou ler com calma antes da reunião."]]},
+    {"id": "livros_novos", "participants": ["kardec", "livreiro"], "lines": [
+      [1, "Professor! Vendi mais três exemplares hoje."],
+      [0, "Fico contente que o livro chegue a quem o procura."]]},
+    {"id": "revista_prova", "participants": ["kardec", "impressor"], "lines": [
+      [1, "As provas do próximo número estão quase prontas."],
+      [0, "Obrigado, Bertin. Revisarei esta noite."]]},
+    {"id": "vizinhas", "participants": ["amelie", "moradora"], "lines": [
+      [1, "Bom ver a senhora, madame Rivail!"],
+      [0, "O prazer é meu. Como vai a família?"],
+      [1, "Todos bem, graças a Deus."]]},
+    {"id": "amigas_estudo", "participants": ["amelie", "medium"], "lines": [
+      [0, "Você parece cansada, Aline."],
+      [1, "Um pouco. Mas a reunião me faz bem."]]},
+    {"id": "aula_louis", "participants": ["amelie", "crianca"], "condition": {"flag": "amelie_ensina_louis"}, "lines": [
+      [1, "Madame! Já sei escrever o meu nome!"],
+      [0, "Muito bem, Louis. Quinta-feira aprenderemos outras palavras."]]},
+    {"id": "colegas_atas", "participants": ["estudioso", "medium"], "lines": [
+      [0, "Posso ler para você a ata da última sessão?"],
+      [1, "Por favor. Gosto de recordar tudo com calma."]]},
+    {"id": "cetico_antes", "participants": ["estudioso", "medico"],
+     "condition": {"not": {"quest_status": {"quest": "o_cetico", "status": "completed"}}}, "lines": [
+      [1, "Delaunay, você ainda acredita nessas mesas?"],
+      [0, "Eu observo, doutor. Acreditar vem depois."],
+      [1, "Hum. Pelo menos você é honesto."]]},
+    {"id": "cetico_depois", "participants": ["estudioso", "medico"],
+     "condition": {"quest_status": {"quest": "o_cetico", "status": "completed"}}, "lines": [
+      [1, "Confesso que a reunião foi mais séria do que eu esperava."],
+      [0, "Volte na próxima terça. Traga suas objeções."],
+      [1, "Trarei. Muitas!"]]},
+    {"id": "cliente_livros", "participants": ["estudioso", "livreiro"], "lines": [
+      [0, "Chegou algo novo de filosofia?"],
+      [1, "Separei dois volumes para o senhor."]]},
+    {"id": "vizinhos_praca", "participants": ["livreiro", "moradora"], "lines": [
+      [1, "Monsieur Gérard, o senhor está pálido. Tem comido?"],
+      [0, "Entre um livro e outro, madame."],
+      [1, "Vou lhe trazer um pão mais tarde."]]},
+    {"id": "louis_casaco", "participants": ["moradora", "crianca"],
+     "condition": {"quest_status": {"quest": "pao_para_louis", "status": "completed"}}, "lines": [
+      [0, "E o casaco novo, Louis? Está quente?"],
+      [1, "Quentinho! Nem senti frio hoje."]]},
+    {"id": "louis_rua", "participants": ["moradora", "crianca"],
+     "condition": {"not": {"quest_status": {"quest": "pao_para_louis", "status": "completed"}}}, "lines": [
+      [0, "Louis, sua mãe já voltou da lavanderia?"],
+      [1, "Ainda não, madame."]]},
+    {"id": "cocheiro_vizinha", "participants": ["moradora", "cocheiro"], "lines": [
+      [1, "As obras fecharam outra rua hoje!"],
+      [0, "Paris não para de mudar, Bertrand."]]},
+    {"id": "cocheiro_louis", "participants": ["cocheiro", "crianca"], "lines": [
+      [1, "Posso fazer carinho no cavalo?"],
+      [0, "Devagar, ele é manso. Assim."]]},
+    {"id": "cocheiro_bertin", "participants": ["cocheiro", "impressor"], "lines": [
+      [0, "Mais papel para entregar, Bertin?"],
+      [1, "Sempre! A tinta não espera."]]},
+    {"id": "medico_paciente", "participants": ["medico", "moradora"], "lines": [
+      [1, "Doutor, aquela tosse passou."],
+      [0, "Fico contente. Mas agasalhe-se à noite."]]},
+    {"id": "medico_livros", "participants": ["medico", "livreiro"], "lines": [
+      [0, "Tem o último tratado de fisiologia?"],
+      [1, "Chega na semana que vem, doutor."]]},
+    {"id": "aline_louis", "participants": ["medium", "crianca"], "lines": [
+      [1, "Moça, é verdade que a senhora fala com os Espíritos?"],
+      [0, "Às vezes eles falam e eu escrevo. Mas eu estudo como você."]]}
+  ],
+  "generic_conversations": [
+    {"id": "tempo", "lines": [[0, "Que tempo faz hoje, não?"], [1, "Paris está bonita."]]},
+    {"id": "obras", "lines": [[0, "Viu as obras na outra rua?"], [1, "Barulho o dia inteiro!"]]},
+    {"id": "cumprimento", "lines": [[0, "Bom ver você."], [1, "Igualmente. Até mais!"]]}
+  ],
+  "greetings": {
+    "periods": {"madrugada": "Boa noite", "amanhecer": "Bom dia", "manha": "Bom dia", "meio_dia": "Bom dia",
+                "tarde": "Boa tarde", "por_do_sol": "Boa tarde", "noite": "Boa noite"},
+    "by_level": {
+      "Desconhecido": ["{periodo}.", "{periodo}, monsieur."],
+      "Conhecido": ["{periodo}, Étienne.", "Olá, Étienne!"],
+      "Amigo": ["{periodo}, meu amigo!", "Étienne! Que bom ver você."],
+      "Confidente": ["Étienne! Sempre uma alegria.", "{periodo}! Venha, conte as novidades."]
+    },
+    "by_npc": {
+      "crianca": ["Oi, Étienne!", "Olha eu aqui!"],
+      "cocheiro": ["{periodo}! Precisa de um fiacre?"],
+      "medico": ["{periodo}, jovem."],
+      "espirito_guia": ["Paz, Étienne."]
+    }
+  }
+}
