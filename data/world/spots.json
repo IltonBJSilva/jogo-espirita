@@ -1,0 +1,709 @@
+{
+ "_exits": {
+  "paris_1857": {
+   "livraria": "porta_livraria",
+   "residencia_kardec": "porta_residencia",
+   "sociedade_salao": "porta_sociedade",
+   "tipografia": "cocheiro_ponto",
+   "*": "saida_rua"
+  },
+  "sociedade_salao": {
+   "*": "porta"
+  },
+  "livraria": {
+   "*": "porta"
+  },
+  "residencia_kardec": {
+   "*": "porta"
+  },
+  "tipografia": {
+   "*": "porta"
+  },
+  "plano_espiritual": {
+   "*": "porta"
+  }
+ },
+ "paris_1857": {
+  "praca_fonte_n": {
+   "pos": [
+    757,
+    530
+   ],
+   "facing": [
+    0,
+    1
+   ],
+   "kind": "praca"
+  },
+  "praca_fonte_s": {
+   "pos": [
+    757,
+    795
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "praca"
+  },
+  "banco_esq": {
+   "pos": [
+    484,
+    528
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "banco"
+  },
+  "banco_dir": {
+   "pos": [
+    1040,
+    560
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "banco"
+  },
+  "porta_livraria": {
+   "pos": [
+    110,
+    620
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "porta"
+  },
+  "porta_sociedade": {
+   "pos": [
+    795,
+    372
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "porta"
+  },
+  "porta_residencia": {
+   "pos": [
+    1392,
+    640
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "porta"
+  },
+  "cocheiro_ponto": {
+   "pos": [
+    300,
+    632
+   ],
+   "facing": [
+    1,
+    0
+   ],
+   "kind": "trabalho"
+  },
+  "canal": {
+   "pos": [
+    1100,
+    860
+   ],
+   "facing": [
+    0,
+    1
+   ],
+   "kind": "passeio"
+  },
+  "feira_1": {
+   "pos": [
+    590,
+    640
+   ],
+   "facing": [
+    1,
+    0
+   ],
+   "kind": "feira"
+  },
+  "feira_2": {
+   "pos": [
+    925,
+    640
+   ],
+   "facing": [
+    -1,
+    0
+   ],
+   "kind": "feira"
+  },
+  "feira_3": {
+   "pos": [
+    700,
+    880
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "feira"
+  },
+  "feira_4": {
+   "pos": [
+    860,
+    880
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "feira"
+  },
+  "saida_rua": {
+   "pos": [
+    784,
+    990
+   ],
+   "facing": [
+    0,
+    1
+   ],
+   "kind": "porta"
+  },
+  "kardec_origem": {
+   "pos": [
+    795,
+    452
+   ],
+   "facing": [
+    0,
+    1
+   ],
+   "kind": "origem"
+  },
+  "estudioso_origem": {
+   "pos": [
+    1000,
+    572
+   ],
+   "facing": [
+    -1,
+    0
+   ],
+   "kind": "origem"
+  },
+  "moradora_origem": {
+   "pos": [
+    372,
+    690
+   ],
+   "facing": [
+    -1,
+    0
+   ],
+   "kind": "origem"
+  },
+  "cocheiro_origem": {
+   "pos": [
+    300,
+    632
+   ],
+   "facing": [
+    1,
+    0
+   ],
+   "kind": "origem"
+  },
+  "crianca_origem": {
+   "pos": [
+    650,
+    805
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "origem"
+  },
+  "medico_origem": {
+   "pos": [
+    520,
+    625
+   ],
+   "facing": [
+    1,
+    0
+   ],
+   "kind": "origem"
+  }
+ },
+ "sociedade_salao": {
+  "reuniao_1": {
+   "pos": [
+    336,
+    216
+   ],
+   "facing": [
+    0,
+    1
+   ],
+   "kind": "cadeira"
+  },
+  "reuniao_2": {
+   "pos": [
+    400,
+    216
+   ],
+   "facing": [
+    0,
+    1
+   ],
+   "kind": "cadeira"
+  },
+  "reuniao_3": {
+   "pos": [
+    560,
+    216
+   ],
+   "facing": [
+    0,
+    1
+   ],
+   "kind": "cadeira"
+  },
+  "reuniao_4": {
+   "pos": [
+    624,
+    216
+   ],
+   "facing": [
+    0,
+    1
+   ],
+   "kind": "cadeira"
+  },
+  "reuniao_5": {
+   "pos": [
+    336,
+    312
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "cadeira"
+  },
+  "reuniao_6": {
+   "pos": [
+    400,
+    312
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "cadeira"
+  },
+  "reuniao_7": {
+   "pos": [
+    560,
+    312
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "cadeira"
+  },
+  "reuniao_8": {
+   "pos": [
+    624,
+    312
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "cadeira"
+  },
+  "pulpito": {
+   "pos": [
+    480,
+    205
+   ],
+   "facing": [
+    0,
+    1
+   ],
+   "kind": "trabalho"
+  },
+  "publico_1": {
+   "pos": [
+    144,
+    408
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "cadeira"
+  },
+  "publico_2": {
+   "pos": [
+    208,
+    408
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "cadeira"
+  },
+  "publico_3": {
+   "pos": [
+    272,
+    408
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "cadeira"
+  },
+  "publico_4": {
+   "pos": [
+    624,
+    408
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "cadeira"
+  },
+  "publico_5": {
+   "pos": [
+    688,
+    408
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "cadeira"
+  },
+  "publico_6": {
+   "pos": [
+    752,
+    408
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "cadeira"
+  },
+  "porta": {
+   "pos": [
+    480,
+    470
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "porta"
+  },
+  "kardec_origem": {
+   "pos": [
+    480,
+    205
+   ],
+   "facing": [
+    0,
+    1
+   ],
+   "kind": "origem"
+  },
+  "medium_origem": {
+   "pos": [
+    176,
+    215
+   ],
+   "facing": [
+    1,
+    0
+   ],
+   "kind": "origem"
+  },
+  "medico_origem": {
+   "pos": [
+    832,
+    316
+   ],
+   "facing": [
+    -1,
+    0
+   ],
+   "kind": "origem"
+  }
+ },
+ "livraria": {
+  "balcao": {
+   "pos": [
+    790,
+    214
+   ],
+   "facing": [
+    0,
+    1
+   ],
+   "kind": "trabalho"
+  },
+  "leitura_1": {
+   "pos": [
+    240,
+    380
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "cadeira"
+  },
+  "leitura_2": {
+   "pos": [
+    304,
+    380
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "cadeira"
+  },
+  "estante": {
+   "pos": [
+    620,
+    180
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "estante"
+  },
+  "porta": {
+   "pos": [
+    480,
+    470
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "porta"
+  },
+  "livreiro_origem": {
+   "pos": [
+    790,
+    214
+   ],
+   "facing": [
+    0,
+    1
+   ],
+   "kind": "origem"
+  }
+ },
+ "residencia_kardec": {
+  "escrivaninha": {
+   "pos": [
+    768,
+    300
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "trabalho"
+  },
+  "lareira": {
+   "pos": [
+    480,
+    205
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "descanso"
+  },
+  "poltrona_1": {
+   "pos": [
+    400,
+    300
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "cadeira"
+  },
+  "poltrona_2": {
+   "pos": [
+    560,
+    300
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "cadeira"
+  },
+  "comoda": {
+   "pos": [
+    330,
+    240
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "trabalho"
+  },
+  "porta": {
+   "pos": [
+    480,
+    470
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "porta"
+  },
+  "amelie_origem": {
+   "pos": [
+    496,
+    380
+   ],
+   "facing": [
+    0,
+    1
+   ],
+   "kind": "origem"
+  }
+ },
+ "tipografia": {
+  "prensa": {
+   "pos": [
+    288,
+    340
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "trabalho"
+  },
+  "composicao": {
+   "pos": [
+    560,
+    300
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "trabalho"
+  },
+  "dobra": {
+   "pos": [
+    768,
+    420
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "trabalho"
+  },
+  "porta": {
+   "pos": [
+    480,
+    470
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "porta"
+  },
+  "impressor_origem": {
+   "pos": [
+    464,
+    280
+   ],
+   "facing": [
+    0,
+    1
+   ],
+   "kind": "origem"
+  }
+ },
+ "plano_espiritual": {
+  "fonte": {
+   "pos": [
+    480,
+    380
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "contemplacao"
+  },
+  "banco_1": {
+   "pos": [
+    304,
+    342
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "banco"
+  },
+  "porta": {
+   "pos": [
+    480,
+    470
+   ],
+   "facing": [
+    0,
+    -1
+   ],
+   "kind": "porta"
+  },
+  "espirito_guia_origem": {
+   "pos": [
+    600,
+    436
+   ],
+   "facing": [
+    -1,
+    0
+   ],
+   "kind": "origem"
+  }
+ }
+}

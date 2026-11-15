@@ -1,0 +1,144 @@
+{
+ "id": "livreiro",
+ "name": "Monsieur Gérard",
+ "personality": "falante, generoso, apaixonado por livros",
+ "occupation": "Livreiro",
+ "mood": "animado",
+ "home": "casa_gerard",
+ "wake": "06:30",
+ "sleep": "22:00",
+ "dialogue_id": "livreiro",
+ "favorite_places": [
+  "livraria:balcao",
+  "livraria:estante"
+ ],
+ "favorite_activities": [
+  "trabalhar",
+  "ler"
+ ],
+ "relations": {
+  "moradora": "vizinho",
+  "kardec": "conhecido"
+ },
+ "schedule": {
+  "default": [
+   {
+    "from": "06:30",
+    "to": "08:00",
+    "activity": "cuidar_casa",
+    "location": "casa_gerard"
+   },
+   {
+    "from": "08:00",
+    "to": "12:30",
+    "activity": "trabalhar",
+    "location": "livraria:balcao"
+   },
+   {
+    "from": "12:30",
+    "to": "13:15",
+    "activity": "comer",
+    "location": "livraria:leitura_2"
+   },
+   {
+    "from": "13:15",
+    "to": "15:00",
+    "activity": "trabalhar",
+    "location": "livraria:estante"
+   },
+   {
+    "from": "15:00",
+    "to": "19:00",
+    "activity": "trabalhar",
+    "location": "livraria:balcao"
+   },
+   {
+    "from": "19:00",
+    "to": "20:00",
+    "activity": "passear",
+    "location": "paris_1857:banco_esq"
+   },
+   {
+    "from": "20:00",
+    "to": "22:00",
+    "activity": "descansar",
+    "location": "casa_gerard"
+   }
+  ],
+  "domingo": [
+   {
+    "from": "06:30",
+    "to": "08:00",
+    "activity": "cuidar_casa",
+    "location": "casa_gerard"
+   },
+   {
+    "from": "08:00",
+    "to": "12:00",
+    "activity": "trabalhar",
+    "location": "livraria:balcao"
+   },
+   {
+    "from": "12:00",
+    "to": "14:00",
+    "activity": "comer",
+    "location": "casa_gerard"
+   },
+   {
+    "from": "14:00",
+    "to": "17:00",
+    "activity": "passear",
+    "location": "paris_1857:banco_esq"
+   },
+   {
+    "from": "17:00",
+    "to": "22:00",
+    "activity": "descansar",
+    "location": "casa_gerard"
+   }
+  ]
+ },
+ "pins": [
+  {
+   "condition": {
+    "any": [
+     {
+      "objective_current": {
+       "quest": "conhecendo_sociedade",
+       "objective": "visitar_livraria"
+      }
+     },
+     {
+      "objective_current": {
+       "quest": "conhecendo_sociedade",
+       "objective": "encontrar_livro"
+      }
+     }
+    ]
+   },
+   "map": "livraria"
+  },
+  {
+   "condition": {
+    "all": [
+     {
+      "quest_status": {
+       "quest": "pao_para_louis",
+       "status": "active"
+      }
+     },
+     {
+      "not": {
+       "objective_done": {
+        "quest": "pao_para_louis",
+        "objective": "pedir_agasalho"
+       }
+      }
+     }
+    ]
+   },
+   "map": "livraria"
+  }
+ ],
+ "frames": "res://resources/sprite_frames/livreiro.tres"
+}

@@ -1,0 +1,95 @@
+{
+ "id": "amelie",
+ "name": "Amélie Boudet",
+ "personality": "gentil, organizada, professora de vocação",
+ "occupation": "Professora",
+ "mood": "acolhedora",
+ "home": "residencia_kardec",
+ "wake": "06:00",
+ "sleep": "22:00",
+ "dialogue_id": "amelie",
+ "favorite_places": [
+  "residencia_kardec:amelie_origem",
+  "residencia_kardec:comoda"
+ ],
+ "favorite_activities": [
+  "cuidar_casa",
+  "ensinar",
+  "conversar"
+ ],
+ "relations": {
+  "kardec": "conjuge",
+  "moradora": "vizinha",
+  "crianca": "aluno"
+ },
+ "schedule": {
+  "default": [
+   {
+    "from": "06:00",
+    "to": "07:30",
+    "activity": "cuidar_casa",
+    "location": "residencia_kardec:comoda"
+   },
+   {
+    "from": "07:30",
+    "to": "08:15",
+    "activity": "comer",
+    "location": "residencia_kardec:poltrona_1"
+   },
+   {
+    "from": "08:15",
+    "to": "12:00",
+    "activity": "cuidar_casa",
+    "location": "residencia_kardec:amelie_origem"
+   },
+   {
+    "from": "12:00",
+    "to": "13:00",
+    "activity": "comer",
+    "location": "residencia_kardec:poltrona_1"
+   },
+   {
+    "from": "13:00",
+    "to": "15:30",
+    "activity": "estudar",
+    "location": "residencia_kardec:comoda"
+   },
+   {
+    "from": "15:30",
+    "to": "16:30",
+    "activity": "passear",
+    "location": "paris_1857:porta_residencia"
+   },
+   {
+    "from": "16:30",
+    "to": "18:30",
+    "activity": "cuidar_casa",
+    "location": "residencia_kardec:amelie_origem"
+   },
+   {
+    "from": "18:30",
+    "to": "19:30",
+    "activity": "comer",
+    "location": "residencia_kardec:poltrona_1"
+   },
+   {
+    "from": "19:30",
+    "to": "22:00",
+    "activity": "descansar",
+    "location": "residencia_kardec:lareira"
+   }
+  ]
+ },
+ "pins": [
+  {
+   "condition": {
+    "quest_status": {
+     "quest": "cartas_do_professor",
+     "status": "active"
+    }
+   },
+   "map": "residencia_kardec"
+  }
+ ],
+ "frames": "res://resources/sprite_frames/amelie.tres"
+}

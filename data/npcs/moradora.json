@@ -1,0 +1,96 @@
+{
+ "id": "moradora",
+ "name": "Madame Marguerite",
+ "personality": "curiosa, prestativa, sabe de tudo no bairro",
+ "occupation": "Moradora e padeira caseira",
+ "mood": "alegre",
+ "home": "casa_marguerite",
+ "wake": "05:30",
+ "sleep": "21:30",
+ "dialogue_id": "moradora",
+ "favorite_places": [
+  "paris_1857:moradora_origem",
+  "paris_1857:feira_1",
+  "paris_1857:banco_esq"
+ ],
+ "favorite_activities": [
+  "conversar",
+  "cuidar_casa",
+  "feira"
+ ],
+ "relations": {
+  "livreiro": "vizinha",
+  "crianca": "vizinha",
+  "amelie": "vizinha"
+ },
+ "schedule": {
+  "default": [
+   {
+    "from": "05:30",
+    "to": "08:00",
+    "activity": "cuidar_casa",
+    "location": "casa_marguerite"
+   },
+   {
+    "from": "08:00",
+    "to": "11:30",
+    "activity": "conversar",
+    "location": "paris_1857:moradora_origem"
+   },
+   {
+    "from": "11:30",
+    "to": "13:00",
+    "activity": "comer",
+    "location": "casa_marguerite"
+   },
+   {
+    "from": "13:00",
+    "to": "14:30",
+    "activity": "passear",
+    "location": "paris_1857:feira_1"
+   },
+   {
+    "from": "14:30",
+    "to": "16:00",
+    "activity": "descansar",
+    "location": "paris_1857:banco_esq"
+   },
+   {
+    "from": "16:00",
+    "to": "18:00",
+    "activity": "conversar",
+    "location": "paris_1857:moradora_origem"
+   },
+   {
+    "from": "18:00",
+    "to": "21:30",
+    "activity": "cuidar_casa",
+    "location": "casa_marguerite"
+   }
+  ]
+ },
+ "pins": [
+  {
+   "condition": {
+    "all": [
+     {
+      "quest_status": {
+       "quest": "pao_para_louis",
+       "status": "active"
+      }
+     },
+     {
+      "not": {
+       "objective_done": {
+        "quest": "pao_para_louis",
+        "objective": "pedir_pao"
+       }
+      }
+     }
+    ]
+   },
+   "map": "paris_1857"
+  }
+ ],
+ "frames": "res://resources/sprite_frames/moradora.tres"
+}

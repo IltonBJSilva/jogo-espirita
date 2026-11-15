@@ -1,0 +1,82 @@
+{
+ "id": "crianca",
+ "name": "Louis",
+ "personality": "curioso, brincalhão, tímido com estranhos",
+ "occupation": "Criança (filho de lavadeira)",
+ "mood": "animado",
+ "home": "casa_louis",
+ "wake": "07:00",
+ "sleep": "20:00",
+ "dialogue_id": "louis",
+ "favorite_places": [
+  "paris_1857:crianca_origem",
+  "paris_1857:praca_fonte_s",
+  "paris_1857:canal"
+ ],
+ "favorite_activities": [
+  "brincar",
+  "olhar_a_fonte"
+ ],
+ "relations": {
+  "moradora": "vizinho",
+  "amelie": "aluno"
+ },
+ "schedule": {
+  "default": [
+   {
+    "from": "07:00",
+    "to": "08:30",
+    "activity": "comer",
+    "location": "casa_louis"
+   },
+   {
+    "from": "08:30",
+    "to": "12:00",
+    "activity": "brincar",
+    "location": "paris_1857:crianca_origem"
+   },
+   {
+    "from": "12:00",
+    "to": "13:00",
+    "activity": "comer",
+    "location": "casa_louis"
+   },
+   {
+    "from": "13:00",
+    "to": "14:30",
+    "activity": "brincar",
+    "location": "paris_1857:praca_fonte_s"
+   },
+   {
+    "from": "14:30",
+    "to": "15:30",
+    "activity": "brincar",
+    "location": "paris_1857:canal"
+   },
+   {
+    "from": "15:30",
+    "to": "18:00",
+    "activity": "brincar",
+    "location": "paris_1857:crianca_origem"
+   },
+   {
+    "from": "18:00",
+    "to": "20:00",
+    "activity": "cuidar_casa",
+    "location": "casa_louis"
+   }
+  ]
+ },
+ "pins": [
+  {
+   "condition": {
+    "quest_status": {
+     "quest": "pao_para_louis",
+     "status": "active"
+    }
+   },
+   "map": "paris_1857"
+  }
+ ],
+ "frames": "res://resources/sprite_frames/crianca.tres"
+}

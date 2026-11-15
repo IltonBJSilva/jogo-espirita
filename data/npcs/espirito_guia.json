@@ -1,0 +1,39 @@
+{
+ "id": "espirito_guia",
+ "name": "Irmã Clara",
+ "personality": "serena, paciente, acolhedora (personagem fictícia)",
+ "occupation": "Espírito benevolente (guia)",
+ "mood": "serena",
+ "home": "plano_espiritual",
+ "wake": "00:00",
+ "sleep": "24:00",
+ "dialogue_id": "irma_clara",
+ "favorite_places": [
+  "plano_espiritual:espirito_guia_origem",
+  "plano_espiritual:fonte"
+ ],
+ "favorite_activities": [
+  "prece",
+  "contemplar"
+ ],
+ "relations": {
+  "medium": "protegida"
+ },
+ "schedule": {
+  "default": [
+   {
+    "from": "00:00",
+    "to": "24:00",
+    "activity": "prece",
+    "location": "plano_espiritual:espirito_guia_origem"
+   }
+  ]
+ },
+ "pins": [
+  {
+   "condition": {},
+   "map": "plano_espiritual"
+  }
+ ],
+ "frames": "res://resources/sprite_frames/espirito_guia.tres"
+}

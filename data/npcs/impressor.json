@@ -1,0 +1,93 @@
+{
+ "id": "impressor",
+ "name": "Monsieur Bertin",
+ "personality": "trabalhador, prático, bem-humorado",
+ "occupation": "Tipógrafo",
+ "mood": "ocupado",
+ "home": "casa_bertin",
+ "wake": "05:30",
+ "sleep": "21:30",
+ "dialogue_id": "bertin",
+ "favorite_places": [
+  "tipografia:prensa",
+  "tipografia:composicao"
+ ],
+ "favorite_activities": [
+  "trabalhar"
+ ],
+ "relations": {
+  "kardec": "cliente"
+ },
+ "schedule": {
+  "default": [
+   {
+    "from": "05:30",
+    "to": "07:00",
+    "activity": "cuidar_casa",
+    "location": "casa_bertin"
+   },
+   {
+    "from": "07:00",
+    "to": "12:00",
+    "activity": "trabalhar",
+    "location": "tipografia:impressor_origem"
+   },
+   {
+    "from": "12:00",
+    "to": "13:00",
+    "activity": "comer",
+    "location": "tipografia:dobra"
+   },
+   {
+    "from": "13:00",
+    "to": "15:30",
+    "activity": "trabalhar",
+    "location": "tipografia:prensa"
+   },
+   {
+    "from": "15:30",
+    "to": "18:00",
+    "activity": "trabalhar",
+    "location": "tipografia:composicao"
+   },
+   {
+    "from": "18:00",
+    "to": "21:30",
+    "activity": "descansar",
+    "location": "casa_bertin"
+   }
+  ],
+  "domingo": [
+   {
+    "from": "05:30",
+    "to": "09:00",
+    "activity": "cuidar_casa",
+    "location": "casa_bertin"
+   },
+   {
+    "from": "09:00",
+    "to": "12:00",
+    "activity": "trabalhar",
+    "location": "tipografia:impressor_origem"
+   },
+   {
+    "from": "12:00",
+    "to": "21:30",
+    "activity": "descansar",
+    "location": "casa_bertin"
+   }
+  ]
+ },
+ "pins": [
+  {
+   "condition": {
+    "quest_status": {
+     "quest": "revista_espirita",
+     "status": "active"
+    }
+   },
+   "map": "tipografia"
+  }
+ ],
+ "frames": "res://resources/sprite_frames/impressor.tres"
+}

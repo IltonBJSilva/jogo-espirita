@@ -1,0 +1,180 @@
+{
+ "id": "kardec",
+ "name": "Allan Kardec",
+ "personality": "metódico, sereno, atencioso; observa antes de concluir",
+ "occupation": "Professor e pesquisador",
+ "mood": "sereno",
+ "home": "residencia_kardec",
+ "wake": "06:00",
+ "sleep": "22:30",
+ "dialogue_id": "kardec",
+ "favorite_places": [
+  "residencia_kardec:escrivaninha",
+  "paris_1857:kardec_origem",
+  "sociedade_salao:pulpito"
+ ],
+ "favorite_activities": [
+  "estudar",
+  "conversar",
+  "reuniao"
+ ],
+ "relations": {
+  "amelie": "conjuge",
+  "estudioso": "colega",
+  "medium": "colega",
+  "livreiro": "conhecido"
+ },
+ "schedule": {
+  "default": [
+   {
+    "from": "06:00",
+    "to": "07:30",
+    "activity": "estudar",
+    "location": "residencia_kardec:escrivaninha"
+   },
+   {
+    "from": "07:30",
+    "to": "08:15",
+    "activity": "comer",
+    "location": "residencia_kardec:poltrona_2"
+   },
+   {
+    "from": "08:15",
+    "to": "12:00",
+    "activity": "conversar",
+    "location": "paris_1857:kardec_origem"
+   },
+   {
+    "from": "12:00",
+    "to": "13:00",
+    "activity": "comer",
+    "location": "residencia_kardec:poltrona_2"
+   },
+   {
+    "from": "13:00",
+    "to": "16:00",
+    "activity": "estudar",
+    "location": "residencia_kardec:escrivaninha"
+   },
+   {
+    "from": "16:00",
+    "to": "17:00",
+    "activity": "passear",
+    "location": "paris_1857:praca_fonte_n"
+   },
+   {
+    "from": "17:00",
+    "to": "18:30",
+    "activity": "conversar",
+    "location": "paris_1857:kardec_origem"
+   },
+   {
+    "from": "18:30",
+    "to": "19:30",
+    "activity": "comer",
+    "location": "residencia_kardec:poltrona_2"
+   },
+   {
+    "from": "19:30",
+    "to": "22:30",
+    "activity": "estudar",
+    "location": "residencia_kardec:escrivaninha"
+   }
+  ],
+  "terca": [
+   {
+    "from": "06:00",
+    "to": "07:30",
+    "activity": "estudar",
+    "location": "residencia_kardec:escrivaninha"
+   },
+   {
+    "from": "07:30",
+    "to": "08:15",
+    "activity": "comer",
+    "location": "residencia_kardec:poltrona_2"
+   },
+   {
+    "from": "08:15",
+    "to": "12:00",
+    "activity": "conversar",
+    "location": "paris_1857:kardec_origem"
+   },
+   {
+    "from": "12:00",
+    "to": "13:00",
+    "activity": "comer",
+    "location": "residencia_kardec:poltrona_2"
+   },
+   {
+    "from": "13:00",
+    "to": "17:00",
+    "activity": "estudar",
+    "location": "residencia_kardec:escrivaninha"
+   },
+   {
+    "from": "17:00",
+    "to": "18:30",
+    "activity": "conversar",
+    "location": "paris_1857:kardec_origem"
+   },
+   {
+    "from": "18:30",
+    "to": "19:15",
+    "activity": "comer",
+    "location": "residencia_kardec:poltrona_2"
+   },
+   {
+    "from": "19:15",
+    "to": "21:45",
+    "activity": "reuniao",
+    "location": "sociedade_salao:pulpito"
+   },
+   {
+    "from": "21:45",
+    "to": "22:30",
+    "activity": "conversar",
+    "location": "residencia_kardec:lareira"
+   }
+  ]
+ },
+ "pins": [
+  {
+   "condition": {
+    "objective_current": {
+     "quest": "conhecendo_sociedade",
+     "objective": "conversar_kardec"
+    }
+   },
+   "map": "paris_1857"
+  },
+  {
+   "condition": {
+    "objective_current": {
+     "quest": "conhecendo_sociedade",
+     "objective": "retornar_sociedade"
+    }
+   },
+   "map": "paris_1857"
+  },
+  {
+   "condition": {
+    "quest_status": {
+     "quest": "perguntas_e_respostas",
+     "status": "active"
+    }
+   },
+   "map": "sociedade_salao"
+  },
+  {
+   "condition": {
+    "quest_status": {
+     "quest": "revista_espirita",
+     "status": "active"
+    }
+   },
+   "map": "paris_1857"
+  }
+ ],
+ "frames": "res://resources/sprite_frames/kardec.tres"
+}

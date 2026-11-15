@@ -1,0 +1,141 @@
+{
+ "id": "medium",
+ "name": "Mademoiselle Aline",
+ "personality": "serena, humilde, discreta",
+ "occupation": "Médium do grupo de estudos e costureira",
+ "mood": "serena",
+ "home": "casa_aline",
+ "wake": "06:00",
+ "sleep": "22:00",
+ "dialogue_id": "aline",
+ "favorite_places": [
+  "sociedade_salao:medium_origem",
+  "paris_1857:canal"
+ ],
+ "favorite_activities": [
+  "prece",
+  "estudar",
+  "costurar"
+ ],
+ "relations": {
+  "estudioso": "colega",
+  "kardec": "colega"
+ },
+ "schedule": {
+  "default": [
+   {
+    "from": "06:00",
+    "to": "08:00",
+    "activity": "prece",
+    "location": "casa_aline"
+   },
+   {
+    "from": "08:00",
+    "to": "12:00",
+    "activity": "estudar",
+    "location": "sociedade_salao:medium_origem"
+   },
+   {
+    "from": "12:00",
+    "to": "13:00",
+    "activity": "comer",
+    "location": "casa_aline"
+   },
+   {
+    "from": "13:00",
+    "to": "17:00",
+    "activity": "trabalhar",
+    "location": "casa_aline"
+   },
+   {
+    "from": "17:00",
+    "to": "18:00",
+    "activity": "passear",
+    "location": "paris_1857:canal"
+   },
+   {
+    "from": "18:00",
+    "to": "22:00",
+    "activity": "descansar",
+    "location": "casa_aline"
+   }
+  ],
+  "terca": [
+   {
+    "from": "06:00",
+    "to": "08:00",
+    "activity": "prece",
+    "location": "casa_aline"
+   },
+   {
+    "from": "08:00",
+    "to": "12:00",
+    "activity": "estudar",
+    "location": "sociedade_salao:medium_origem"
+   },
+   {
+    "from": "12:00",
+    "to": "13:00",
+    "activity": "comer",
+    "location": "casa_aline"
+   },
+   {
+    "from": "13:00",
+    "to": "18:00",
+    "activity": "trabalhar",
+    "location": "casa_aline"
+   },
+   {
+    "from": "18:00",
+    "to": "19:00",
+    "activity": "passear",
+    "location": "paris_1857:canal"
+   },
+   {
+    "from": "19:00",
+    "to": "21:45",
+    "activity": "reuniao",
+    "location": "sociedade_salao:reuniao_2"
+   },
+   {
+    "from": "21:45",
+    "to": "22:00",
+    "activity": "passear",
+    "location": "paris_1857:canal"
+   }
+  ]
+ },
+ "pins": [
+  {
+   "condition": {
+    "quest_status": {
+     "quest": "perguntas_e_respostas",
+     "status": "active"
+    }
+   },
+   "map": "sociedade_salao"
+  },
+  {
+   "condition": {
+    "all": [
+     {
+      "quest_status": {
+       "quest": "revista_espirita",
+       "status": "completed"
+      }
+     },
+     {
+      "not": {
+       "quest_status": {
+        "quest": "jardim_da_reflexao",
+        "status": "completed"
+       }
+      }
+     }
+    ]
+   },
+   "map": "sociedade_salao"
+  }
+ ],
+ "frames": "res://resources/sprite_frames/medium.tres"
+}

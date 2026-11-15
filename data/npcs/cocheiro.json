@@ -1,0 +1,74 @@
+{
+ "id": "cocheiro",
+ "name": "Bertrand",
+ "personality": "conversador, conhece cada rua de Paris",
+ "occupation": "Cocheiro de fiacre",
+ "mood": "tranquilo",
+ "home": "casa_bertrand",
+ "wake": "06:00",
+ "sleep": "22:30",
+ "dialogue_id": "cocheiro",
+ "favorite_places": [
+  "paris_1857:cocheiro_ponto"
+ ],
+ "favorite_activities": [
+  "trabalhar",
+  "conversar"
+ ],
+ "relations": {
+  "moradora": "conhecido"
+ },
+ "schedule": {
+  "default": [
+   {
+    "from": "06:00",
+    "to": "08:00",
+    "activity": "cuidar_casa",
+    "location": "casa_bertrand"
+   },
+   {
+    "from": "08:00",
+    "to": "12:30",
+    "activity": "trabalhar",
+    "location": "paris_1857:cocheiro_ponto"
+   },
+   {
+    "from": "12:30",
+    "to": "13:15",
+    "activity": "comer",
+    "location": "paris_1857:feira_1"
+   },
+   {
+    "from": "13:15",
+    "to": "20:00",
+    "activity": "trabalhar",
+    "location": "paris_1857:cocheiro_ponto"
+   },
+   {
+    "from": "20:00",
+    "to": "22:30",
+    "activity": "descansar",
+    "location": "casa_bertrand"
+   }
+  ]
+ },
+ "pins": [
+  {
+   "condition": {
+    "any": [
+     {
+      "flag": "tipografia_conhecida"
+     },
+     {
+      "quest_status": {
+       "quest": "revista_espirita",
+       "status": "active"
+      }
+     }
+    ]
+   },
+   "map": "paris_1857"
+  }
+ ],
+ "frames": "res://resources/sprite_frames/cocheiro.tres"
+}
