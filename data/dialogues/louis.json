@@ -4,6 +4,34 @@
   "variants": [
     {
       "condition": {
+        "all": [
+          {"quest_status": {"quest": "primeiras_letras", "status": "active"}},
+          {"weekday": "quinta"},
+          {"time_between": {"from": "13:00", "to": "14:30"}}
+        ]
+      },
+      "start": "aula"
+    },
+    {
+      "condition": {
+        "quest_status": {
+          "quest": "primeiras_letras",
+          "status": "active"
+        }
+      },
+      "start": "esperando_aula"
+    },
+    {
+      "condition": {
+        "all": [
+          {"flag": "amelie_ensina_louis"},
+          {"quest_status": {"quest": "primeiras_letras", "status": "not_started"}}
+        ]
+      },
+      "start": "convite_aula"
+    },
+    {
+      "condition": {
         "quest_status": {
           "quest": "pao_para_louis",
           "status": "completed"
@@ -133,6 +161,11 @@
                 "not": {
                   "flag": "louis_quer_ler"
                 }
+              },
+              {
+                "not": {
+                  "flag": "amelie_ensina_louis"
+                }
               }
             ]
           },
@@ -150,6 +183,48 @@
         }
       ],
       "text": "Sabia que a senhora da casa ao lado da Sociedade é professora? Será que ela me ensinaria a ler?"
+    },
+    "convite_aula": {
+      "actions": [
+        {
+          "type": "start_quest",
+          "quest": "primeiras_letras"
+        }
+      ],
+      "text": [
+        "Madame Amélie disse que posso ir à aula! Você vai comigo?",
+        "Ela me espera na residência às quintas-feiras, depois do almoço."
+      ]
+    },
+    "esperando_aula": {
+      "text": "A aula é na quinta-feira, entre uma e duas e meia da tarde. Não quero chegar atrasado!"
+    },
+    "aula": {
+      "actions": [
+        {
+          "type": "complete_objective",
+          "quest": "primeiras_letras",
+          "objective": "participar_da_aula"
+        },
+        {
+          "type": "add_affinity",
+          "npc": "crianca",
+          "amount": 10
+        },
+        {
+          "type": "add_virtue",
+          "virtue": "fraternidade",
+          "amount": 5
+        },
+        {
+          "type": "unlock_entry",
+          "entry": "pestalozzi"
+        }
+      ],
+      "text": [
+        "A de Amélie parece uma escadinha. Agora consigo escrever o L de Louis!",
+        "Obrigado por vir. Quero ler os livros da praça um dia."
+      ]
     }
   }
 }

@@ -65,6 +65,15 @@
     "activity": "cuidar_casa",
     "location": "casa_louis"
    }
+  ],
+  "quinta": [
+   {"from": "07:00", "to": "08:30", "activity": "comer", "location": "casa_louis"},
+   {"from": "08:30", "to": "12:00", "activity": "brincar", "location": "paris_1857:crianca_origem"},
+   {"from": "12:00", "to": "13:00", "activity": "comer", "location": "casa_louis"},
+   {"from": "13:00", "to": "14:30", "activity": "estudar", "location": "residencia_kardec:aula_louis"},
+   {"from": "14:30", "to": "15:30", "activity": "brincar", "location": "paris_1857:canal"},
+   {"from": "15:30", "to": "18:00", "activity": "brincar", "location": "paris_1857:crianca_origem"},
+   {"from": "18:00", "to": "20:00", "activity": "cuidar_casa", "location": "casa_louis"}
   ]
  },
  "pins": [

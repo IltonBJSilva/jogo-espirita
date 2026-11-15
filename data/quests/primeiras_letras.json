@@ -1,0 +1,22 @@
+{
+  "id": "primeiras_letras",
+  "name": "As Primeiras Letras",
+  "chapter": 1,
+  "description": "Louis quer aprender a ler. Amélie Boudet o espera na residência às quintas-feiras, depois do almoço.",
+  "sequential": true,
+  "requirements": {
+    "quests_completed": ["pao_para_louis"],
+    "flags": ["amelie_ensina_louis"],
+    "items": []
+  },
+  "objectives": [
+    {
+      "id": "participar_da_aula",
+      "description": "Ir à residência de Kardec na quinta-feira, entre 13:00 e 14:30"
+    }
+  ],
+  "rewards": {
+    "items": {},
+    "flags": ["louis_primeiras_letras"]
+  }
+}

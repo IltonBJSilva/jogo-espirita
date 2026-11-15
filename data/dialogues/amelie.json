@@ -4,6 +4,25 @@
   "variants": [
     {
       "condition": {
+        "all": [
+          {"quest_status": {"quest": "primeiras_letras", "status": "active"}},
+          {"weekday": "quinta"},
+          {"time_between": {"from": "13:00", "to": "14:30"}}
+        ]
+      },
+      "start": "aula_louis"
+    },
+    {
+      "condition": {
+        "quest_status": {
+          "quest": "primeiras_letras",
+          "status": "active"
+        }
+      },
+      "start": "lembrete_aula"
+    },
+    {
+      "condition": {
         "objective_current": {
           "quest": "cartas_do_professor",
           "objective": "voltar_amelie"
@@ -171,6 +190,15 @@
       "text": [
         "Louis quer aprender a ler? Mande-o aqui às quintas-feiras, depois do almoço.",
         "Ensinar uma criança a ler é abrir uma porta que ninguém mais fecha."
+      ]
+    },
+    "lembrete_aula": {
+      "text": "Louis e eu nos encontraremos na quinta-feira, entre uma e duas e meia da tarde."
+    },
+    "aula_louis": {
+      "text": [
+        "Começamos pelo nome dele. Uma letra de cada vez, sem pressa.",
+        "O importante é que Louis descubra que as palavras também podem lhe fazer companhia."
       ]
     }
   }

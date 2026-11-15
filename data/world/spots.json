@@ -601,6 +601,28 @@
     1
    ],
    "kind": "origem"
+  },
+  "aula_amelie": {
+   "pos": [
+    400,
+    300
+   ],
+   "facing": [
+    1,
+    0
+   ],
+   "kind": "aula"
+  },
+  "aula_louis": {
+   "pos": [
+    560,
+    300
+   ],
+   "facing": [
+    -1,
+    0
+   ],
+   "kind": "aula"
   }
  },
  "tipografia": {
