@@ -25,7 +25,9 @@ extends RefCounted
 ## Expansao (sistemas adicionados depois do MVP):
 ##   Condicoes: {"entry_unlocked": "id"}, {"book_read": "id"},
 ##              {"affinity_at_least": {"npc", "value"}},
-##              {"virtue_at_least": {"virtue", "value"}}
+##              {"virtue_at_least": {"virtue", "value"}},
+##              {"weekday": "segunda|...|domingo|0..6"},
+##              {"time_between": {"from": "HH:MM", "to": "HH:MM"}}
 ##   Acoes: unlock_entry {entry}, read_book {book}, add_affinity {npc, amount},
 ##          add_virtue {virtue, amount}, open_travel, save_game
 
@@ -34,6 +36,8 @@ const STATUS_NAMES := {
 	"active": 1,
 	"completed": 2,
 }
+
+const WEEKDAY_NAMES := ["segunda", "terca", "quarta", "quinta", "sexta", "sabado", "domingo"]
 
 
 ## Avalia uma condicao. Condicao vazia (ou nula) e sempre verdadeira.
@@ -99,6 +103,17 @@ static func check(condition: Variant) -> bool:
 					return false
 			"virtue_at_least":
 				if ProgressManager.get_value(value.get("virtue", "")) < int(value.get("value", 0)):
+					return false
+			"weekday":
+				var expected := int(value) if value is int or value is float else WEEKDAY_NAMES.find(str(value).to_lower())
+				if expected < 0 or TimeManager.get_date().get("weekday", -1) != expected:
+					return false
+			"time_between":
+				var start := TimeManager.parse_hhmm(str(value.get("from", "00:00")))
+				var end := TimeManager.parse_hhmm(str(value.get("to", "00:00")))
+				var now := TimeManager.get_minute_of_day()
+				var inside := (now >= start and now < end) if start <= end else (now >= start or now < end)
+				if not inside:
 					return false
 			_:
 				push_warning("GameActions: condicao desconhecida '%s'" % key)

@@ -150,7 +150,7 @@ O quiz usa `{"questions_file": "res://data/quizzes/<id>.json"}`.
 
 ## Condições e ações novas
 - **Condições:** `entry_unlocked`, `book_read`, `affinity_at_least {npc, value}`,
-  `virtue_at_least {virtue, value}`.
+  `virtue_at_least {virtue, value}`, `weekday` e `time_between`.
 - **Ações:** `unlock_entry {entry}`, `read_book {book}`, `add_affinity {npc, amount}`,
   `add_virtue {virtue, amount}`, `open_travel`, `save_game`.
 
@@ -164,6 +164,17 @@ present_when = "{\"quest_status\": {\"quest\": \"o_cetico\", \"status\": \"compl
 
 ## Flag especial `data_atual`
 É um texto livre ("Dezembro de 1857") que o HUD mostra como data da história.
+
+### Condições de agenda
+`weekday` aceita o nome sem acento (`segunda` a `domingo`) ou o número do dia (0 = segunda).
+`time_between` inclui o início e exclui o fim; também aceita faixas que passam da meia-noite.
+
+```json
+{"all": [
+  {"weekday": "quinta"},
+  {"time_between": {"from": "13:00", "to": "14:30"}}
+]}
+```
 
 ## Boa prática: ações que trocam de contexto
 As `actions` rodam ao **entrar** no nó, antes do texto. Para trocar de mapa depois de uma fala,

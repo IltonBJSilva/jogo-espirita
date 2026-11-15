@@ -29,6 +29,15 @@ func _run() -> void:
 	_check(TimeManager.get_date_string() == "Segunda-feira, 4 de maio de 1857", "texto da data")
 	_check(TimeManager.parse_hhmm("06:30") == 390, "parse_hhmm")
 
+	# --- Condições de agenda reutilizáveis ---------------------------------------------
+	TimeManager.set_datetime(1857, 5, 7, 13, 15)  # quinta-feira
+	_check(GameActions.check({"weekday": "quinta"}), "condição weekday por nome")
+	_check(GameActions.check({"weekday": 3}), "condição weekday por número")
+	_check(GameActions.check({"time_between": {"from": "13:00", "to": "14:30"}}), "condição dentro da faixa horária")
+	_check(not GameActions.check({"time_between": {"from": "14:30", "to": "15:00"}}), "condição fora da faixa horária")
+	TimeManager.set_datetime(1857, 5, 7, 23, 30)
+	_check(GameActions.check({"time_between": {"from": "22:00", "to": "01:00"}}), "faixa de horário atravessa meia-noite")
+
 	# --- Minutos e horas ------------------------------------------------------------
 	TimeManager.set_datetime(1857, 5, 4, 10, 0)
 	_reset_counts()
