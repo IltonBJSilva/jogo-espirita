@@ -85,3 +85,10 @@
 - Nova personagem: Irmã Clara (`espirito_guia`), com sprite e retrato gerados pelo Codex.
 - Nova missão `jardim_da_reflexao` e 4 entradas novas na enciclopédia.
 - Novo teste `tests/spiritual_test.tscn`. As 3 suítes passam: smoke, expansão e plano espiritual.
+
+### 2026-11-14: Sistema de vida e As Primeiras Letras
+- Calendário, luz ambiente, eventos e rotinas dos 11 NPCs passaram a compor a simulação persistente do mundo.
+- `GameActions` ganhou condições reutilizáveis de agenda: `weekday` e `time_between`.
+- Nova missão opcional *As Primeiras Letras*: após receber ajuda, Louis começa a aprender a ler com Amélie,
+  toda quinta-feira das 13:00 às 14:30, na residência de Kardec.
+- Testes `time_test`, `life_test` e `louis_lesson_test` validam as condições de agenda, as rotinas e a aula.

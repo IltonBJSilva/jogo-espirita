@@ -112,6 +112,7 @@ pausa há **Salvar jogo**, e o inventário ganhou o botão **Ler**.
 ```bash
 godot --headless --path . res://tests/expansion_test.tscn   # joga toda a expansão + salvar/carregar
 godot --headless --path . res://tests/smoke_test.tscn       # missão original (continua passando)
+godot --headless --path . res://tests/louis_lesson_test.tscn # arco de alfabetização de Louis
 ```
 
 **Novos scripts de arte:**

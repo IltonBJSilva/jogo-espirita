@@ -18,22 +18,20 @@
   - minigames genéricos (quiz e ordenar), ícones de itens e calendário
 - [x] **Testes automatizados:** `tests/smoke_test.tscn` e `tests/expansion_test.tscn`.
 - [x] **Plano espiritual:** veja `docs/PLANO_ESPIRITUAL.md` (outro agente).
+- [x] **Sistema de vida:** relógio e calendário de 1857, ciclo dia/noite, rotinas e eventos para os 11 NPCs.
+- [x] **Arco de Louis:** missão *As Primeiras Letras*, com aula de quinta-feira na residência de Kardec.
 
 ## P1 — próximos passos
 - [ ] **Animações completas (Codex) para livreiro, estudioso, moradora e Kardec.** Hoje a caminhada de frente e
       de costas deles é só "bob" e não há `talk` (exceto no Kardec). Use o prompt-modelo de `docs/SPRITES.md`,
       acrescente os ids a `SHEETS` em `tools/extract_sheet.py` e **preserve** os PNGs atuais (gere com
       nomes novos ou só depois de aprovar).
-- [ ] **Arco de Louis:** aprender a ler com Amélie. As flags `louis_quer_ler` e `amelie_ensina_louis` já existem;
-      falta uma missão curta e uma cena de aula na residência.
 - [ ] **Capítulo 2 completo:** fundação da Sociedade Parisiense (abril de 1858), com uma sessão e as regras
       (o programa já existe como documento).
 - [ ] **Ícones próprios** para o pão e o casaco de lã (hoje usam bilhete e documento).
 
 ## P2 — sistemas
-- [ ] Rotinas de NPCs por horário. Hoje existe a presença condicional `present_when`; falta a hora do dia.
-- [ ] Ciclo dia/noite e clima (manhã, tarde, noite e chuva no Guia Visual). Pode ser um CanvasModulate por
-      mapa, ligado a `data_atual` e a uma hora.
+- [ ] Clima: chuva e neblina. O ciclo de luz e os lampiões já acompanham a hora do dia.
 - [ ] Áudio: **não há nenhum som ou música ainda**. Faltam trilha de piano/cordas de época, passos, portas,
       páginas, prensa e ambiente da praça. É preciso criar a pasta `assets/audio/` e um AudioManager.
 - [ ] Fonte pixel para a interface (hoje é a SystemFont serifada Georgia).

@@ -13,6 +13,7 @@ Capítulo 1 — Paris, 1857: o início dos estudos
         ├─> [3] cartas_do_professor    (secundária)
         └─> [5] o_cetico               (secundária)
   [4] pao_para_louis  (secundária, sem requisito)
+        └─> [8] primeiras_letras  (secundária; após o convite de Amélie)
 Capítulo 2 — A Codificação
   [6] revista_espirita  (principal; requer a 2)  -> anuncia a fundação da Sociedade (abril de 1858)
 ```
@@ -111,3 +112,15 @@ Capítulo 2 — A Codificação
   em qualquer ordem → despedir-se e voltar ao salão.
 - **Recompensas:** flag `capitulo2_epilogo`, virtudes, afinidade e entradas da enciclopédia.
 - **Detalhes completos:** [PLANO_ESPIRITUAL.md](PLANO_ESPIRITUAL.md).
+
+---
+
+## 8. primeiras_letras — As Primeiras Letras
+
+- **Requisitos:** *Pão para Louis* concluída e a confirmação de Amélie (`amelie_ensina_louis`).
+- **Inicia:** falar com Louis depois de Amélie aceitar ensiná-lo.
+- **Objetivo:** participar da aula na residência de Kardec, numa quinta-feira entre 13:00 e 14:30.
+- **Cena:** LifeManager leva Amélie ao lugar `aula_amelie` e Louis ao `aula_louis`; os dois continuam
+  seguindo suas demais rotinas fora desse horário.
+- **Recompensas:** flag `louis_primeiras_letras`, +10 de afinidade com Louis, +5 de Fraternidade e a entrada
+  sobre Pestalozzi.
