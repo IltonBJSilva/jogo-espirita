@@ -126,7 +126,7 @@ dialogue_id = "gatilho_praca"
 size = Vector2(380, 300)
 
 [node name="Cocheiro" parent="Interactive" instance=ExtResource("3_npc")]
-position = Vector2(300, 632)
+position = Vector2(352, 704)
 sprite_frames = ExtResource("11_cocheiro")
 facing = Vector2(1, 0)
 npc_id = "cocheiro"

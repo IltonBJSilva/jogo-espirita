@@ -27,7 +27,7 @@ COLS, ROWS = 48, 32
 
 SOLID = [
     # Livraria e casas ao fundo (canto superior esquerdo)
-    (0, 0, 10, 17), (1, 18, 1, 18), (2, 18, 4, 18), (9, 18, 9, 18),
+    (0, 0, 10, 17), (1, 18, 1, 18), (2, 18, 4, 18),
     # Jardim e arvores entre a Livraria e a Sociedade
     (10, 0, 17, 6), (11, 7, 11, 9), (14, 7, 16, 9),
     (14, 11, 14, 13), (12, 12, 12, 13), (13, 12, 16, 15),
